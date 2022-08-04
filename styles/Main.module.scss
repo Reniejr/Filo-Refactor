@@ -1,0 +1,32 @@
+@import "./main.scss";
+
+//? DEBUG PURPOSES
+//? .test{
+//?     border: 1px solid $pure_b;
+//? }
+
+.container{
+    width: 100%;
+    max-width: 1160px;
+    position: relative;
+    margin: 0 auto;
+
+    @media screen and (max-width: $xl){
+        padding: 0 5vw;
+    }
+}
+
+.section{
+    padding: 40px 0;
+
+    @media screen and (max-width: $sm){
+        padding: 20px 0;
+    }
+}
+
+.layout{
+
+    &#main-layout{
+        padding-top: calc(4rem + 39px);
+    }
+}

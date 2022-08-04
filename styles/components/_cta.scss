@@ -1,0 +1,62 @@
+.btn{
+    @include btn_font;
+    @include borderRadius(4px);
+    @include transition(all 0.3s ease-in-out);
+    min-width: 168px;
+    width: fit-content;
+    padding: 10px 24px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &.btn-primary, &.btn-secondary:hover{
+        background-color: $primary;
+        color: $pure_w;
+        border: 1px solid $primary;
+    }
+
+    &.btn-secondary, &.btn-primary:hover{
+        background-color: transparent;
+        color: $primary;
+        border: 1px solid $primary;
+    }
+}
+
+.link{
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+    font-weight: 400;
+    text-decoration: none;
+
+    &.upper{
+        text-transform: uppercase;
+    }
+
+    &.u-line{
+        text-decoration: underline;
+    }
+
+    &.link-b{
+        color: $pure_b;
+
+        &:hover{
+            color: $primary;
+        }
+    }
+
+    &.link-w{
+        color: $pure_w;
+
+        &:hover{
+            color: $primary;
+        }
+    }
+
+    &.link-primary{
+        color: $primary;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+    
+}

@@ -1,0 +1,23 @@
+@import '../../../styles/main.scss';
+
+.download-apps-container{
+
+    @include flexBox(row, flex-start, flex-start);
+
+    .app-icon{
+        margin-right: 1rem;
+    }
+
+    @media screen and (max-width: $xs){
+        justify-content: space-between;
+
+        .app-icon{
+            @include transform(scale(.95));
+            margin: 0;
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

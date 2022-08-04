@@ -1,0 +1,26 @@
+{
+    "Top Slider": {
+        "title_0": "Filo Tag",
+        "description_0": "Filo ti aiuta a non perdere le cose più importanti.",
+        "title_1": "Per Lui",
+        "description_1": "Non perderai più tempo per cercare le tue chiavi.",
+        "title_2": "Per Lei",
+        "description_2": "Inseriscilo nella borsetta o nel portafoglio e non dimenticare più nulla."
+    },
+    "Mentions": {
+        "featured_on": "Parlano di noi"
+    },
+    "Filo_Description": {
+        "description": "Filo è un piccolo dispositivo che ti aiuta a ritrovare le cose importanti, con l'aiuto di una semplice app."
+    },
+    "Bottom Slider": {
+        "title_0": "Per il portafoglio",
+        "description_0": "Inserisci Filo nel tuo portafoglio. Fallo suonare dall’app per ritrovarlo o visualizza dove lo hai dimenticato sulla mappa.",
+        "title_1": "Per il tuo zaino",
+        "description_1": "Attacca Filo allo zaino e attiva la Comfort Zone. Riceverai una notifica che ti avviserà quando ti allontanerai troppo da lui o viceversa.",
+        "title_2": "Per il tuo smartphone",
+        "description_2": "Non trovi lo smartphone? Premi due volte il pulsante di Filo per farlo suonare, anche in modalità silenzioso!",
+        "title_3": "Per le tue chiavi",
+        "description_3": "Attacca Filo alle chiavi e collegalo all'app sul tuo smartphone. Da ora puoi far suonare le tue chiavi per ritrovarle in un attimo!"
+    }
+}

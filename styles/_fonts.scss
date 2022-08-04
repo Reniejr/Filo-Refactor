@@ -1,0 +1,48 @@
+$primary_font_family: 'Open Sans', sans-serif;
+
+@mixin title_font_xl{
+    font-size: 40px;
+    font-weight: bold;
+
+    @media screen and (max-width: $md){
+        font-size: 32px;
+    }
+}
+
+@mixin title_font_md{
+    font-size: 32px;
+    font-weight: bold;
+
+    @media screen and (max-width: $md){
+        font-size: 24px;
+    }
+}
+
+@mixin title_font_sm{
+    font-size: 20px;
+    font-weight: bold;
+
+    @media screen and (max-width: $md){
+        font-size: 18px;
+    }
+}
+
+@mixin txt_font{
+    font-size: 20px;
+    font-weight: 300;
+    
+    @media screen and (max-width: $md){
+        font-size: 18px;
+    }
+}
+
+@mixin mini_font{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+@mixin btn_font{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}

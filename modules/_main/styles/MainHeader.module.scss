@@ -1,0 +1,136 @@
+@import '../../../styles/main.scss';
+
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    &#main-header{
+        padding: 2rem 0;
+        
+        &.on-top{
+            background-color: transparent;
+            box-shadow: none;
+        }
+        &.off-top{
+            background-color: $pure_w_50;
+            box-shadow: 0px 5px 15px -5px $pure_b_10;
+        }
+    }
+
+    .menu-container{
+        @include flexBox(row, space-between, center);
+        
+        .menu{
+            @include flexBox(row, flex-start, center);
+
+            .menu-item{
+                @include btn_font;
+                font-weight: 500;
+                letter-spacing: 0.75px;
+                
+                &:not(:nth-last-of-type(1)){
+                    margin-right: 1rem;
+                }
+            }
+            
+            .btn-buy-action{
+                margin-right: 1rem;
+                letter-spacing: 1px;
+            }
+
+            .cart-item{
+                color: $primary;
+                @include flexBox(column, center, center);
+                padding-left: 1rem;
+                border-left: 1px solid $primary;
+
+                ion-icon{
+                    font-size: 24px;
+                }
+            }
+        }
+        ion-icon[name="menu-outline"]{
+            color: $primary;
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    .mobile-nav{
+        display: none;
+    }
+    
+
+    @media screen and (max-width: $md){
+        .menu-container{
+            .menu-item{
+                display: none;
+            }
+            ion-icon[name="menu-outline"]{
+                display: block;
+            }
+        }
+        .mobile-nav{
+            display: block;
+            background-color: $pure_w_10;
+            backdrop-filter: blur(5px);
+            overflow: hidden;
+            @include transition(all 0.5s ease-in-out);
+            
+            &.show-mob{
+                border-top: 1px solid $pure_b_25;
+                max-height: 1000px;
+            }
+            &.hide-mob{
+                max-height: 0px;
+            }
+            
+            .mobile-menu{
+                @include flexBox(column, center, center);
+                list-style: none;
+                li{
+                    width: 100%;
+                    border-bottom: 1px solid $pure_b_25;
+                    padding: .5rem 0;
+                    @include flexBox(column, center, center);
+                    text-align: center;
+                    .menu-item-mob{
+                        font-size: 12px;
+                    }
+                    &:nth-last-of-type(1){
+                        display: none;
+                    }
+                }
+
+            }
+        }
+    }
+    @media screen and (max-width: $sm){
+        .menu-container{
+            .menu{
+                .btn-buy-action{
+                    display: none;
+                }
+
+                .cart-item{
+                    border-left: none;
+                    padding-left: 0;
+                }
+            }
+        }
+        .mobile-nav{
+            .mobile-menu{
+                li{
+                    padding: 0.5rem 0;
+                    &:nth-last-of-type(1){
+                        display: block;
+                    }
+                }
+
+            }
+        }
+    }
+}

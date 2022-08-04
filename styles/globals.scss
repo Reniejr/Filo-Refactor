@@ -1,0 +1,17 @@
+//* FOR PURE SELECTORS
+
+@import './fonts';
+
+*, *::after, *::before{
+    font-family: $primary_font_family;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//? DEBUG PURPOSES
+body{
+    min-height: 200vh;
+}

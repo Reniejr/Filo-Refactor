@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/common/components/*": ["modules/_common/components/*"],
+            "@/main/components/*": ["modules/_main/components/*"],
+            "@/styles/*": ["styles/*"],
+            "@/assets/*": ["assets/*"],
+            "@/translations/*": ["translations/*"],
+            "@/utilities/*": ["utilities/*"],
+            "@/hooks/*": ["hooks/*"]
+        }
+    }
+}
