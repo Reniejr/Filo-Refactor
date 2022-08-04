@@ -15,7 +15,7 @@ export default function Home({messages}) {
       <section className={globals["container"]}>
         <h1>Test container</h1>
         <section className={globals["section"]}>
-          <h2>Test section</h2>
+          <h2>Test section Deploy Test</h2>
           <Image src={Logo_Filo_Red} width={168} height={77}/>
           <LinkCTA classes={`${globals["link"]} ${globals["u-line"]} ${globals["upper"]}`}
           href="/"
