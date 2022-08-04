@@ -16,7 +16,7 @@ export default function Home({messages}) {
         <h1>Test container</h1>
         <section className={globals["section"]}>
           <h2>Test section Deploy Test</h2>
-          <Image src={Logo_Filo_Red} width={168} height={77}/>
+          <Image src="https://wp.wedevs.it/wp-content/uploads/2022/06/Logo_Filo_Red.png" width={168} height={77}/>
           <LinkCTA classes={`${globals["link"]} ${globals["u-line"]} ${globals["upper"]}`}
           href="/"
           text_label="Test Link"
