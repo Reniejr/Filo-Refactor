@@ -53,6 +53,7 @@ function MyApp({ Component, pageProps }) {
   <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        id="gtag-manager"
       />
       <Script
         strategy="afterInteractive"
@@ -66,6 +67,7 @@ function MyApp({ Component, pageProps }) {
             });
           `,
         }}
+        id="gtag-event-test"
       />
   <NextIntlProvider 
             messages={pageProps.messages} 
