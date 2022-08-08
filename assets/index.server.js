@@ -1,4 +1,6 @@
-const BASE_URL = process.env.WP_URL + '/wp-content/uploads/2022';
+const wp_url = process.env.NODE_ENV === 'production' ? process.env.WP_URL : process.env.NEXT_PUBLIC_WP_URL
+
+const BASE_URL = wp_url + '/wp-content/uploads/2022';
 
 //* ASSETS FILE NAMES
 import logos from './logos.json';
