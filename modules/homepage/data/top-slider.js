@@ -14,6 +14,8 @@ const {
     Top_Slider_3_Mobile
 } = getImage("homepages")
 
+console.log(Top_Slider_1_Mobile)
+
 const top_slider_data = {
     "slider_id": "homepage_top_slider",
     "slider_type": "no-number",
