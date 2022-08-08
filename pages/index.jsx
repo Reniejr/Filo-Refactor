@@ -1,28 +1,25 @@
 import globals from '@/styles/Main.module.scss';
+import styles from '../modules/homepage/styles/HomePage.module.scss';
 
-import Image from 'next/future/image'
+//* COMPONENTS
+import Slider from '@/common/components/Slider';
 
-import getImage from '@/assets/index.server' 
-import { LinkCTA } from '@/common/components/CTA';
+//* DATA
+import top_slider_data from '../modules/homepage/data/top-slider';
 
 export default function Home({messages}) {
 
-  const { Logo_Filo_Red } = getImage('logos')
   const { general, homepage } = messages
 
   return (
-    <div>
-      <section className={globals["container"]}>
-        <h1>Test container</h1>
-        <section className={globals["section"]}>
-          <h2>Test section Deploy Test</h2>
-          <Image src="https://wp.wedevs.it/wp-content/uploads/2022/06/Logo_Filo_Red.png" width={168} height={77}/>
-          <LinkCTA classes={`${globals["link"]} ${globals["u-line"]} ${globals["upper"]}`}
-          href="/"
-          text_label="Test Link"
-          />
-        </section>
-      </section>
+    <div 
+      className={`${globals["page"]}`}
+      id={styles["homepage"]}
+    >
+      <Slider 
+        slider_details={top_slider_data}
+        content={{translation: {...general, ...homepage}}}
+      />
     </div>
   )
 }
