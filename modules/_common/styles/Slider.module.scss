@@ -1,1 +1,81 @@
 @import '../../../styles/main.scss';
+
+.slider{
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+
+    ion-icon{
+        @include transition(all 0.2s ease-in-out);
+        font-size: 64px;
+        position: absolute;
+        top: 50%;
+        @include transform(translateY(-50%));
+        z-index: 100;
+        color: $pure_b_50;
+        margin: 0 1rem;
+        cursor: pointer;
+
+        &:hover{
+            color: $primary;
+        }
+
+        &[name="chevron-forward-outline"]{
+            right: 0;
+        }
+        &[name="chevron-back-outline"]{
+            left: 0;
+        }
+    }
+
+    .slider-nav-dot-container{
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        bottom: 1rem;
+        @include flexBox(row, center, center);
+
+        .slider-nav-dot{
+            width: 8px;
+            height: 8px;
+            display: block;
+            @include borderRadius(50%);
+            background: $pure_b_50;
+            margin: 0 .5rem;
+        }
+    }
+
+    .slide-container{
+        @include flexBox(row, flex-start, flex-start);
+        @include transition(all 0.3s ease-in-out);
+        height: 100%;
+
+        .slide{
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            
+            .slide-content{
+                @include flexBox(column, center, flex-start);
+                height: 100%;
+
+                .slide-title{
+                    @include title_font_xl;
+                    margin-bottom: .5rem;
+                }
+
+                .slide-description{
+                    max-width: 25ch;
+                    margin-bottom: 1rem;
+                }
+
+                .slide-cta-container{
+                    @include flexBox(row, flex-start, flex-start);
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+}
