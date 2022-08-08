@@ -65,7 +65,6 @@
             .slide-content{
                 @include flexBox(column, center, flex-start);
                 height: 100%;
-                display: block;
 
                 .slide-title{
                     @include title_font_xl;
