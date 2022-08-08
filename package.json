@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev_to_prod": "git push -u origin dev && git checkout main && git fetch && git merge dev && git push -u origin main && git checkout dev"
   },
   "dependencies": {
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
