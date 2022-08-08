@@ -1,5 +1,5 @@
 // export const GA_TRACKING_ID = process.env.NODE_ENV === 'production' ? process.env.GA_ID : process.env.NEXT_PUBLIC_GA_ID
-export const GA_TRACKING_ID = "EPDM266LWB"
+export const GA_TRACKING_ID = process.env.GA_ID
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url) => {

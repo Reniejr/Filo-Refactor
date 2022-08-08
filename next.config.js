@@ -20,6 +20,10 @@ const nextConfig = {
   i18n: {
     locales: ['en', 'it'],
     defaultLocale: 'en',
+  },
+  env: {
+    WP_URL: "https://wp.wedevs.it",
+    GA_ID: "EPDM266LWB"
   }
 }
 

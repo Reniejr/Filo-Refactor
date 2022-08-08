@@ -15,24 +15,24 @@ import { NextIntlProvider, IntlErrorCode } from 'next-intl'
 import '@/styles/globals.scss';
 
 //* NEXTJS INTL FN
-// function onError(error) {
-//   if (process.env.NODE_ENV !== 'production') {
-//     if (error.code === IntlErrorCode.MISSING_MESSAGE) {
-//       console.warn(error);
-//     } else {
-//       console.error(error);
-//     }
-//   }
-// }
+function onError(error) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (error.code === IntlErrorCode.MISSING_MESSAGE) {
+      console.warn(error);
+    } else {
+      console.error(error);
+    }
+  }
+}
 
-// function getMessageFallback({ namespace, key, error }) {
-//   const path = [namespace, key].filter((part) => part != null).join('.');
+function getMessageFallback({ namespace, key, error }) {
+  const path = [namespace, key].filter((part) => part != null).join('.');
 
-//   if (error.code === IntlErrorCode.MISSING_MESSAGE) {
-//     return `${path} is not yet translated`;
-//   }
-//   return `Fix translation message at: ${path}`;
-// }
+  if (error.code === IntlErrorCode.MISSING_MESSAGE) {
+    return `${path} is not yet translated`;
+  }
+  return `Fix translation message at: ${path}`;
+}
 
 function MyApp({ Component, pageProps }) {
 
@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
   return <>
   <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-${gtag.GA_TRACKING_ID}`}
         id="gtag-manager"
       />
       <Script
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${gtag.GA_TRACKING_ID}', {
+            gtag('config', 'G-${gtag.GA_TRACKING_ID}', {
               page_path: window.location.pathname,
             });
           `,
@@ -71,8 +71,8 @@ function MyApp({ Component, pageProps }) {
       />
   <NextIntlProvider 
             messages={pageProps.messages} 
-            // onError={onError}
-            // getMessageFallback={getMessageFallback}
+            onError={onError}
+            getMessageFallback={getMessageFallback}
             >
               <MainLayout translation={{...pageProps.messages}}>
                 <Component {...pageProps} />
