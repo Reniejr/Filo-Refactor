@@ -1,0 +1,30 @@
+@import '../../../styles/main.scss';
+
+.filo-tag-features-container{
+    @include flexBox(column, flex-start, flex-start);
+
+    .filo-tag-feature{
+        @include flexBox(row, flex-start, flex-start);
+        margin-bottom: 2.5rem;
+        gap: 1rem;
+
+        img{
+            height: auto;
+            width: auto;
+            min-width: 45px;
+        }
+
+        .description{
+
+            h4{
+                @include title_font_sm;
+                margin-top: -5px;
+                margin-bottom: .75rem;
+            }
+
+            p{
+                max-width: 20ch;
+            }
+        }
+    }
+}

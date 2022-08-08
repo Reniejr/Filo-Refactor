@@ -1,5 +1,6 @@
 //* FOR PURE SELECTORS
 
+@import './responsive';
 @import './fonts';
 
 *, *::after, *::before{
@@ -14,4 +15,11 @@
 //? DEBUG PURPOSES
 body{
     min-height: 200vh;
+}
+
+p{
+    @include txt_font;
+    @media screen and (max-width: $sm){
+        white-space: normal;
+    }
 }

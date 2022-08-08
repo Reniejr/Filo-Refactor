@@ -1,5 +1,10 @@
 {
-    "Top Slider": {
+    "Meta_Tags": {
+        "title": "Filo | Italian Tech Atelier",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Top_Slider": {
         "title_0": "Filo Tag",
         "description_0": "Filo is here to help you find everything matters.",
         "title_1": "For Him",
@@ -13,7 +18,7 @@
     "Filo_Description": {
         "description": "Filo is a small device that helps you to never forget or lose what matters most to you, with a simple app on your phone."
     },
-    "Bottom Slider": {
+    "Bottom_Slider": {
         "title_0": "For your wallet",
         "description_0": "Insert Filo into your wallet and use the Filo app to locate it by making it ring or check where you last left it behind on the map.",
         "title_1": "For your bag",

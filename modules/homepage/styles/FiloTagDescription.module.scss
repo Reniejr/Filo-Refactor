@@ -1,0 +1,70 @@
+@import '../../../styles/main.scss';
+
+.filo-tag-description-section{
+    margin-bottom: 2rem;
+
+    .description-container{
+        @include flexBox(row, flex-start, stretch);
+
+        img[alt="home-demo-app-filo-tag"]{
+            width: 30%;
+            height: auto;
+        }
+        
+        .description{
+            @include flexBox(column, space-between, flex-start);
+            width: 42%;
+            img[alt="home-demo-app-filo-tag-sm"]{
+                display: none;
+            }
+            
+            h2{
+                @include title_font_md;
+                max-width: 18ch;
+            }
+            
+            .hiw-and-apps{
+                
+                .hiw-link{
+                    display: block;
+                    margin: 1rem 0;
+                }
+            }
+        }
+        
+        @media screen and (max-width: $lg){
+            img[alt="home-demo-app-filo-tag"]{
+                display: none;
+            }
+            .description{
+                width: 60%;
+                
+                h2{
+                    max-width: 80%;
+                }
+                
+                img[alt="home-demo-app-filo-tag-sm"]{
+                    display: block;
+                    width: auto;
+                    max-height: 300px;
+                }
+            }
+            
+        }
+        @media screen and (max-width: $sm){
+            @include flexBox(column, flex-start, flex-start);
+            gap: 2rem;
+            .description{
+                width: 100%;
+                @include flexBox(column, flex-start, center);
+                h2{
+                    max-width: 100%
+                }
+                
+                .hiw-and-apps{
+                    @include flexBox(column, flex-start, center);
+                }
+            }
+        }
+    }
+}

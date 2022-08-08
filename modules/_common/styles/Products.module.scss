@@ -1,0 +1,111 @@
+@import '../../../styles/main.scss';
+
+.product-overview{
+    padding: 2rem 0;
+
+    .container{
+        @include flexBox(row, space-between, stretch);
+        
+        @media screen and (max-width: $lg){
+            @include flexBox(row, space-between, center);
+            
+        }
+        @media screen and (max-width: $md){
+            @include flexBox(column, flex-start, center);
+            
+        }
+        
+        .product-img-box{
+            width: 50%;
+            @media screen and (max-width: $md){
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .overview-1{
+            @include flexBox(column, space-between, flex-start);
+            gap: 1rem;
+
+            @media screen and (max-width: $sm){
+                width: 100%;
+            }
+
+            .overall-description{
+                h2{
+                    @include title_font_xl;
+                    margin-bottom: .5rem;
+                }
+    
+                p{
+                    white-space: pre;
+
+                    @media screen and (max-width: $sm){
+                        white-space: normal;
+                    }
+                }
+            }
+
+            .product-specifications{
+
+                .specification{
+                    @include flexBox(row, flex-start, flex-start);
+                    gap: .75rem;
+                    margin-bottom: 1rem;
+
+                    .img-box{
+                        width: 24px;
+                        height: 24px;
+
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .description{
+                        white-space: pre;
+                        @media screen and (max-width: $sm){
+                            white-space: normal;
+                        }
+                    }
+                }
+            }
+
+            .ft-colors{
+                @include flexBox(row, flex-start, center);
+                gap: .5rem;
+                .color-box{
+                    width: 24px;
+                    height: 24px;
+                    @include borderRadius(4px);
+                    overflow: hidden;
+                    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                @media screen and (max-width: $xs){
+                    width: 100%;
+                    @include flexBox(row, center, center);
+                    
+                }
+            }
+
+            .cta-container{
+                @include flexBox(row, flex-start, flex-start);
+                gap: 1rem; 
+                @media screen and (max-width: $xs){
+                    width: 100%;
+                    @include flexBox(column, flex-start, center);
+                }
+            }
+        }
+    }
+}

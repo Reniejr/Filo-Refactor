@@ -1,5 +1,10 @@
 {
-    "Top Slider": {
+    "Meta_Tags": {
+        "title": "Filo | Italian Tech Atelier",
+        "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi",
+        "description": "Filo s.r.l. è una Compagnia Italiana nel campo dell' IoT situata a Roma.\nProgrammiamo, sviluppiamo, costruiamo e vendiamo dispositivi che aiutano la gente nella loro vita quotidiana."
+    },
+    "Top_Slider": {
         "title_0": "Filo Tag",
         "description_0": "Filo ti aiuta a non perdere le cose più importanti.",
         "title_1": "Per Lui",
@@ -13,7 +18,7 @@
     "Filo_Description": {
         "description": "Filo è un piccolo dispositivo che ti aiuta a ritrovare le cose importanti, con l'aiuto di una semplice app."
     },
-    "Bottom Slider": {
+    "Bottom_Slider": {
         "title_0": "Per il portafoglio",
         "description_0": "Inserisci Filo nel tuo portafoglio. Fallo suonare dall’app per ritrovarlo o visualizza dove lo hai dimenticato sulla mappa.",
         "title_1": "Per il tuo zaino",

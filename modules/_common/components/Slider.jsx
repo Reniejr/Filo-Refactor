@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+//* TRANSLATION
+import { useTranslations } from 'next-intl'
+
 //* COMPONENTS
 import { LinkCTA } from './CTA'
 import Image from 'next/future/image'
@@ -8,12 +11,12 @@ import Image from 'next/future/image'
 import styles from '../styles/Slider.module.scss'
 import globals from '@/styles/Main.module.scss'
 
-const Slider = ({slider_details, content, add_class_style}) => {
+const Slider = ({slider_details, add_class_style}) => {
 
     //* DATA
     const { slider_id, slider_type, slides, content_label } = slider_details
-    const { translation } = content
-    const t = translation[content_label]
+
+    const t = useTranslations(`homepage.${content_label}`)
 
     //* STATE
     const [slider_info, setSliderInfo] = useState({
@@ -58,15 +61,14 @@ const Slider = ({slider_details, content, add_class_style}) => {
                     const { slide_id } = slideInfo
                     const props_Slide = {
                         ...slideInfo,
-                        title: t[`title_${i}`],
-                        description: t[`description_${i}`],
+                        title: t(`title_${i}`),
+                        description: t(`description_${i}`),
                     }
 
                     return(
                         <Slide 
                             slideInfo={props_Slide} 
                             key={`slide-${slide_id}`}
-                            translation={translation}
                             slide_n={slides.length}
                             />
                     )
@@ -101,7 +103,9 @@ const Slider = ({slider_details, content, add_class_style}) => {
   )
 }
 
-const Slide = ({slideInfo, translation, slide_n}) => {
+const Slide = ({slideInfo, slide_n}) => {
+
+    const t = useTranslations("general")
 
     const { 
             title, 
@@ -155,7 +159,7 @@ const Slide = ({slideInfo, translation, slide_n}) => {
                                         key={`slide-${title}-cta-${text_label}-${i}`}
                                         href={ href }
                                         classes={classes}
-                                        text_label={translation[`${text_label}`]}
+                                        text_label={t(`${text_label}`)}
                                     />
                                 )
                             }) :

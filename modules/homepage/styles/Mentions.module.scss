@@ -1,0 +1,33 @@
+@import '../../../styles/main.scss';
+
+.mentions-section{
+    @include flexBox(row, space-between, center);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid $pure_b_25;
+    margin-bottom: 2rem;
+
+    p{
+        @include txt_font;
+    }
+    
+    img{
+        width: 80%;
+        height: auto;
+        max-height: 33px;
+    }
+
+    @media screen and (max-width: $container){
+        width: calc(100% - 4rem);
+        margin: 0 2rem;
+        margin-bottom: 2rem;
+    }
+
+    @media screen and (max-width: $sm){
+        @include flexBox(column, flex-start, center);
+        gap: 1rem;
+
+        img{
+            width: 100%;
+        }
+    }
+}

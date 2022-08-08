@@ -7,6 +7,36 @@
     position: relative;
     background-color: $bg_img_color;
 
+    &#homepage_bottom_slider{
+        height: 55vh;
+        @media screen and (max-width: $sm) {
+            height: 100%;
+        }
+        .slide-container{
+
+            .slide{
+                background-position-x: -10vw;
+                background-size: auto 100%;
+
+                .slide-content{
+                    margin-left: 50%;
+
+                    .slide-description{
+                        max-width: 30ch;
+                    }
+                }
+
+                @media screen and (max-width: $sm) {
+                    
+                    .slide-content{
+                        margin-left: 0;
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
     ion-icon{
         @include transition(all 0.2s ease-in-out);
         font-size: 64px;
@@ -79,6 +109,10 @@
                 .slide-cta-container{
                     @include flexBox(row, flex-start, flex-start);
                     gap: 1rem;
+                    @media screen and (max-width: $xs){
+                        @include flexBox(column, flex-start, center);
+                        
+                    }
                 }
             }
 
@@ -122,4 +156,6 @@
     @media screen and (max-width: $sm){
         height: 100%;
     }
+
+    
 }

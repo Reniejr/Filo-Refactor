@@ -14,12 +14,12 @@ const {
     Top_Slider_3_Mobile
 } = getImage("homepages")
 
-console.log(Top_Slider_1_Mobile)
+//? console.log(Top_Slider_1_Mobile)
 
 const top_slider_data = {
     "slider_id": "homepage_top_slider",
     "slider_type": "no-number",
-    "content_label": "Top Slider",
+    "content_label": "Top_Slider",
     "slides": [{
             "slide_id": "HP_TS_0",
             "bg": {
