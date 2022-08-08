@@ -5,6 +5,7 @@
     height: 70vh;
     overflow: hidden;
     position: relative;
+    background-color: $bg_img_color;
 
     ion-icon{
         @include transition(all 0.2s ease-in-out);
@@ -57,9 +58,14 @@
             background-repeat: no-repeat;
             background-position: center center;
             
+            .bg-mob{
+                display: none;
+            }
+            
             .slide-content{
                 @include flexBox(column, center, flex-start);
                 height: 100%;
+                display: block;
 
                 .slide-title{
                     @include title_font_xl;
@@ -76,6 +82,45 @@
                     gap: 1rem;
                 }
             }
+
+            @media screen and (max-width: $lg){
+                background-position: right right;
+                background-size: auto 100%;
+                
+                .slide-content{
+                    padding-left: 4rem;
+                }
+            }
+
+            @media screen and (max-width: $sm){
+                @include flexBox(column, flex-start, center);
+
+                .bg-mob{
+                    display: block;
+                    width: 100%;
+                    img{
+                        width: 100% !important;
+                        height: auto !important;
+                    }
+                }
+    
+                .slide-content{
+                    padding: 2rem 0;
+                    @include flexBox(column, center, center);
+                
+                    .slide-description{
+                        text-align: center;
+                    }
+                }
+            }
         }
+    }
+
+    @media screen and (max-width: $lg){
+        height: 65vh;
+    }
+
+    @media screen and (max-width: $sm){
+        height: 100%;
     }
 }

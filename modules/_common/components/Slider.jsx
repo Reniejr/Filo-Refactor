@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 //* COMPONENTS
 import { LinkCTA } from './CTA'
+import Image from 'next/future/image'
 
 //* STYLES
 import styles from '../styles/Slider.module.scss'
@@ -115,13 +116,10 @@ const Slide = ({slideInfo, translation, slide_n}) => {
     const slide_bg = mob_size ? bg_mob : bg
 
     //* DYNAMIC STYLES
-    const slide_style = mob_size ? {
-        width: `calc( 100% / ${slide_n})`,
-        backgroundColor: slide_bg["color"]
-    } : {
+    const slide_style = {
         width: `calc( 100% / ${slide_n})`,
         backgroundColor: slide_bg["color"],
-        backgroundImage: 'url("' + slide_bg["image"] + '")'
+        backgroundImage: mob_size ? "none" : 'url("' + slide_bg["image"] + '")'
     }
 
     return(
@@ -129,6 +127,17 @@ const Slide = ({slideInfo, translation, slide_n}) => {
             className={`${styles["slide"]}`}
             style={slide_style}
             >
+            {
+                mob_size ?
+                <div className={styles["bg-mob"]}>
+                    <Image 
+                        src={bg_mob.image}
+                        alt={`slide-${title}-bg-mob`}
+                        width={576}
+                        height={400}
+                        />
+                </div> : null
+            }
             <div className={`${styles["slide-content"]} ${globals["container"]}`}>
                 <h2 className={styles["slide-title"]}>
                     {title}
