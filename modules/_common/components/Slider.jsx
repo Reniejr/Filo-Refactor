@@ -34,6 +34,10 @@ const Slider = ({slider_details, add_class_style}) => {
         setSliderInfo({slide_active: slides.length - 1}) :
         setSliderInfo({slide_active: slide_active - 1})
 
+    const handleManual = (number_slide) => {
+        setSliderInfo({slide_active: number_slide})
+    }
+
     //* DYNAMIC STYLES
     const slide_container_style = {
         width: `calc( 100% * ${slides.length})`,
@@ -43,6 +47,13 @@ const Slider = ({slider_details, add_class_style}) => {
     const dot_nav_style = (dot_index) => {
         return{
             backgroundColor: dot_index === slide_active ? "#FF3545" : "rgba(0, 0, 0, 0.75)"
+        }
+    }
+
+    const number_nav_style = (number_index) => {
+        return{
+            backgroundColor: number_index === slide_active ? "#FF3545" : "transparent",
+            color: number_index === slide_active ? "#FFF" : "#FF3545"
         }
     }
 
@@ -75,16 +86,20 @@ const Slider = ({slider_details, add_class_style}) => {
                 })
             }
         </div>
-        <ion-icon 
-            name="chevron-forward-outline"
-            // className={styles["slider-nav"]}
-            onClick={()=> handleForward()}
-            ></ion-icon>
-        <ion-icon 
-            name="chevron-back-outline"
-            // className={styles["slider-nav"]}
-            onClick={()=> handleBack()}
-            ></ion-icon>
+        {
+            slider_type === "no-number" ? <>
+                <ion-icon 
+                    name="chevron-forward-outline"
+                    // className={styles["slider-nav"]}
+                    onClick={()=> handleForward()}
+                    ></ion-icon>
+                <ion-icon 
+                    name="chevron-back-outline"
+                    // className={styles["slider-nav"]}
+                    onClick={()=> handleBack()}
+                    ></ion-icon>    
+            </> : null
+        }
         <div className={styles["slider-nav-dot-container"]}>
             {
                 /* eslint-disable-next-line */
@@ -99,6 +114,26 @@ const Slider = ({slider_details, add_class_style}) => {
                 })
             }
         </div>
+        {
+            slider_type === "with-number" ?
+            <div className={`${styles["nav-number-container"]}`}>
+                <div className={styles["number-nav-items"]}>
+                    {
+                        /* eslint-disable-next-line */
+                        slides.map( (slide, i) => {
+                            return(
+                                <span 
+                                    key={`${slider_id}-number-nav-${i}`}
+                                    className={styles["slider-nav-number"]}
+                                    style={number_nav_style(i)}
+                                    onClick={() => handleManual(i)}
+                                >{i + 1}</span>
+                            )
+                        })
+                    }
+                </div>
+            </div> : null
+        }
     </section>
   )
 }
@@ -131,17 +166,7 @@ const Slide = ({slideInfo, slide_n}) => {
             className={`${styles["slide"]}`}
             style={slide_style}
             >
-            {
-                mob_size ?
-                <div className={styles["bg-mob"]}>
-                    <Image 
-                        src={bg_mob.image}
-                        alt={`slide-${title}-bg-mob`}
-                        width={576}
-                        height={400}
-                        />
-                </div> : null
-            }
+            
             <div className={`${styles["slide-content"]} ${globals["container"]}`}>
                 <h2 className={styles["slide-title"]}>
                     {title}
@@ -167,6 +192,17 @@ const Slide = ({slideInfo, slide_n}) => {
                     }
                 </div>
             </div>
+            {
+                mob_size ?
+                <div className={styles["bg-mob"]}>
+                    <Image 
+                        src={bg_mob.image}
+                        alt={`slide-${title}-bg-mob`}
+                        width={576}
+                        height={400}
+                        />
+                </div> : null
+            }
         </div>
     )
 }

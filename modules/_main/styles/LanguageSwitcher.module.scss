@@ -1,0 +1,27 @@
+@import '../../../styles/main.scss';
+
+.language-switcher{
+    position: fixed;
+    bottom: 0;
+    right: 15vw;
+    @include flexBox(row, flex-start, flex-end);
+    padding: .25rem;
+    padding-bottom: 3px;
+    background-color: $pure_b;
+    gap: .25rem;
+    max-width: calc( 30px + .45rem );
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    @include transition(all .4s ease-in-out);
+
+    &:hover{
+        max-width: 1000px;
+    }
+
+    .img-flag-icon{
+        width: 30px;
+        height: 22px;
+        @include flexBox(row, center, center);
+    }
+}

@@ -8,18 +8,38 @@
     background-color: $bg_img_color;
 
     &#homepage_bottom_slider{
-        height: 55vh;
+        height: 65vh;
+        @media screen and (max-width: $lg) {
+            height: 60vh;
+        }
+        @media screen and (max-width: $md) {
+            height: 50vh;
+        }
         @media screen and (max-width: $sm) {
             height: 100%;
         }
         .slide-container{
 
             .slide{
-                background-position-x: -10vw;
+                background-position-x: -5vw;
                 background-size: auto 100%;
+                @media screen and (max-width: $lg) {
+                    background-position-x: -10vw;
+                }
+                @media screen and (max-width: $md) {
+                    background-position-x: -12.5vw;
+                }
 
+                .bg-mob{
+                    height: 50%;
+
+                    img{
+                        height: 100%;
+                    }
+                }
+                
                 .slide-content{
-                    margin-left: 50%;
+                    padding-left: 50vw;
 
                     .slide-description{
                         max-width: 30ch;
@@ -29,7 +49,8 @@
                 @media screen and (max-width: $sm) {
                     
                     .slide-content{
-                        margin-left: 0;
+                        padding-left: 0;
+                        padding-top: 3rem;
                         margin-bottom: 1rem;
                     }
                 }
@@ -74,6 +95,58 @@
             @include borderRadius(50%);
             background: $pure_b_50;
             margin: 0 .5rem;
+        }
+    }
+
+    .nav-number-container{
+        position: absolute;
+        @media screen and (min-width: $sm){
+            width: 100%;
+            top: 3rem;
+        }
+        @media screen and (max-width: $md){
+            top: 1rem;
+        }
+        @media screen and (max-width: $sm){
+            left: 50%;
+            @include transform(translateX(-50%));
+            top: 1rem;
+        }
+
+        .number-nav-items{
+            @media screen and (min-width: $sm){
+                @include flexBox(row, flex-start, center);
+                width: 100%;
+                position: relative;
+                max-width: 1160px;
+                margin: 0 auto;
+                padding-left: 50vw;
+            }
+            @media screen and (max-width: $sm){
+                @include flexBox(row, center, center);
+            }
+            
+            .slider-nav-number{
+                @include flexBox(column, center, center);
+                width: 32px;
+                height: 32px;
+                @include borderRadius(50%);
+                background-color: $pure_b_50;
+                margin: 0 .5rem;
+                font-size: 14px;
+                font-weight: 500;
+                border: 1px solid $primary;
+                cursor: pointer;
+    
+                &:hover{
+                    background-color: $primary;
+                    color: $pure_w;
+                }
+    
+                &:nth-of-type(1){
+                    margin-left: 0;
+                }
+            }
         }
     }
 
