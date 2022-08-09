@@ -9,5 +9,10 @@
     "I_FT_Black": "/07/I_FT_Black.png",
     "I_Volume": "/07/I_Volume.webp",
     "I_Battery": "/07/I_Battery.webp",
-    "I_Size": "/07/I_Size.webp"
+    "I_Size": "/07/I_Size.webp",
+    "it": "/08/it.webp",
+    "en": "/08/en.webp",
+    "fr": "/08/fr.webp",
+    "de": "/08/de.webp",
+    "es": "/08/es.webp"
 }
