@@ -1,4 +1,5 @@
 //* COMPONENTS
+import LanguageSwitcher from "@/main/components/LanguageSwitcher";
 import MainFooter from "@/main/components/MainFooter";
 import MainHeader from "@/main/components/MainHeader";
 
@@ -14,6 +15,7 @@ const MainLayout = ({children, translation}) => {
             <MainHeader t={{...header, ...general}}/>
             {children}
             <MainFooter t={{...footer, ...general}}/>
+            <LanguageSwitcher/>
         </div>
     )
 }
