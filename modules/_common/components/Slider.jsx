@@ -11,12 +11,12 @@ import Image from 'next/future/image'
 import styles from '../styles/Slider.module.scss'
 import globals from '@/styles/Main.module.scss'
 
-const Slider = ({slider_details, add_class_style}) => {
+const Slider = ({slider_details, add_class_style, page}) => {
 
     //* DATA
     const { slider_id, slider_type, slides, content_label } = slider_details
 
-    const t = useTranslations(`homepage.${content_label}`)
+    const t = useTranslations(`${page}.${content_label}`)
 
     //* STATE
     const [slider_info, setSliderInfo] = useState({

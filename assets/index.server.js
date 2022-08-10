@@ -10,6 +10,7 @@ import icons from './icons.json';
 import products from './products.json';
 import homepages from './homepages.json';
 import press from './press.json';
+import hiw from './hiw.json'
 
 const media = {
     logos,
@@ -17,7 +18,8 @@ const media = {
     icons,
     products,
     homepages,
-    press
+    press,
+    hiw
 }
 
 const getImage = (folder) => {

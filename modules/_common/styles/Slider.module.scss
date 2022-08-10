@@ -7,6 +7,26 @@
     position: relative;
     background-color: $bg_img_color;
 
+    &#hiw_slider{
+        .slide-container{
+            .slide{
+                .slide-content{
+                    .slide-title{
+                        max-width: 25ch;
+                        white-space: pre-wrap;
+                        @media screen and (max-width: $sm){
+                            text-align: center;
+                        }
+                    }
+                    .slide-description{
+                        max-width: 30ch;
+                        white-space: pre-wrap;
+                    }
+                }
+            }
+        }
+    }
+
     &#homepage_bottom_slider{
         height: 65vh;
         @media screen and (max-width: $lg) {

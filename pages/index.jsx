@@ -23,11 +23,13 @@ export default function Home() {
       >
         <Slider 
           slider_details={top_slider_data}
+          page="homepage"
         />
         <Mentions/>
         <FiloTagDescription/>
         <Slider 
           slider_details={bottom_slider_data}
+          page="homepage"
         />
         <ProductOverview1/>
       </div>

@@ -1,7 +1,30 @@
 {
     "Meta_Tags": {
-        "title": "Filo | Italian Tech Atelier",
+        "title": "Filo | How it Works",
         "keywords": "filo-tag, filo, technology, bluetooth-device, device, filo tag, how it works",
         "description": "Attach it. Ring it. Find it.\nAttach Filo to all your personal objects to find them through a very simple mobile app."
-    }
+    },
+    "Slider": {
+        "title_0": "Attach it. Ring it. Find it.",
+        "description_0": "Attach Filo to your valuables.\nConnect it with the Filo app.\nFind everything that matters.",
+        "title_1": "Go anywhere. Relax. Filo’s got your back.",
+        "description_1": "Activate the Comfort Zone and get a notification on your smartphone every time you leave your bag behind.",
+        "title_2": "Where did I last leave my wallet?",
+        "description_2": "Find your wallet by checking its last known position on the map."
+    },
+    "Blocks": {
+        "title_0": "Attach Filo to your valuables",
+        "description_0": "Attach Filo to anything you don’t want to lose or forget.",
+        "title_1": "Download the free Filo app and connect Filo.",
+        "description_1": "Follow the easy in-app instructions to activate your Filo.",
+        "title_2": "Let your Filo ring and find it fast.",
+        "description_2": "Make your Filo ring, to retrieve your lost items in seconds.",
+        "title_3": "Find your smartphone",
+        "description_3": "Have you ever left your smartphone behind? Filo works both ways! Press two times the button on your Filo to make your smartphone ring, even if it’s in silent mode!",
+        "title_4": "Check the last seen position",
+        "description_4": "Is your Filo out of Bluetooth range? Find your missing valuables by checking their last known position. The app remembers when and where you last left them.",
+        "title_5": "Comfort Zone",
+        "description_5": "Activate the Comfort Zone feature and get a notification on your smartphone every time you leave your valuables behind."
+    },
+    "Download_App": "Let's get started!\nDownload the app today."
 }

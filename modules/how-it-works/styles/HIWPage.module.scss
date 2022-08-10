@@ -1,1 +1,32 @@
 @import '../../../styles/main.scss';
+
+.divider{
+    width: 100%;
+    background-color: $pure_b;
+    color: $pure_w;
+    padding: 1rem 0;
+    @include flexBox(row, center, center);
+
+    ion-icon{
+        font-size: 36px;
+        cursor: pointer;
+        &:hover{
+            color: $primary;
+        }
+    }
+}
+
+.hiw-download-app{
+    padding: 2rem 0;
+    @include flexBox(column, center, center);
+
+    @media screen and (max-width: $sm){
+        padding: 2rem;
+    }
+    h2{
+        @include title_font_xl;
+        white-space: pre-wrap;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+}

@@ -1,7 +1,30 @@
 {
     "Meta_Tags": {
-        "title": "Filo Tag | How it Works",
+        "title": "Filo | Come Funziona",
         "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi, come funziona, filo tag",
         "description": "Attaccalo. Fallo suonare. Ritrovalo.\nAttacca Filo a tutti i tuoi oggetti per ritrovarli sempre tramite una semplice app."
-    }
+    },
+    "Slider": {
+        "title_0": "Attaccalo. Fallo suonare.\nRitrovalo.",
+        "description_0": "Attacca Filo ai tuoi oggetti.\nConnettiti all'app.\nTrova tutto quello di cui hai bisogno.",
+        "title_1": "Attiva la Comfort Zone per viaggiare tranquillo.",
+        "description_1": "Attiva la Comfort Zone e ricevi una notifica non appena ti allontani troppo dalla tua borsa.",
+        "title_2": "Vuoi sapere dove hai dimenticato il portafoglio?",
+        "description_2": "Controlla l'ultima posizione registrata.\nL’app ricorda dove e quando lo avevi con te l'ultima volta."
+    },
+    "Blocks": {
+        "title_0": "Attacca Filo ai tuoi oggetti",
+        "description_0": "Attacca Filo a tutte quelle cose importanti che non vuoi perdere o dimenticare.",
+        "title_1": "Scarica l’app e collega Filo",
+        "description_1": "Segui le semplici istruzioni presenti all’interno dell’app per collegarlo.",
+        "title_2": "Fai suonare Filo e\nritrova le tue cose",
+        "description_2": "Fai suonare il tuo Filo per ritrovare in pochi secondi gli oggetti che hai perso.",
+        "title_3": "Trova facilmente",
+        "description_3": "Basta premere due volte il pulsante di Filo Tag per far squillare il tuo smartphone, anche in modalità silenziosa.",
+        "title_4": "Ultima posizione",
+        "description_4": "Il tuo Filo è fuori dal range Bluetooth? Trova gli oggetti che hai perso controllando la loro ultima posizione registrata. L’app ricorda dove e quando li avevi con te l’ultima volta.",
+        "title_5": "Comfort Zone",
+        "description_5": "Attiva la funzione Comfort Zone e ricevi una notifica sul tuo smartphone ogni volta che ti allontani troppo dai tuoi oggetti."
+    },
+    "Download_App": "Inizia a ritrovare i tuoi oggetti!\nScarica l'app oggi stesso."
 }
