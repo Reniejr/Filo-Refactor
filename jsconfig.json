@@ -8,7 +8,8 @@
             "@/assets/*": ["assets/*"],
             "@/translations/*": ["translations/*"],
             "@/utilities/*": ["utilities/*"],
-            "@/hooks/*": ["hooks/*"]
+            "@/hooks/*": ["hooks/*"],
+            "@/products/*": ["products/*"],
         }
     }
 }
