@@ -1,5 +1,129 @@
 @import '../../../styles/main.scss';
 
+.ft-showcase{
+    @include flexBox(column, flex-start, flex-start);
+    width: 50%;
+    max-width: 550px;
+    
+    .preview-img{
+        width: 100%;
+        @include flexBox(column, center, center);
+        background-color: $bg_img_color2;
+        margin-bottom: .5rem;
+        height: 100%;
+        max-height: 550px;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .ft-gallery{
+        width: 100%;
+        @include flexBox(row, space-between, flex-start);
+        .gallery-img{
+            cursor: pointer;
+            width: 18.5%;
+            
+            img{
+                width: 100%;
+                height: auto;
+            }
+            
+            &.gallery-img-inactive{
+                @include filter(brightness(0.9));
+                opacity: .5;
+            }
+
+            &.gallery-img-active, &:hover{
+                @include filter(brightness(1));
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+.product-selection{
+    @include flexBox(column, flex-start, flex-start);
+    width: 100%;
+    @media screen and (max-width: $lg){
+        @include flexBox(column, center, center);
+    }
+
+    .bundle-selection{
+        @include flexBox(column, flex-start, flex-start);
+        width: 100%;
+        
+        .bundle{
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+            @include flexBox(column, center, flex-start);
+            padding: 0 1rem;
+
+            &.selected{
+                border: 3px solid $pure_b;
+            }
+            &.no-selected{
+                border: 1px solid $pure_b;
+            }
+
+            &:nth-of-type(1).selected{
+                border-bottom: 2px solid $pure_b;
+            }
+            &:nth-of-type(2).selected{
+                border-top: 2px solid $pure_b;
+            }
+
+            .main-details{
+                width: 100%;
+                @include flexBox(row, space-between, center);
+
+                p{
+                    font-size: 24px;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+            .sub-detail{
+                font-size: 14px;
+            }
+        }
+
+    }
+
+    .color-selection{
+        margin-top: 1rem;
+        .colors-container{
+            @include flexBox(row, flex-start, flex-start);
+            gap: .5rem;
+
+            .color-box{
+                @include borderRadius(4px);
+                width: 24px;
+                height: 24px;
+                overflow: hidden;
+                padding: 0;
+                @include flexBox(column, center, center);
+                cursor: pointer;
+
+                &.selected{
+                    border: 2.5px solid $pure_b;
+                }
+                &.no-selected{
+                    border: 1px solid $pure_b_50;
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
 .product-overview{
     padding: 2rem 0;
 
@@ -27,7 +151,7 @@
                 height: auto;
             }
         }
-
+//* OVERVIEW 1 ---------------------------------------------------------
         .overview-1{
             @include flexBox(column, space-between, flex-start);
             gap: 1rem;
@@ -107,5 +231,89 @@
                 }
             }
         }
+
+//* OVERVIEW 2 ---------------------------------------------------------
+        &.container-ovr-2{
+            @media screen and (max-width: $lg){
+                @include flexBox(column, flex-start, center);
+                gap: 1rem;
+
+                .overview-2{
+                    margin-right: 0;
+                    width: 75%;
+                }
+                .ft-showcase{
+                    width: 75%;
+                }
+            }
+            @media screen and (max-width: $md){
+                .overview-2, .ft-showcase{
+                    width: 90%;
+                }
+            }
+            @media screen and (max-width: $sm){
+                .overview-2{
+                    width: 96%;
+                }
+                .ft-showcase{
+                    display: none;
+                }
+            }
+        }
+        .overview-2{
+            @include flexBox(column, flex-start, flex-start);
+            width: 50%;
+            margin-right: 5rem;
+
+            h2{
+                @include title_font_xl;
+                margin-bottom: .5rem;
+            }
+            p{
+                white-space: pre-wrap;
+            }
+
+            .dropdown-specifications{
+                padding-bottom: .5rem;
+                border-bottom: 1px solid $pure_b_50;
+                margin: 1rem 0;
+                
+                h3{
+                    @include title_font_sm;
+                    cursor: pointer;
+                    color: $primary;
+                    @include flexBox(row, flex-start, center);
+                }
+
+                .spec-list{
+                    overflow: hidden;
+                    @include transition(all 0.3s ease-in-out);
+                    padding-left: 1rem;
+
+                    &.dropdown-active{
+                        max-height: 2000px;
+                        margin-top: 1rem;
+                    }
+                    &.dropdown-inactive{
+                        max-height: 0px;
+                        margin-top: 0;
+                    }
+
+                    .spec-item{
+                        margin-bottom: 1rem;
+
+                        h4{
+                            @include title_font_sm;
+                        }
+
+                        ul{
+                            padding-left: 1.5rem;
+                        }
+                    }
+                }
+
+            }
+        }
+
     }
 }

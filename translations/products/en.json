@@ -1,0 +1,25 @@
+{
+    "Filo_Tag": {
+        "title": "Filo Tag - Bluetooth Tracker",
+        "short_description": "The loudest Bluetooth tracker yet.\nImproved Sound and Range. In 4 stylish colors.\nCompatible with iPhone and Android.",
+        "x4_label": "In 4 single packs",
+        "specifications": {
+            "main_label": "Specifications",
+            "features": "Features",
+            "features_0": "Ring Filo from your phone",
+            "features_1": "Ring your phone with Filo",
+            "features_2": "See it on a map",
+            "features_3": "Set “comfort zone” with quick notification if separated from track item.",
+            "size": "Size",
+            "size_0": "25 mm x 41 mm x 5 mm (0.98 in x 1.61 in x 0.19 in)",
+            "range": "Range",
+            "range_0": "Up to 80m - line of sight",
+            "battery": "Battery",
+            "battery_0": "1-year Replaceable battery",
+            "compatibility": "Compatibility",
+            "compatibility_0": "Compatible with iOS 9 and later, and devices running Android 4.4 and later.",
+            "compatibility_1": "See full list of officially supported devices."
+
+        }
+    }
+}
