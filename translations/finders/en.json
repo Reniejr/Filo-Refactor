@@ -1,0 +1,19 @@
+{
+    "Blocks": {
+        "title_1": "Where's my phone?",
+        "description_1": "Use Filo’s phone finder feature to keep your phone always with you. With a press of a button reunite with your phone. Filo is the perfect bluetooth tracker to help you find your keys, phone and personal belongings that you can’t leave behind."
+    },
+    "How_it_works": {
+        "hiw": "How does it work?",
+        "title_0": "1. Attach",
+        "description_0": "Attach Filo to anything you don’t want to lose. Connect it with the Free Filo App.",
+        "title_1": "2. Ring",
+        "description_1": "Ring Filo by pressing the in app button or double press Filo’s button to ring your phone, even in silence mode.",
+        "title_2": "3. Find",
+        "description_2": "Find your missing belongings. Filo’s app remembers when and where you last left them."
+    },
+    "Finder_Banner": {
+        "title": "Find fast everything that matters with Filo",
+        "description": "Don’t lose sight of your belongings with the free Filo app and Filo’s Bluetooth tracker. Filo is simply there when you most need it. Let Filo remind you before you leave behind your personal belongings where ever you go."
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "Blocks": {
+        "title_1": "Dov'è il mio telefono?",
+        "description_1": "Usa la funzione Trova telefono di Filo per tenere il telefono sempre con te. Premendo due volte il pulsante, potete ritrovare il vostro cellulare. Filo è il perfetto bluetooth tracker per aiutarti a trovare le chiavi, il telefono e gli oggetti personali che non puoi fare a meno."
+    },
+    "How_it_works": {
+        "hiw": "Come funziona?",
+        "title_0": "1. Attaccalo",
+        "description_0": "Attacca Filo a tutto quello che non vuoi perdere. Collegalo con l’applicazione gratuito Filo.",
+        "title_1": "2. Fallo suonare",
+        "description_1": "Fate suonare Filo premendo il pulsante nell’app o premete due volte il pulsante Filo per far suonare il vostro telefono, anche in modalità silenziosa.",
+        "title_2": "3. Ritrovalo",
+        "description_2": "Ritrova le tue cose in pochi istanti o ricorda dove le hai lasciate."
+    },
+    "Finder_Banner": {
+        "title": "Trova velocemente tutto ciò che conta con Filo",
+        "description": "Non perdere di vista i tuoi oggetti personali con la app gratuita di Filo e il tracker Bluetooth di Filo. Filo è semplicemente lì quando ne hai più bisogno. Lascia che Filo te lo ricordi prima di lasciare i tuoi oggetti personali ovunque tu vada."
+    }
+}

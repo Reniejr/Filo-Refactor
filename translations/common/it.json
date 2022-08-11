@@ -1,5 +1,7 @@
 {
     "buy-now": "Compra Ora",
+    "buy-now-filo": "Compra Filo Tag Ora",
+    "add-cart": "Aggiungi al carrello",
     "learn-more": "Scopri di più",
     "filo-tag": "Filo Tag",
     "tata-pad": "Tata Pad",
@@ -17,5 +19,10 @@
         "size": "Più piccolo e sottile.",
         "sound": "Suono migliorato. 10x più potente.",
         "battery": "Batteria ottimizzata per durare 1 anno."
+    },
+    "Product_Merchandise": {
+        "made": "Made in Italy",
+        "shipping": "Spedizione gratuita in Italia",
+        "warranty": "2 anni di garanzia"
     }
 }

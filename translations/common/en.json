@@ -1,5 +1,7 @@
 {
     "buy-now": "Buy Now",
+    "buy-now-filo": "Buy Filo Now",
+    "add-cart": "Add to cart",
     "learn-more": "Learn More",
     "filo-tag": "Filo Tag",
     "tata-pad": "Tata Pad",
@@ -17,5 +19,10 @@
         "size": "Smaller and thinner.",
         "sound": "Improved sound. 10x louder.",
         "battery": "Optimised battery that lasts one year."
+    },
+    "Product_Merchandise": {
+        "made": "Made in Italy",
+        "shipping": "Free shipping in Italy",
+        "warranty": "2 years warranty"
     }
 }

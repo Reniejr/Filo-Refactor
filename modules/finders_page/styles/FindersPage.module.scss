@@ -1,0 +1,188 @@
+@import '../../../styles/main.scss';
+
+.finders-hiw{
+    @include flexBox(column, center, center );
+    padding: 3rem 0;
+    @media screen and (max-width: $lg) {
+        padding: 2rem;
+    }
+
+    h2{
+        @include title_font_md;
+    }
+
+    .instructions-container{
+        @include flexBox(row, space-between, flex-start);
+        margin-top: 3rem;
+        padding: 0 1rem;
+        border-top: 2px solid $primary;
+        position: relative;
+
+        @media screen and (max-width: $lg) {
+            max-width: 360px;
+            margin: 0 auto;
+            margin-top: 2rem;
+            @include flexBox(column, space-between, flex-start);
+            border-left: 2px solid $primary;
+            border-top: none;
+            padding: 1rem 0;
+        }
+
+        ion-icon{
+            color: $primary;
+            position: absolute;
+
+            @media screen and (min-width: $lg){
+                right: -10.5px;
+                top: -10.5px;    
+            }
+
+            @media screen and (max-width: $lg){
+
+                @include transform(rotate(90deg));
+                top: calc(100% - 10.5px);
+                left: -10.5px;
+            }
+        }
+
+        h4{
+            @include title_font_sm;
+            margin-bottom: .5rem;
+        }
+
+        p{
+            max-width: 25ch;
+        }
+
+        .instruction{
+            position: relative;
+            padding-top: 1rem;
+            padding-left: 5px;
+
+            @media screen and (max-width: $lg){
+                padding: 0;
+                padding-left: 1.5rem;
+                margin-bottom: 1.5rem;
+
+                &:nth-last-of-type(1){
+                    margin-bottom: 0;
+                }
+            }
+            
+            .guide-point{
+                display: block;
+                width: 12px;
+                height: 12px;
+                @include borderRadius(50%);
+                background-color: $primary;
+                position: absolute;
+                top: -7px;
+                left: -6px;
+                @media screen and (max-width: $lg){
+                    left: -8px;
+                }
+            }
+        }
+    }
+}
+
+.finders-banner{
+    background-color: $bg_img_color;
+    padding: 0;
+    overflow: hidden;
+
+    .finders-banner-container{
+        @include flexBox(row, space-between, stretch);
+        position: relative;
+
+        @media screen and (max-width: $md){
+            @include flexBox(column, flex-start, stretch);
+            gap: 1rem;
+        }
+        @media screen and (max-width: $sm){
+            padding-top: 1.5rem;
+        }
+        
+        .finder-banner-content,
+        .finder-banner-img{
+            width: 50%;
+            min-height: 60vh;
+            @media screen and (max-width: $md){
+                width: 100%;
+                min-height: 40vh;
+            }
+        }
+        
+        .finder-banner-content{
+            @include flexBox(column, center, flex-start);
+            gap: 2rem;
+            z-index: 5;
+            @media screen and (max-width: $md){
+                @include flexBox(column, center, center);
+            }
+            
+            h2{
+                @include title_font_md;
+                @media screen and (max-width: $sm){
+                    text-align: center;
+                }
+            }
+            
+            p{
+                padding-right: 1rem;
+                @media screen and (max-width: $md){
+                    padding: 0;
+                    text-align: center;
+                }
+            }
+        }
+
+        .finder-banner-img{
+            @include flexBox(column, flex-end, center);
+            z-index: 2;
+            
+            img{
+                width: 100%;
+                height: auto;
+                @media screen and (max-width: $lg){
+                    height: 100%;
+                    width: auto;   
+                }
+            }
+
+        }
+    }
+}
+
+.product-merchandise{
+    border-top: 1px solid $pure_b_25;
+    padding: 2rem 0;
+
+    .details-container{
+        @include flexBox(row, space-between, center);
+        
+        @media screen and (max-width: $sm){
+            @include flexBox(column, flex-start, center);
+            gap: 2rem;
+        }
+
+        .detail{
+            @include flexBox(column, center, center);
+
+            .img-box{
+                height: 80px;
+                @include flexBox(column, flex-start, center);
+            }
+
+            p{
+                text-transform: uppercase;
+                font-size: 20px;
+                font-weight: 300;
+
+                @media screen and (max-width: $md){
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

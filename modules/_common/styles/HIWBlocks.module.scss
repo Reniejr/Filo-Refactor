@@ -8,14 +8,14 @@
     border-bottom: 1px solid $pure_b_75;
 
     &.normal-block{
-        @include flexBox(row, center, center);
+        @include flexBox(row, center, stretch);
         
         @media screen and (max-width: $md){
             @include flexBox(column-reverse, center, stretch);
         }
     }
     &.reversed-block{
-        @include flexBox(row-reverse, center, center);
+        @include flexBox(row-reverse, center, stretch);
         @media screen and (max-width: $md){
             @include flexBox(column-reverse, center, stretch);
         }
@@ -31,6 +31,7 @@
     .content-img {
         @include flexBox(column, flex-end, flex-start);
         background-color: $bg_img_color2;    
+        z-index: 2;
         img{
             width: 100%;
             height: 100%;
@@ -39,6 +40,8 @@
     .content-txt{
         @include flexBox(column, center, flex-start);
         padding: 0 3rem;
+        z-index: 5;
+        background-color: $pure_w;
 
         @media screen and (max-width: $sm){
             padding: 1rem;
@@ -54,8 +57,10 @@
         }
         p{
             max-width: 45ch;
+            white-space: pre-wrap;
             @media screen and (max-width: $sm){
                 @include txt_font;
+                white-space: normal;
             }
         }
     }
