@@ -23,6 +23,8 @@
     "Product_Merchandise": {
         "made": "Made in Italy",
         "shipping": "Spedizione gratuita in Italia",
-        "warranty": "2 anni di garanzia"
+        "warranty": "2 anni di garanzia",
+        "shipping_3days": "in 3 giorni lavorativi",
+        "14_days": "14 giorni di reso gratuito"
     }
 }

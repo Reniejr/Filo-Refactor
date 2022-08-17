@@ -13,11 +13,20 @@
         @media screen and (max-width: $md){
             @include flexBox(column-reverse, center, stretch);
         }
+        .content-txt{
+            margin-left: auto;
+            padding-right: 3rem;
+        }
     }
     &.reversed-block{
         @include flexBox(row-reverse, center, stretch);
         @media screen and (max-width: $md){
             @include flexBox(column-reverse, center, stretch);
+        }
+
+        .content-txt{
+            margin-right: auto;
+            padding-left: 3rem;
         }
     }
     .content-img, .content-txt{
@@ -36,12 +45,16 @@
             width: 100%;
             height: 100%;
         }
+        @media screen and (max-width: $md) {
+            min-height: fit-content;
+        }
     }
     .content-txt{
         @include flexBox(column, center, flex-start);
-        padding: 0 3rem;
+        // padding: 0 3rem;
         z-index: 5;
         background-color: $pure_w;
+        max-width: 580px;
 
         @media screen and (max-width: $sm){
             padding: 1rem;

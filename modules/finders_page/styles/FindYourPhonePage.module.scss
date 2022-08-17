@@ -1,0 +1,103 @@
+@import '../../../styles/main.scss';
+
+.phone-banner-1{
+    width: 100%;
+    min-height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @include flexBox(row, flex-end, center);
+    @media screen and (max-width: $sm){
+        height: 50vh;
+        background-size: auto 100%;
+        background-position: 30% 50%;
+    }
+    
+    .title-container{
+        width: 50%;
+        @include flexBox(column, center, center);
+        @media screen and (max-width: $md){
+            backdrop-filter: brightness(80%);
+            width: 100%;
+            height: 100%;
+        }
+
+        h1{
+            @include title_font_xl;
+            color: $pure_w;
+            white-space: pre-wrap;
+            text-align: center;
+            @media screen and (max-width: $sm){
+                white-space: normal;
+            }
+        }
+    }
+
+}
+.hiw-btn{
+    margin-top: 1rem;
+}
+
+.phone-banner-2{
+    min-height: 60vh;
+    @include flexBox(row, flex-end, center);
+    background-size: cover;
+    background-position: center center;
+    background-image: url("https://wp.wedevs.it/wp-content/uploads/2022/08/Finders_Phone_Banner_2.webp");
+    
+    @media screen and (max-width: $sm) {
+        background-image: url("https://wp.wedevs.it/wp-content/uploads/2022/08/Finder_Phone_Mob.webp");
+        @include flexBox(column, flex-start, center);
+        min-height: 60vh;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        padding: 2rem 0;
+
+    }
+    @media screen and (max-width: $sm) and (max-height: $md) {
+        min-height: 80vh;
+    }
+    @media screen and (max-width: $sm) and (max-height: $sm) {
+        min-height: 90vh;
+    }
+    @media screen and (max-width: $sm) and (max-height: $xs) {
+        min-height: 100vh;
+    }
+
+    .content{
+        @include flexBox(column, center, flex-start);
+        width: 50%;
+        padding-left: 4rem;
+        @media screen and (max-width: $lg){
+            padding-left: 0;
+        }
+        @media screen and (max-width: $sm){
+            width: 100%;
+            padding: 0 1.5rem;
+        }
+        h2{
+            @include title_font_md;
+            max-width: 20ch;
+            @media screen and (max-width: $sm){
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        .list-details{
+            margin-top: 1rem;
+
+            .detail{
+                text-transform: uppercase;
+                ion-icon{
+                    font-weight: bold;
+                    color: $primary;
+                }
+                span{
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

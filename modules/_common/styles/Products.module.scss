@@ -60,12 +60,17 @@
             cursor: pointer;
             @include flexBox(column, center, flex-start);
             padding: 0 1rem;
+            @include transition(all 0.3s ease-in-out);
 
             &.selected{
                 border: 3px solid $pure_b;
             }
             &.no-selected{
                 border: 1px solid $pure_b;
+                &:hover{
+                    border: 3px solid $primary;
+                    
+                }
             }
 
             &:nth-of-type(1).selected{
@@ -81,6 +86,7 @@
 
                 p{
                     font-size: 24px;
+                    font-weight: 400;
                 }
                 span{
                     font-weight: bold;

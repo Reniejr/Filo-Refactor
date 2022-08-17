@@ -7,7 +7,7 @@ import Image from 'next/future/image'
 //* STYLES
 import styles from '../styles/HIWBlocks.module.scss'
 
-const HIWBlocks = ({data, page}) => {
+const HIWBlocks = ({data, page, children}) => {
 
     const t = useTranslations(`${page}.Blocks`)
 
@@ -24,6 +24,7 @@ const HIWBlocks = ({data, page}) => {
         <div className={styles["content-txt"]}>
             <h2>{t(title_label)}</h2>
             <p>{t(description_label)}</p>
+            { children ? children : null }
         </div>
         <div className={styles["content-img"]}>
             <Image 

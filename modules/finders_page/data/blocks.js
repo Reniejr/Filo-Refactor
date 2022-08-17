@@ -36,10 +36,18 @@ const finders_block_wallet = {
     "title_label": "title",
     "description_label": "description"
 }
+const finders_block_phone = {
+    "id": "finders_block_phone",
+    "img": Finders_Phone_Img_1,
+    "direction": "normal",
+    "title_label": "title",
+    "description_label": "description"
+}
 
 export {
     finders_block_1_data,
     finders_block_key,
     finders_block_luggage,
-    finders_block_wallet
+    finders_block_wallet,
+    finders_block_phone
 }
