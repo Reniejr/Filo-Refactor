@@ -12,6 +12,7 @@ import homepages from './homepages.json';
 import press from './press.json';
 import hiw from './hiw.json'
 import finders from './finders.json';
+import about_us from './about-us.json';
 
 const media = {
     logos,
@@ -21,7 +22,8 @@ const media = {
     homepages,
     press,
     hiw,
-    finders
+    finders,
+    about_us,
 }
 
 const getImage = (folder) => {

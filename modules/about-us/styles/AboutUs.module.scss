@@ -1,0 +1,92 @@
+@import '../../../styles/main.scss';
+
+.banner{
+    min-height: 75vh;
+    background-image: url("https://wp.wedevs.it/wp-content/uploads/2022/08/AboutUs_Banner.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding: 3rem 0;
+    @media screen and (max-width: $md) {
+        margin: 0; 
+        background-image: none;
+        padding: 1rem 0;
+    }
+
+    .container{
+        @include flexBox(row, flex-end, center);
+
+        @media screen and (max-width: $md) {
+            @include flexBox(column, flex-start, center); 
+            margin: 0;
+            width: 100%;
+            padding: 0;
+        }
+        
+        .content{
+            width: 50%;
+            @include flexBox(column, center, flex-end);
+
+            @media screen and (max-width: $md) {
+                @include flexBox(column, center, center);
+                width: 100%;
+                padding: 0 1rem;
+            }
+            
+            h1{
+                @include title_font_xl;
+                text-align: right;
+                margin-bottom: 1rem;
+                @media screen and (max-width: $md) {
+                    text-align: center;
+                }
+            }
+            
+            p{
+                text-align: right;
+                font-weight: 300;
+                @media screen and (max-width: $md) {
+                    text-align: center;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        .img-box-mob{
+            display: none;
+            overflow: hidden;
+
+            @media screen and (max-width: $md){
+                display: block;
+                width: 100%;
+
+                img{
+                    width: 100%;
+                    height: auto
+                }
+            }
+        }
+    }
+}
+
+.our-team, .our-advisors{
+    padding: 3rem 0;
+    @include flexBox(column, center, center);
+    gap: 3rem;
+    h2{
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+    .person-container{
+        @include flexBox(row, center, center);
+        gap: 2rem;
+        
+        @media screen and (max-width: $lg){
+            flex-wrap: wrap;
+        }
+        @media screen and (max-width: $sm){
+            @include flexBox(column, center, center);
+            
+        }
+    }
+}
