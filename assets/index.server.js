@@ -13,6 +13,8 @@ import press from './press.json';
 import hiw from './hiw.json'
 import finders from './finders.json';
 import about_us from './about-us.json';
+import contact_us from './contact_us.json';
+import career from './career.json';
 
 const media = {
     logos,
@@ -24,6 +26,8 @@ const media = {
     hiw,
     finders,
     about_us,
+    contact_us,
+    career
 }
 
 const getImage = (folder) => {
