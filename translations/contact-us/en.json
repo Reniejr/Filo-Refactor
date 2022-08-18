@@ -1,0 +1,31 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Contact Us",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Banner": {
+        "title": "Contact Us",
+        "description": "If you have a proposal or idea, please feel free to contact us and we’ll get back to you as soon as possible."
+    },
+    "Help_Support": {
+        "label": "Help & Support",
+        "description": "Do you need any assistance?\nWe are here to help you.",
+        "button": "Help & Support"
+    },
+    "Promotional": {
+        "label": "Promotional & Bulk Orders",
+        "description": "Interested in personalising or distributing Filo?\nLet’s get in touch.",
+        "button": "Promotional"
+    },
+    "Press": {
+        "label": "Press & Media",
+        "description": "Looking to write an aritcle or make a video? Our Press material is available for you in order to find all you need about us.",
+        "button": "Press & Media"
+    },
+    "Privacy_DPO": {
+        "label": "Privacy DPO",
+        "description": "Interest in Privacy?\nContact our DPO:\nFrancesco Paolucci",
+        "button": "Mail DPO"
+    }
+}

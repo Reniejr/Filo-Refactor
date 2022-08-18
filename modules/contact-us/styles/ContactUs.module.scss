@@ -1,0 +1,40 @@
+@import '../../../styles/main.scss';
+
+.banner{
+    background-image: url('https://wp.wedevs.it/wp-content/uploads/2022/08/ContactUs_Banner.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    @include flexBox(column, center, center);
+
+    .container{
+        @include flexBox(column, center, center);
+
+        h1{
+            @include title_font_xl;
+            text-align: center;
+        }
+
+        p{
+            font-weight: 700;
+            text-align: center;
+            max-width: 50ch;
+        }
+    }
+}
+
+.contacts{
+    padding: 5rem 0;
+
+    .contacts-container{
+        @include flexBox(row, space-between, flex-start);
+        gap: 2rem;
+        flex-wrap: wrap;
+        
+        @media screen and (max-width: $sm) {
+            @include flexBox(column, center, center);
+            
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@import '../../../styles/main.scss';
+
+.contact-card{
+    @include flexBox(column, flex-start, center);
+    gap: 1.25rem;
+    text-align: center;
+    max-width: 25%;
+    min-width: 220px;
+
+    ion-icon{
+        color: $primary;
+        font-size: 48px;
+    }
+    h4{
+        font-size: 20px;
+        color: $primary;
+        font-weight: 300;
+    }
+    p{
+        font-size: 18px;
+        font-weight: 300;
+        max-width: 20ch;
+        white-space: pre-wrap;
+    }
+}

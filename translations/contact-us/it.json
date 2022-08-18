@@ -1,0 +1,31 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Contattaci",
+        "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi",
+        "description": "Filo s.r.l. è una Compagnia Italiana nel campo dell' IoT situata a Roma.\nProgrammiamo, sviluppiamo, costruiamo e vendiamo dispositivi che aiutano la gente nella loro vita quotidiana."
+    },
+    "Banner": {
+        "title": "Contattaci",
+        "description": "Se hai un’idea o una proposta, scrivici! Ti risponderemo il più presto possibile."
+    },
+    "Help_Support": {
+        "label": "Aiuto & Supporto",
+        "description": "Hai bisogno di assistenza?\nSiamo qui per aiutarti.",
+        "button": "Aiuto & Supporto"
+    },
+    "Promotional": {
+        "label": "Ordini promozionali e aziendali",
+        "description": "Sei interessato a personalizzare o distribuire Filo?\nTeniamoci in contatto.",
+        "button": "Promozionale"
+    },
+    "Press": {
+        "label": "Stampa",
+        "description": "Vuoi scrivere un articolo o realizzare un video? Il nostro press-kit ti aiuterà a trovare tutte le informazioni su Filo.",
+        "button": "Stampa"
+    },
+    "Privacy_DPO": {
+        "label": "DPO Privacy",
+        "description": "Interessato alla privacy?\nContatta il nostro DPO:\nFrancesco Paolucci",
+        "button": "Mail DPO"
+    }
+}
