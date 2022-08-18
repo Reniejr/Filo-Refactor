@@ -1,0 +1,85 @@
+@import '../../../styles/main.scss';
+
+.container{
+    max-width: 700px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $md) {
+        padding: 0 1.5rem;
+    }
+}
+
+.banner{
+    min-height: 50vh;
+    @include flexBox(column, center, center);
+    background-image: url("https://wp.wedevs.it/wp-content/uploads/2022/08/Career_Banner.webp");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 3rem;
+
+    .container{
+        max-width: 700px;
+        margin: 0 auto;
+        color: $pure_w;
+        @include flexBox(column, center, center);
+        gap: 1rem;
+        text-align: center;
+        @media screen and (max-width: $md) {
+            padding: 0 1.5rem;
+        }
+
+        h1{
+            @include title_font_xl;
+        }
+        p{
+            font-weight: 600;
+        }
+    }
+}
+
+.career-description, .job-positions{
+    @include flexBox(column, flex-start, flex-start);
+    gap: 1rem;
+    color: $pure_b;
+    margin-bottom: 3rem;
+
+    h2{
+        @include title_font_md;
+    }
+    h3{
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    p{
+        white-space: pre-wrap;
+        font-weight: 300;
+    }
+}
+
+.work-with-us-section{
+    @include flexBox(column, flex-start, center);
+    
+    h2{
+        @include title_font_md;
+        margin-bottom: 3rem;
+    }
+    .career-includes-section{
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+        @include flexBox(row, space-between, flex-start);
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+        
+        @media screen and (max-width: 1160px){
+            @include flexBox(row, center, flex-start);
+            padding: 0 1.5rem;
+            gap: 1rem;
+        }
+        @media screen and (max-width: $xs){
+            @include flexBox(column, space-between, center);
+            gap: 1rem;
+        }
+    }
+}

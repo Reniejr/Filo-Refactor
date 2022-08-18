@@ -1,0 +1,41 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Lavora con noi",
+        "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi",
+        "description": "Filo s.r.l. è una Compagnia Italiana nel campo dell' IoT situata a Roma.\nProgrammiamo, sviluppiamo, costruiamo e vendiamo dispositivi che aiutano la gente nella loro vita quotidiana."
+    },
+    "Banner": {
+        "title": "Lavora con noi. Ti piacerà.",
+        "description_0": "Siamo un team di persone appassionate che ama quello che fa, circondati dalla natura in una delle ville di Pi Campus, a Roma.",
+        "description_1": "Siamo sempre alla ricerca di persone di talento che vogliano far parte del nostro team."
+    },
+    "Content": {
+        "_1": "In Filo crediamo fortemente che ciò che amiamo debba stare sempre accanto a noi.",
+        "_2": "Per questo motivo abbiamo creato Filo, un piccolo dispositivo che aiuta le persone a trovare ciò che amano.\nNata nel 2014, Filo è una startup italiana che ha raccolto €560k di investimento rilasciando sul mercato circa 150,000 prodotti in appena 3 anni. A Dicembre Dicembre 2017 abbiamo rilasciato Filo Tag, disegnato da Emanuele Pizzolorusso - uno tra i top designer italiani - facendo sold-out di prodotto in 2 settimane.",
+        "_3": "perché lavorare in Filo?",
+        "_4": "Oggi il team conta 16 persone e il business è in rapida crescita. L’obiettivo che perseguiremo sarà quello di rendere Filo una realtà internazionale già da quest’anno.\nLavorare in Filo significa non solo poter cogliere un’opportunità, ma anche saper affrontare una dura sfida. Ti accorgerai che lavorare in una startup di prodotto non è per tutti, ma al tempo stesso ti farà crescere in maniera esponenziale.\nLavorare in Filo sarà l’esperienza migliore della tua vita."
+    },
+    "Job_Position": {
+        "title": "Posizioni aperte",
+        "_1": "Al momento non ci sono posizioni aperte.",
+        "_2": "Siamo comunque sempre desiderosi di incontrare persone attive e competenti per allargare il nostro team.",
+        "_3": "Se vuoi rimanere informato su future posizioni aperte, inviaci un CV ed una cover letter a:"
+    },
+    "work_with_us": "Lavorare con noi include",
+    "include_0": {
+        "title": "Un team impiegato",
+        "description": "Siamo tutti focalizzati sugli stessi obiettivi. Fallire, imparare, raggiungere il traguardo: la vittoria di uno è la vittoria di tutti."
+    },
+    "include_1": {
+        "title": "Una location incredibile",
+        "description": "Il nostro ufficio si trova a Roma, nel verde dell’EUR, in una villa che è parte del dinamico ambiente del PI Campus."
+    },
+    "include_2": {
+        "title": "Crescita personale",
+        "description": "Impara qualcosa di nuovo ogni giorno. Investiamo nella nostra crescita per dare il massimo, insieme."
+    },
+    "include_3": {
+        "title": "Non solo lavoro",
+        "description": "Iniziamo ogni giornata di lavoro con il sorriso. Anche se lavoriamo duro sappiamo come rilassarci e divertirci, giocando a biliardino o facendo spinning."
+    }
+}

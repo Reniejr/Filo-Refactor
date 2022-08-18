@@ -1,0 +1,24 @@
+@import '../../../styles/main.scss';
+
+.career-card{
+    @include flexBox(column, flex-start, center);
+    gap: 1rem;
+    text-align: center;
+    min-width: 250px;
+    max-width: 20%;
+
+    img{
+        width: 100%;
+        height: auto;
+    }
+
+    h4{
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+
+    p{
+        font-weight: 300;
+        max-width: 20ch;
+    }
+}
