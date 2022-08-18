@@ -1,0 +1,14 @@
+@import '../../../styles/main.scss';
+
+.slideshow-section{
+
+    padding: 3rem 0;
+    @media screen and (max-width: $md){
+        padding: 1.5rem 0;
+    }
+
+    h2{
+        text-align: center;
+        @include title_font_xl;
+    }
+}

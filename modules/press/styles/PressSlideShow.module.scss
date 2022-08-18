@@ -1,0 +1,86 @@
+@import '../../../styles/main.scss';
+
+.press-slideshow{
+
+    width: 50%;
+    height: 250px;
+    position: relative;
+    @media screen and (max-width: $md){
+        height: 200px;
+    }
+
+    .slide-container{
+
+        @include flexBox(row, flex-start, center);
+        height: 100%;
+        @include transition(all 0.3s ease-in-out);
+
+        .press-slide{
+            height: 100%;
+            @include flexBox(row, center, center);
+            // padding: 0 12.5%;
+            img{
+                width: 200px;
+                height: auto;
+
+                @media screen and (max-width: $xs){
+                    width: 100px;
+                }
+            }
+        }
+    }
+
+    .nav-slideshow{
+        position: absolute;
+        @include flexBox(row, center, center);
+        bottom: 2.5rem;
+        left: 100%;
+        gap: .25rem;
+        @include transform(translateX(-50%));
+
+        .nav-dot{
+            width: 10px;
+            height: 10px;
+            @include borderRadius(50%);
+            border: 1px solid $primary;
+
+            &.active{
+                background-color: $primary;
+            }
+            &.inactive{
+                background-color: transparent;
+            }
+        }
+    }
+
+    ion-icon{
+        font-size: 48px;
+        font-weight: bold;
+        color: $primary;
+        position: absolute;
+        top: 50%;
+        @include transform(translate(-50%, -50%));
+        z-index: 5;
+        cursor: pointer;
+        @include transition(all 0.2s ease-in-out);
+
+        @media screen and (max-width: $lg){
+            font-size: 36px;
+        }
+        @media screen and (max-width: $xs){
+            font-size: 24px;
+        }
+
+        &:hover{
+            @include transform(translate(-50%, -50%) scale(1.5));
+        }
+
+        &[name="chevron-forward-outline"]{
+            left: calc(50% + 75% + 50px);
+        }
+        &[name="chevron-back-outline"]{
+            left: calc(50% + 25% - 50px);
+
+        }
+    }
+}
