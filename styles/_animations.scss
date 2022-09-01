@@ -1,0 +1,12 @@
+@mixin animation($animation...) {
+    animation: $animation;
+    -webkit-animation: $animation;
+}
+
+@keyframes skeleton_bg{
+    to{
+        background-position: 100% 0;
+    }
+}
+
+$skeleton_bg: skeleton_bg 1s infinite;
