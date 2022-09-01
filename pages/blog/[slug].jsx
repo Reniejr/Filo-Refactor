@@ -15,20 +15,25 @@ import styles from '../../modules/blog/styles/Article.module.scss'
 const Article = ({post}) => {
 
   return (
-    <div className={`${globals["page"]} ${styles["article-page"]}`}>
-        <div className={styles["banner"]}>
-            <Image
-                src={post.preview_img}
-                alt={`article-img-${post.preview_img}`}
-                width={1160}
-                height={500}  
-            />
-            <h1>{post.title.rendered}</h1>
-        </div>
-        <div className={styles["container"]}>
-            <div className={styles["article"]} dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
-        </div>
-    </div>
+    <>
+    {
+      post ? 
+        <div className={`${globals["page"]} ${styles["article-page"]}`}>
+            <div className={styles["banner"]}>
+                <Image
+                    src={post.preview_img}
+                    alt={`article-img-${post.preview_img}`}
+                    width={1160}
+                    height={500}  
+                />
+                <h1>{post.title.rendered}</h1>
+            </div>
+            <div className={styles["container"]}>
+                <div className={styles["article"]} dangerouslySetInnerHTML={{__html: post.content.rendered}}/>
+            </div>
+        </div> : null
+    }
+    </>
   )
 }
 
