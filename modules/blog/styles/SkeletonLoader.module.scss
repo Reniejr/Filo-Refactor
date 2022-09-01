@@ -1,0 +1,46 @@
+@import '../../../styles/main.scss';
+
+.skeleton-loader{
+    margin: 3rem 0;
+    width: 100%;
+    @include flexBox(column, center, flex-start);
+    gap: 1rem;
+
+    .title-loader, .img-preview-loader, .description-loader{
+        background-color: $lightgray;
+        overflow: hidden;
+
+        .gradient{
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: linear-gradient(
+                to right,
+                rgba($color: $pure_w, $alpha: 0),
+                rgba($color: $pure_w, $alpha: 0.5) 50%,
+                rgba($color: $pure_w, $alpha: 0) 80%,
+            ),
+            $lightgray;
+            background-repeat: repeat-y;
+            background-size: 20px 100%;
+            background-position: 0 0;
+            @include animation($skeleton_bg);
+        }
+    }
+
+    .title-loader{
+        width: 50%;
+        height: 24px;
+        @include borderRadius(9999px);
+    }
+    .img-preview-loader{
+        width: 100%;
+        height: 20vh;
+        @include borderRadius(10px);
+    }
+    .description-loader{
+        width: 100%;
+        height: 10vh;
+        @include borderRadius(10px);
+    }
+}

@@ -1,0 +1,15 @@
+@import '../../../styles/main.scss';
+
+.container{
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+
+    h1{
+        text-align: center;
+        @include title_font_xl;
+    }
+    p{
+        text-align: center;
+    }
+}

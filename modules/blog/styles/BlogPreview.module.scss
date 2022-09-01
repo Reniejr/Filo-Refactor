@@ -1,0 +1,13 @@
+@import '../../../styles/main.scss';
+
+.blog-preview{
+    margin: 3rem 0;
+    @include flexBox(column, center, flex-start);
+    gap: 1rem;
+    h2{
+        @include title_font_xl;
+    }
+    p{
+        text-align: left !important;
+    }
+}
