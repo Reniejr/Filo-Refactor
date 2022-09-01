@@ -13,7 +13,7 @@ import styles from '../styles/LanguageSwitcher.module.scss'
 
 const LanguageSwitcher = () => {
 
-    const { locale, route } = useRouter()
+    const { locale, route, query } = useRouter()
 
     const { it, en } = getImage('icons')
 
@@ -37,8 +37,15 @@ const LanguageSwitcher = () => {
     <div className={styles["language-switcher"]}>
         {
             languages.map( (langItem) => {
+
+                const href = route.includes('blog') ?
+                {
+                    pathname: '/blog/[slug]',
+                    query: query
+                } : route
+
                 return(
-                    <Link href={ route } locale={ langItem.lang } key={`lang-menu-${langItem.lang}`}>
+                    <Link href={ href } locale={ langItem.lang } key={`lang-menu-${langItem.lang}`}>
                         <a className={styles["img-flag-icon"]}>
                             <Image 
                                 src={ langItem.img } 

@@ -1,0 +1,72 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Resi e Sostituzioni",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device, filo tag, how it works",
+        "description": "Attach it. Ring it. Find it.\nAttach Filo to all your personal objects to find them through a very simple mobile app."
+    },
+    "Title": {
+        "_1": "Richiesta di reso o sostituzione",
+        "_2": "per acquisti effettuati online su filotrack.com"
+    },
+    "Return": {
+        "title": "Reso",
+        "description": "Il reso è gratuito e puoi effettuarlo entro 14 giorni dalla data di effettiva ricezione del tuo ordine.\n\nDopo aver inviato la richiesta controlleremo che questa sia pervenuta nei tempi previsti. In caso positivo ti invieremo una mail con le indicazioni per concordare il ritiro dell’ordine presso il tuo indirizzo. Successivamente verificheremo che il prodotto da te reso sia stato mantenuto nelle stesse condizioni in cui è stato venduto. Assicurati quindi di spedire il prodotto integro e completo di confezione e istruzioni.\n\nIn caso il prodotto sia stato danneggiato in una o più componenti non garantiamo il rimborso o il rimborso completo."
+    },
+    "Exchange": {
+        "title": "Sostituzione in garanzia",
+        "description": "Puoi richiedere una sostituzione in garanzia entro 2 anni dall’acquisto. La sostituzione si applica in caso di difetti imputabili alla natura del prodotto e non per danni accidentali.\n\nA tal proposito, la sostituzione dovrà essere autorizzata dal nostro team di assistenza tecnica il quale la contatterà a seguito della sua richiesta per effettuare tutte le verifiche del caso."
+    },
+    "Faq": {
+        "title": "Domande frequenti",
+        "_1": {
+            "title": "Dove trovo il numero d’ordine?",
+            "description": "Il numero d’ordine servirà al nostro team di assistenza per identificare il tuo acquisto. Recupera la mail di conferma ordine con oggetto “Grazie per il tuo ordine” cercando info@filotrack.com"
+        },
+        "_2": {
+            "title": "In quanto tempo riceverò il rimborso?",
+            "description": "In caso positivo emetteremo il rimborso entro 72H dalla ricezione. I tempi di effettivo riaccredito dell’importo pagato dipendono dal tuo istituto di credito e dal metodo di pagamento."
+        }
+    },
+    "Form": {
+        "title": "Compila il modulo",
+        "n_order": {
+            "placeholder": "Numero d'ordine* ( ex. FL 1234-SH )",
+            "required": "Il numero d'ordine è obbligatorio"
+        },
+        "request_for": {
+            "label": "Richiesta di*",
+            "return": "Reso",
+            "exchange": "Sostituzione",
+            "required": "Specifica la tua richiesta",
+            "placeholder": ""
+        },
+        "reason": {
+            "label": "Motivo del reso / sostituzione*",
+            "required": "Questo campo è obbligatorio"
+        },
+        "name": {
+            "placeholder": "Nome e cognome*",
+            "required": "Nome e cognome sono obbligatori"
+        },
+        "phone": {
+            "placeholder": "Cellulare*",
+            "required": "Il numero di telefono/cellulare è obbligatorio",
+            "error_text": "Il numero di telefono/cellulare deve contenere solo numeri"
+        },
+        "email": {
+            "placeholder": "La tua email*",
+            "required": "L'email è obbligatoria per poterti contattare",
+            "error_text": "Inserisci un indirizzo email valido"
+        },
+        "notes": {
+            "label": "Notes ( optional )",
+            "placeholder": ""
+        },
+        "policy": {
+            "label": "Accetto il trattamento dei dati necessari al processamento della richiesta di reso / sostituzione",
+            "required": "Questo campo è obbligatorio",
+            "placeholder": ""
+        },
+        "send": "Invia richiesta"
+    }
+}

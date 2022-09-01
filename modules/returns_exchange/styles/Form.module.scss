@@ -1,0 +1,33 @@
+@import '../../../styles/main.scss';
+
+.form{
+    width: 100%;
+    height: 100%;
+    background-color: $bg_form;
+    @include borderRadius(4px);
+    border: 1px solid $border_form;
+    padding: 2rem 1.5rem;
+    @include flexBox(column, flex-start, flex-start);
+    gap: 1rem;
+
+    h2{
+        @include title_font_sm;
+    }
+
+    button[type="submit"]{
+        font-size: 20px;
+        width: 100%;
+        padding: .75rem 0;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $pure_w;
+        background-color: $primary;
+        border: 1px solid $primary;
+        cursor: pointer;
+
+        &:hover{
+            color: $primary;
+            background-color: transparent;
+        }
+    }
+}

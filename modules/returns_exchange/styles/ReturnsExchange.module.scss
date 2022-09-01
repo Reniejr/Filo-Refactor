@@ -1,0 +1,36 @@
+@import '../../../styles/main.scss';
+
+.container{
+    @include flexBox(row, space-between, stretch);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    .block{
+        margin: 1.25rem 0;
+        h4{
+            @include title_font_sm;
+        }
+        p{
+            white-space: pre-wrap;
+            font-size: 18px;
+        }
+    }
+
+    .col-1{
+        width: 50%;
+
+        .title{
+            h1, span{
+                @include title_font_xl;
+                display: inline-block;
+            }
+        }
+
+        h2{
+            @include title_font_md;
+        }
+    }
+    .col-2{
+        width: 40%;
+    }
+}

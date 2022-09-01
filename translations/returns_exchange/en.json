@@ -1,0 +1,72 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Returns and Exchange",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device, filo tag, how it works",
+        "description": "Attach it. Ring it. Find it.\nAttach Filo to all your personal objects to find them through a very simple mobile app."
+    },
+    "Title": {
+        "_1": "Returns and exchanges policy",
+        "_2": "for purchases made through filotrack.com"
+    },
+    "Return": {
+        "title": "Returns",
+        "description": "The return is free of charge within 14 days from the actual date of your order receipt.\n\nOnce we receive your return request, and it is within the due date, we will send you an email with instructions on how to arrange the collection of your order. We will then verify that the returned product has been kept properly. Please make sure to ship the product intact and complete with packaging and instructions.\n\nIf the product has been damaged in one or more components, we do not guarantee any refund."
+    },
+    "Exchange": {
+        "title": "Replacement under warranty",
+        "description": "You can request a replacement under warranty within 2 years after your purchase. Replacements only apply in case of defects linked to the nature of the product and not for accidental damages.\n\nThe replacement must be authorized by our technical assistance team which will contact you to carry out all the necessary controls."
+    },
+    "Faq": {
+        "title": "Frequently Asked Questions",
+        "_1": {
+            "title": "Where can I find the order number?",
+            "description": "Retrieve the order confirmation from the email (info@filotrack.com) with subject “Thank you for your order”. Your order number will be used by our support team to identify your purchase."
+        },
+        "_2": {
+            "title": "How long will it take to receive the refund?",
+            "description": "We will refund within 72 hours after receipt. The actual accreditation of the paid amount depends on your credit institution and payment method."
+        }
+    },
+    "Form": {
+        "title": "Fill out the form",
+        "n_order": {
+            "placeholder": "Order number* ( ex. FL 1234-SH )",
+            "required": "Order number is required"
+        },
+        "request_for": {
+            "label": "Request for*",
+            "return": "Return",
+            "exchange": "Exchange",
+            "required": "Specify your request for",
+            "placeholder": ""
+        },
+        "reason": {
+            "label": "Reason for Return / Replacement*",
+            "required": "This field is required"
+        },
+        "name": {
+            "placeholder": "Name and Surname*",
+            "required": "Name and Surname are required"
+        },
+        "phone": {
+            "placeholder": "Phone*",
+            "required": "Phone number is required",
+            "error_text": "Phone number must contain only numbers."
+        },
+        "email": {
+            "placeholder": "Email*",
+            "required": "Email is required in order to contact you",
+            "error_text": "Please insert valid email address"
+        },
+        "notes": {
+            "label": "Notes ( optional )",
+            "placeholder": ""
+        },
+        "policy": {
+            "label": "I agree to the processing of the data necessary to process the return / replacement request",
+            "required": "This field is required",
+            "placeholder": ""
+        },
+        "send": "Send Request"
+    }
+}

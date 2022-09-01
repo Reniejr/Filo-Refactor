@@ -1,0 +1,46 @@
+@import '../../../styles/main.scss';
+
+.input-group{
+    width: 100%;
+
+    input, textarea{
+        width: 100%;
+        outline: none;
+        @include borderRadius(4px);
+        border: 1px solid $border_form;
+        padding: .25rem .5rem;
+        font-size: 16px;
+    }
+
+    label{
+        font-size: 16px;
+    }
+
+    textarea{
+        min-height: 5rem;
+    }
+
+    .radio-group{
+        @include flexBox(row, flex-start, center);
+        gap: .25rem;
+        padding-left: 1.25rem;
+        input{
+            width: auto;
+        }
+        label{
+            text-transform: uppercase;
+        }
+    }
+
+    &.input-checkbox{
+        @include flexBox(row, flex-start, flex-start);
+        gap: .25rem;
+        input{
+            width: auto;
+        }
+        label{
+            font-size: 14px;
+            margin-top: -5px;
+        }
+    }
+}
