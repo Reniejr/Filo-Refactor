@@ -23,7 +23,9 @@ const nextConfig = {
   },
   env: {
     WP_URL: "https://wp.wedevs.it",
-    GA_ID: "EPDM266LWB"
+    GA_ID: "EPDM266LWB",
+    WOO_CK: "ck_881b7b3dd1e3747866c792c1670e42756b2e1c6a",
+    WOO_CS: "cs_6706d25b83e0085d129bc011c8bb2c773567d21d"
   }
 }
 

@@ -15,6 +15,7 @@ import finders from './finders.json';
 import about_us from './about-us.json';
 import contact_us from './contact_us.json';
 import career from './career.json';
+import product_page from './product_page.json';
 
 const media = {
     logos,
@@ -27,7 +28,8 @@ const media = {
     finders,
     about_us,
     contact_us,
-    career
+    career,
+    product_page
 }
 
 const getImage = (folder) => {

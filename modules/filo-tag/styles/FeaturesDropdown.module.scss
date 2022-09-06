@@ -1,0 +1,43 @@
+@import '../../../styles/main.scss';
+
+.dropdown-specifications{
+    padding-bottom: .5rem;
+    border-bottom: 1px solid $pure_b_50;
+    margin: 1rem 0;
+    
+    h3{
+        @include title_font_sm;
+        cursor: pointer;
+        color: $primary;
+        @include flexBox(row, flex-start, center);
+    }
+
+    .spec-list{
+        overflow: hidden;
+        @include transition(all 0.3s ease-in-out);
+        padding-left: 1rem;
+
+        &.dropdown-active{
+            max-height: 2000px;
+            margin-top: 1rem;
+        }
+        &.dropdown-inactive{
+            max-height: 0px;
+            margin-top: 0;
+        }
+
+        .spec-item{
+            margin-bottom: 1rem;
+
+            h4{
+                @include title_font_sm;
+            }
+
+            ul{
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+}
+

@@ -1,6 +1,11 @@
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
+//* REDUX
+import { useDispatch } from 'react-redux'
+import { wrapper } from '../store'
+import { cartSlice } from '@/slices/cartSlice'
+
 //* GA4
 import Script from 'next/script'
 import * as gtag from '../config/gtag'
@@ -37,6 +42,8 @@ function getMessageFallback({ namespace, key, error }) {
 function MyApp({ Component, pageProps }) {
 
   const router = useRouter()
+  const dispatch = useDispatch()
+  const { setCart } = cartSlice.actions
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -48,6 +55,19 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router.events]);
 
+  useEffect(() => {
+
+    const ISSERVER = typeof window === "undefined";
+
+    if (!ISSERVER) {
+      const cart_saved = JSON.parse(localStorage.getItem('cart'))
+      if (cart_saved) {
+        dispatch(setCart(cart_saved));
+      }
+    }
+
+    /* eslint-disable-next-line */
+  },[])
   
   return <>
   <Script
@@ -82,4 +102,4 @@ function MyApp({ Component, pageProps }) {
   
 }
 
-export default MyApp
+export default wrapper.withRedux(MyApp)

@@ -4,6 +4,9 @@ $primary_font_family: 'Open Sans', sans-serif;
     font-size: 40px;
     font-weight: bold;
 
+    @media screen and (max-width: $lg){
+        font-size: 36px;
+    }
     @media screen and (max-width: $md){
         font-size: 32px;
     }
@@ -45,4 +48,17 @@ $primary_font_family: 'Open Sans', sans-serif;
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
+}
+
+@mixin txt_font_lg{
+    font-size: 24px;
+    font-weight: 300;
+    
+    @media screen and (max-width: $lg){
+        font-size: 20px;
+    }
+    @media screen and (max-width: $md){
+        font-size: 18px;
+    }
+    
 }

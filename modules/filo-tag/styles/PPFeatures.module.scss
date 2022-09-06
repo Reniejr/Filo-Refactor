@@ -1,0 +1,161 @@
+@import '../../../styles/main.scss';
+
+.break-section{
+    width: 100%;
+    height: 2rem;
+    background-color: $pure_b;
+}
+
+.features-section{
+    width: 100%;
+    padding: 3rem 0;
+    background-color: $bg_img_color2;
+
+    @media screen and (max-width: $md){
+        padding: 0;
+    }
+
+    &:nth-of-type(1){
+        background-image: url('https://wp.wedevs.it/wp-content/uploads/2022/09/ProductPage_FT_Img_1.webp');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 50%;
+        @media screen and ( max-width: $md){
+            background-image: none;
+        }
+    }
+    &:nth-of-type(2){
+        background-image: url('https://wp.wedevs.it/wp-content/uploads/2022/09/ProductPage_FT_Img_2.webp');
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: 50%;
+        @media screen and ( max-width: $md){
+            background-image: none;
+        }
+        
+    }
+
+    .container{
+
+        @media screen and ( max-width: $md){
+            padding: 0;
+
+            .banner-img{
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    
+    &.reversed{
+        .container{
+            @include flexBox(row, flex-end, center);
+            .col-end{
+                width: fit-content;
+                @media screen and ( max-width: $md){
+                    padding: 2rem 1rem;
+                }
+            }
+            @media screen and ( max-width: $md){
+                @include flexBox(column, flex-start, center);
+            }
+
+        }
+    }
+}
+
+.list-spec{
+
+    @include flexBox(column, flex-start, flex-start);
+    gap: .5rem;
+
+    @media screen and ( max-width: $md){
+        padding: 2rem 1rem;
+    }
+    @media screen and ( max-width: $sm){
+        @include flexBox(column, flex-start, center);
+    }
+
+    .icon-spec{
+        margin-bottom: .5rem;
+
+        @media screen and ( max-width: $sm){
+            @include flexBox(column, flex-start, center);
+        }
+
+        .spec-title{
+            @include flexBox(row, flex-start, center);
+            gap: 20px;
+            @media screen and ( max-width: $md){
+                gap: 10px;
+            }
+            img{
+                width: 48px;
+                height: auto;
+                @media screen and ( max-width: $md){
+                    width: 36px;
+                    height: auto;
+                }
+            }
+
+            h4{
+                @include title_font_sm;
+            }
+        }
+        p{
+            padding-left: 68px;
+            @include txt_font;
+            max-width: 25ch;
+            @media screen and ( max-width: $md){
+                padding-left: 46px;
+            }
+            @media screen and ( max-width: $sm){
+                padding-left: 0;
+                text-align: center;
+            }
+        }
+    }
+    .no-icon-spec{
+        @include flexBox(row, flex-start, flex-start);
+        gap: 5px;
+        padding-left: 68px;
+        @media screen and ( max-width: $md){
+            padding-left: 46px;
+        }
+        @media screen and ( max-width: $sm){
+            @include flexBox(column, flex-start, center);
+            padding-left: 0;
+            span{
+                text-align: center;
+            }
+        }
+        h4{
+            @include title_font_sm;
+        }
+        span{
+            @include txt_font;
+            max-width: 25ch;
+        }
+    }
+    
+    .compatibility{
+        padding-left: 68px;
+        @media screen and ( max-width: $md){
+            padding-left: 46px;
+        }
+        @media screen and ( max-width: $sm){
+            @include flexBox(column, flex-start, center);
+            padding-left: 0;
+            p{
+                text-align: center;
+            }
+        }
+        h4{
+            @include title_font_sm;
+        }
+        p{
+            @include txt_font;
+            max-width: 30ch;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import '../../../styles/main.scss';
+
+.filo-tag-gallery{
+    @include flexBox(column, flex-start, flex-start);
+    max-width: 512px;
+    width: 100%;
+
+    @media screen and (max-width: $lg){
+        justify-content: center;
+    }
+
+    .main-img{
+        width: 100%;
+        max-height: 512px;
+        img{
+            width: 100%;
+            aspect-ratio: 1 / 1;
+
+            @media screen and (max-width: $lg){
+                aspect-ratio: initial;
+                height: auto;
+            }
+        }
+    }
+
+    .gallery-imgs{
+        @include flexBox(row, space-between, flex-start);
+        width: 100%;
+        margin-top: .75rem;
+
+        .gallery-img-box{
+            width: calc( 100% / 5 - .5rem);
+            cursor: pointer;
+
+            &.active{
+                opacity: 1;
+            }
+            
+            &.disabled{
+                opacity: .5;
+                &:hover{
+                    opacity: 1;                    
+                }
+            }
+
+            img{
+                width: 100%;
+                aspect-ratio: 1 / 1;
+
+                @media screen and (max-width: $xs){
+                    aspect-ratio: initial;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

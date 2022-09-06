@@ -1,6 +1,9 @@
 import globals from '@/styles/Main.module.scss';
 import styles from '../modules/homepage/styles/HomePage.module.scss';
 
+//* REDUX
+import { useSelector } from 'react-redux'
+
 //* COMPONENTS
 import CustomHead from '@/main/components/CustomHead';
 import Slider from '@/common/components/Slider';

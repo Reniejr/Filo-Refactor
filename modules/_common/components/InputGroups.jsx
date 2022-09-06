@@ -72,7 +72,7 @@ const InputGroup = ({input_data, page_t, formStatus}) => {
                                             onChange={(e)=> formFn(e)}
                                             checked={formState["request_for"] === radio_options ? true : false}
                                             />
-                                        <label htmlFor={radio_options}>{radio_options}</label>
+                                        <label htmlFor={radio_options}>{t(`Form.request_for.${radio_options}`)}</label>
                                     </div>
                                 )
                             })

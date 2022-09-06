@@ -10,6 +10,7 @@
             "@/utilities/*": ["utilities/*"],
             "@/hooks/*": ["hooks/*"],
             "@/products/*": ["products/*"],
+            "@/slices/*": ["slices/*"],
         }
     }
 }

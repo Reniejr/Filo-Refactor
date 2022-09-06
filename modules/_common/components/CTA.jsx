@@ -1,11 +1,19 @@
 import React from 'react'
 
+
+//* REDUX
+import { useSelector } from 'react-redux'
+import cartSlice from '@/slices/cartSlice';
+
 //* NEXTJS COMPONENTS
 import Link from 'next/link'
 import Image from 'next/future/image'
 
 //* ASSETS
 import getImage from '@/assets/index.server'
+
+//* STYLES
+import globals from '@/styles/Main.module.scss'
 
 const LinkCTA = ({classes, href, text_label}) => {
 
@@ -69,10 +77,16 @@ const LinkImageCTA = ({img_details, href, classes}) => {
 
 const CartCTA = ({classes}) => {
 
+  const { cart } = useSelector(state => state.cart)
+
   return(
     <Link href="/cart" passHref>
       <a className={classes}>
         <ion-icon name="cart"></ion-icon>
+        {
+          cart.length > 0 ?
+          <div className={globals["cart-index"]}>{cart.length}</div> : null
+        }
       </a>
     </Link>
   )

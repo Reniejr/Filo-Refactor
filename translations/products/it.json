@@ -21,5 +21,20 @@
             "compatibility_1": "Consultate l'elenco completo dei dispositivi ufficialmente supportati."
 
         }
+    },
+    "Product_Page": {
+        "battery": "Batteria",
+        "battery_0": "Batteria ottimizzata per durare un anno poi puoi semplicemente sostituirla",
+        "sound": "Suono 10x",
+        "sound_0": "Filo Tag ha un suono 10 volte più potente che ti aiuta a ritrovarlo ancora più velocemente.",
+        "connection": "Connessione",
+        "connection_0": "Bluetooth LE 4.0",
+        "battery_type": "Tipo Batteria",
+        "battery_type_0": "CR2032",
+        "size": "Dimensioni",
+        "size_0": "25 mm x 41 mm x 5 mm (0.98 in x 1.61 in x 0.19 in)",
+        "compatibility": "Compatibile con:",
+        "compatibility_0": "iOS 9 e successivi, e dispositivi con Android 4.4 e successivi.",
+        "compatibility_1": "Visita <a>www.filotrack.com/devices</a> per l'elenco completo dei dispositivi ufficialmente supportati."
     }
 }

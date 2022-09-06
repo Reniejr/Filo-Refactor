@@ -10,11 +10,14 @@
     "dev_to_prod": "git push -u origin dev && git checkout main && git fetch && git merge dev && git push -u origin main && git checkout dev"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
     "next": "12.2.3",
     "next-intl": "^2.7.4",
+    "next-redux-wrapper": "^7.0.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-redux": "^8.0.2"
   },
   "devDependencies": {
     "eslint": "8.21.0",

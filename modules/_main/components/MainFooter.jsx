@@ -33,9 +33,9 @@ const MainFooter = ({t}) => {
             <section className={`${styles["footer-section"]} ${styles["footer-copyright-section"]}`}>
                 <p className={styles["copyright"]}>
                     <Link href="/privacy-policy">
-                        <a className={styles["privacy-policy"]}>Privacy Policy </a>
+                        <a className={styles["privacy-policy"]}>Privacy Policy</a>
                     </Link>
-                    - © 2014 - 2022 Filo Srl - 
+                    &nbsp;- © 2014 - 2022 Filo Srl - 
                     {t["copyright"]}
                 </p>
             </section>

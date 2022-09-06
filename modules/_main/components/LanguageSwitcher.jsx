@@ -42,6 +42,9 @@ const LanguageSwitcher = () => {
                 {
                     pathname: '/blog/[slug]',
                     query: query
+                } : route.includes('products') ? {
+                    pathname: '/products/[product_slug]',
+                    query: query
                 } : route
 
                 return(

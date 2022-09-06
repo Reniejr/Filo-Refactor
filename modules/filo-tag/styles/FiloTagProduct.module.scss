@@ -1,0 +1,77 @@
+@import '../../../styles/main.scss';
+
+.container {
+    padding: 2rem 0;
+    
+    &.normal{
+        @include flexBox(row, space-between, stretch);
+        .description{
+            margin-left: 5rem;
+
+            @media screen and (max-width: $lg) {
+                margin-left: 1rem;
+            }
+            @media screen and (max-width: $sm) {
+                margin-left: 0;
+            }
+        }
+        @media screen and (max-width: $md) {
+            @include flexBox(column, flex-start, center);
+            gap: 1rem;
+        }
+    }
+    
+    &.reversed{
+        @include flexBox(row-reverse, space-between, stretch);
+        
+        .description{
+            margin-right: 5rem;
+
+            @media screen and (max-width: $lg) {
+                margin-right: 1rem;
+            }
+            @media screen and (max-width: $sm) {
+                margin-right: 0;
+            }
+        }
+        @media screen and (max-width: $md) {
+            @include flexBox(column, flex-start, center);
+            gap: 1rem;
+        }
+    }
+    
+
+    .description{
+        @include flexBox(column, flex-start, stretch);
+        width: 100%;
+        gap: 1rem;
+
+        @media screen and (max-width: $lg) {
+            gap: .5rem;
+        }
+        @media screen and (max-width: $md) {
+            max-width: 512px;
+            margin: 0 auto;
+        }
+        @media screen and (max-width: $sm) {
+            width: 100%;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        h1{
+            @include title_font_xl;
+            margin-bottom: .5rem;
+        }
+
+        .short-description{
+            white-space: pre-wrap;
+            @include txt_font_lg;
+
+            @media screen and (max-width: $xl) {
+                white-space: normal;
+            }
+        }
+
+    }
+}
