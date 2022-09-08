@@ -1,0 +1,38 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Carrello",
+        "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi",
+        "description": "Filo s.r.l. è una Compagnia Italiana nel campo dell' IoT situata a Roma.\nProgrammiamo, sviluppiamo, costruiamo e vendiamo dispositivi che aiutano la gente nella loro vita quotidiana."
+    },
+    "cart": "Il tuo carrello",
+    "cart_empty": "Il tuo carrello è vuoto. <a>Continua lo shopping</a>",
+    "update_cart": "Aggiorna carrello",
+    "product": "Prodotto",
+    "price": "Prezzo",
+    "quantity": "Quantità",
+    "subtotal": "Subtotale",
+    "total": "Totale",
+    "checkout": "Vai in cassa",
+    "is_invoice": "Hai bisogno della fattura ?",
+    "Invoice": {
+        "for_company": "Per la tua azienda",
+        "private": "Privato",
+        "insert_details": "Inserisci i dati necessari",
+        "vat_n": "Partita IVA",
+        "tax_code": "Codice Fiscale",
+        "request": "Richiedi fattura",
+        "submitted": "La tua richiesta per la fattura è stata salvata.\nContinua in cassa.\n<p>o cambia i dati della fattura.</p>",
+        "company": {
+            "company_name": "Ragione Sociale",
+            "billing_address": "Indirizzo legale di fatturazione",
+            "sdi_pec": "Codice SDI / Indirizzo PEC"
+        },
+        "person": {
+            "first_name": "Nome",
+            "last_name": "Cognome",
+            "address": "Indirizzo di residenza",
+            "email": "Email",
+            "pec": "Indirizzo PEC"
+        }
+    }
+}

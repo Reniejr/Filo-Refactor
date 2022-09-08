@@ -1,0 +1,79 @@
+@import '../../../styles/main.scss';
+
+#cart{
+    min-height: 31vh;
+    margin-bottom: 2rem;
+}
+
+.container{
+
+    h1{
+        @include title_font_xl;
+        text-align: center;
+        margin: 2rem 0;
+    }
+    
+    .cart-empty{
+        text-align: center;
+    }
+    
+    .cart-table{
+        margin-bottom: 2rem;
+    
+        .cart-header{
+            @include flexBox(row, space-between, center);
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $pure_b_10;
+
+            @media screen and (max-width: $md){
+                display: none;
+            }
+    
+            .img-header{
+                width: 80px;
+                margin-right: 2rem;
+            }
+            .name-header{
+                width: 50%;
+
+                @media screen and (max-width: $lg) {
+                    width: 40%;
+                }
+            }
+            .quantity-header{
+                width: 20%;
+                @include flexBox(row, center, center);
+                text-align: center;
+            }
+            .remove-header{
+                width: 2%;
+            }
+        }
+    }
+
+    .checkout-row{
+        @include flexBox(row, space-between, flex-start);
+
+        .total-box{
+            @include flexBox(column, flex-start, flex-end);
+            
+            h2{
+                @include title_font_md;
+                font-weight: 300;
+            }
+            .total{
+                @include title_font_xl;
+                font-weight: 400;
+            }
+        }
+        
+        @media screen and (max-width: $xs){
+            @include flexBox(column-reverse, flex-start, center);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            .total-box{
+                @include flexBox(column, center, center);
+            }
+        }
+    }
+}

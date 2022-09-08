@@ -1,0 +1,108 @@
+@import '../../../styles/main.scss';
+
+.invoice-section{
+
+    .is-invoice{
+        @include flexBox(row, flex-start, center);
+
+        h3{
+            font-weight: 500;
+        }
+
+        input[type="checkbox"]{
+            margin-top: 5px;
+            margin-left: 1rem;
+        }
+    }
+
+    .invoice-details{
+
+        .invoice-choose{
+            @include flexBox(row, flex-start, center);
+            gap: 2rem;
+            padding-left: 2rem;
+            margin: .5rem 0;
+            
+            
+            .radio-group{
+                @include flexBox(row, flex-start, center);
+                input[type="radio"]{
+                    margin-right: .5rem;
+                    margin-top: 1.5px;
+                }
+                label{
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    font-size: 14px;
+                    color: $primary;
+                }
+            }
+        }
+        
+        .invoice-data{
+            @include flexBox(column, flex-start, center);
+            @include borderRadius(10px);
+            width: fit-content;
+            padding: 1rem;
+            margin-left: 2rem;
+            background-color: $bg_form;
+            
+            @media screen and (max-width: $md){
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .invoice-submitted{
+                text-align: center;
+                white-space: pre-wrap;
+                font-size: 16px;
+
+                p{
+                    font-size: 16px;
+                    cursor: pointer;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            p{
+                font-size: 14px;
+                font-weight: 500;
+                color: $primary;
+                margin-bottom: 1rem;
+            }
+            
+            .input-row{
+                @include flexBox(row, flex-start, center);
+                width: 100%;
+                gap: 1rem;
+                margin-bottom: 1rem;
+
+                input{
+                    padding: .25rem .5rem;
+                    @include borderRadius(2px);
+                    border: 1px solid $border_form;
+
+                    &[type="text"]{
+                        text-transform: uppercase;
+
+                        &::placeholder{
+                            text-transform: initial;
+                        }
+                    }
+
+                    &.company_name, &.billing_address, &.address, &.sdi_pec{
+                        width: 100%;
+                    }
+
+                }
+                @media screen and (max-width: $md){
+                    @include flexBox(column, flex-start, stretch);
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+}

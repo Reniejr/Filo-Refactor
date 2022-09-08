@@ -1,0 +1,131 @@
+@import '../../../styles/main.scss';
+
+.product-in-cart{
+    @include flexBox(row, space-between, center);
+    padding: 1rem 0;
+    border-bottom: 1px solid $pure_b_10;
+
+    .hr-mob{
+        display: none;
+    }
+
+    .img-box{
+        width: 80px;
+        margin-right: 2rem;
+    }
+    .name-box{
+        width: 50%;
+
+        h4{
+            font-weight: 600;
+            color: $primary;
+
+            .cart-btn.remove{
+                display: none;
+            }
+        }
+        .variation{
+            text-transform: capitalize;
+        }
+
+        @media screen and (max-width: $lg) {
+            width: 40%;
+        }
+    }
+    .quantity-box{
+        width: 20%;
+
+        .input-group{
+            @include flexBox(row, center, center);
+    
+            .quantity{
+                border: 1px solid $pure_b_10;
+                padding: .25rem 1.5rem;
+                margin: 0 .25rem;
+            }
+    
+            ion-icon{
+                margin-top: 7.5px;
+                color: $pure_b_50;
+            }
+        }
+    }
+    .remove-box{
+        width: 2%;
+        ion-icon{
+            color: $primary;
+        }
+    }
+
+    .cart-btn{
+
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    @media screen and (max-width: $md){
+        @include flexBox(column, flex-start, center);
+        gap: 1rem;
+
+        .hr-mob{
+            display: block;
+            @include title_font_sm;
+            margin-bottom: .25rem;
+        }
+
+        .img-box{
+            width: 100%;
+            margin-right: 0;
+            @include flexBox(column, flex-start, center);
+            
+            img{
+                width: 50%;
+                height: auto;
+            }
+        }
+        
+        .name-box, .price-box{
+            width: 100%;
+            text-align: center;
+        }
+        .name-box{
+
+            h4{
+                font-size: 18px;
+                @include flexBox(row, center, center);
+                .cart-btn.remove{
+                    color: $primary;
+                    margin-left: 5px;
+                }
+            }
+            .variation{
+                font-size: 16px;
+            }
+        }
+        
+        .quantity-box{
+            @include flexBox(column, flex-start, center);
+            width: 100%;
+            padding: 0 1rem;
+            .input-group{
+                width: 100%;
+                .quantity{
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+        }
+        .subtotal-box{
+            text-align: center;
+
+        }
+
+        .remove-box{
+            display: none;
+        }
+        
+    }
+}
