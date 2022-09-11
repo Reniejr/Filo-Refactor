@@ -9,6 +9,12 @@ import {
     invoiceSlice
 } from './slices/invoiceSlice'
 import {
+    stripeSlice
+} from './slices/stripeSlice'
+import {
+    orderSlice
+} from './slices/orderSlice'
+import {
     productsSlice
 } from './slices/productSlice'
 import {
@@ -19,7 +25,9 @@ const makeStore = () => configureStore({
     reducer: {
         cart: cartSlice.reducer,
         products: productsSlice.reducer,
-        invoice: invoiceSlice.reducer
+        invoice: invoiceSlice.reducer,
+        order: orderSlice.reducer,
+        stripe: stripeSlice.reducer
     },
     devTools: true
 })

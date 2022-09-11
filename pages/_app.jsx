@@ -88,7 +88,8 @@ function MyApp({ Component, pageProps }) {
           return{
             ...product,
             price: parseFloat(ft_variations.find( variant => variant.id === product.id).price),
-            name: "Filo Tag - Bluetooth Tracker"
+            name: "Filo Tag - Bluetooth Tracker",
+            product_id: FT.id
           }
         })
         dispatch(setProducts(ft_products))

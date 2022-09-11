@@ -1,0 +1,22 @@
+@import '../../../styles/main.scss';
+
+.payment-box{
+    @include flexBox(column, flex-start, flex-start);
+    gap: 1rem;
+    width: 60%;
+
+    .payment-method{
+        width: 100%;
+        .method-choose{
+            @include flexBox(row, flex-start, center);
+            margin-bottom: .5rem;
+            input{
+                margin-right: .5rem;
+            }
+            label{
+                font-size: 16px;
+                font-weight: 500;
+            }
+        }
+    }
+}

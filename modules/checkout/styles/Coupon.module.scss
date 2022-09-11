@@ -1,0 +1,63 @@
+@import '../../../styles/main.scss';
+
+.coupon-container{
+    margin: 1.5rem 0;
+
+    .is-coupon{
+        font-size: 14px;
+        font-weight: 400;
+        
+        span{
+            font-size: inherit;
+            font-weight: inherit;
+            color: $primary;
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .coupon-input{
+        width: 100%;
+        
+        .input-group{
+            width: 100%;
+            @include flexBox(row, flex-start, center);
+
+            input{
+                width: 100%;
+                padding: .42rem .5rem;
+                border: 1px solid $pure_b_25;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: uppercase;
+
+                &::placeholder{
+                    text-transform: initial;
+                }
+            }
+
+            .btn-coupon{
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                max-width: 100px;
+            }
+        }
+        .no-coupon{
+            margin: .25rem 0;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}

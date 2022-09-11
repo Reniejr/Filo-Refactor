@@ -11,6 +11,7 @@
             "@/hooks/*": ["hooks/*"],
             "@/products/*": ["products/*"],
             "@/slices/*": ["slices/*"],
+            "@/config/*": ["config/*"],
         }
     }
 }

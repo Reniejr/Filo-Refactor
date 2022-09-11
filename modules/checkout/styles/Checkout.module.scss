@@ -1,0 +1,151 @@
+@import '../../../styles/main.scss';
+
+#checkout{
+    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 55%, #F9F9F9 55%, #F9F9F9 100%);
+    padding: 2rem 0;
+    position: relative;
+    min-height: 100vh;
+
+    @media screen and (max-width: $md) {
+        background: $pure_w;
+    }
+
+    h2{
+        @include title_font_sm;
+        margin-bottom: 1rem;
+    }
+}
+
+.user-container{
+    min-height: 40vh;
+
+    .is-shipping{
+        width: 100%;
+        @include flexBox(row, flex-start, center);
+        gap: .75rem;
+        margin: 1.5rem 0;
+        p{
+            font-size: 16px;
+            font-weight: 500;
+        }
+        input[type="checkbox"]{
+            margin-top: .25rem;
+        }
+    }
+
+    .notes{
+        width: 40%;
+        @include flexBox(column, flex-start, stretch);
+
+        @media screen and (max-width: $lg) {
+            width: 50%;   
+        }
+
+        @media screen and (max-width: $md) {
+            width: 100%;   
+        }
+
+        label{
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: .5rem;
+        }
+
+        textarea{
+            padding: .25rem;
+            font-size: 14px;
+        }
+    }
+}
+.order-container{
+    position: absolute;
+    width: 45%;
+    top: 0;
+    right: 0;
+    // top: calc(4rem + 39px);
+    padding-left: 1rem;
+    // padding-right: 15vw;
+    padding-top: 2rem;
+
+    .products-list, .cost-details{
+        border-bottom: 1px solid $pure_b_10;
+    }
+
+    .cost-details{
+        padding: .5rem 0;
+        @include flexBox(column, flex-start, stretch);
+        gap: .75rem;
+
+        .subtotal, .shipping-method{
+            width: 100%;
+            @include flexBox(row, space-between, center);
+
+            h3{
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            p{
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .total-box{
+        padding: .5rem 0;
+        @include flexBox(row, space-between, center);
+        
+        h3{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 18px;
+            font-weight: 700;
+        }
+    }
+
+    .privacy{
+        font-size: 11px;
+
+        .mini-txt{
+            font-size: inherit;
+        }
+    }
+
+    .terms-conditions-container{
+        margin: .5rem 0;
+        .input-group{
+            @include flexBox(row, flex-start, center);
+            gap: .25rem;
+    
+            .terms-label{
+                font-size: 12px;
+        
+                .mini-txt{
+                    font-size: inherit;
+                }
+            }
+        }
+    }
+
+    .order-btn{
+        width: 100%;
+        margin-top: 3rem;
+    }
+
+    @media screen and (max-width: $xl){
+        padding-right: 2rem;
+    }
+    @media screen and (min-width: $xl){
+        padding-right: calc(45% - 498px);
+    }
+    @media screen and (max-width: $md){
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 576px;
+        padding-right: 1rem;
+    }
+}

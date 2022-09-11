@@ -25,7 +25,9 @@ const nextConfig = {
     WP_URL: "https://wp.wedevs.it",
     GA_ID: "EPDM266LWB",
     WOO_CK: "ck_881b7b3dd1e3747866c792c1670e42756b2e1c6a",
-    WOO_CS: "cs_6706d25b83e0085d129bc011c8bb2c773567d21d"
+    WOO_CS: "cs_6706d25b83e0085d129bc011c8bb2c773567d21d",
+    STRIPE_SK: "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",
+    STRIPE_PUBLIC_KEY: "pk_live_51LHmioH3DyNxzNjdFllh59ewGb0WlmDNJhVsgpsQDBI19SFF3v2GeGdSlD2n8CvhCGIgH7qLRmVVx9h8kz5Lcb76006HNJwIOV"
   }
 }
 

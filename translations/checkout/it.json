@@ -1,0 +1,64 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Cassa",
+        "keywords": "filo-tag, filo, tecnologia, dispositivi bluetooth, dispositivi",
+        "description": "Filo s.r.l. è una Compagnia Italiana nel campo dell' IoT situata a Roma.\nProgrammiamo, sviluppiamo, costruiamo e vendiamo dispositivi che aiutano la gente nella loro vita quotidiana."
+    },
+    "your_order": "Il tuo ordine",
+    "total": "Totale",
+    "subtotal": "Parziale",
+    "shipping": "Spedizione",
+    "flat_rate": "Tasso Fisso",
+    "free_shipping": "Spedizione gratuita",
+    "is_required": "è necessario.",
+    "field": "Il campo",
+    "place_order": "Effettua ordine",
+    "Coupon": {
+        "isCoupon": "Hai un codice sconto?",
+        "enter_coupon": "Clicca qui per inserire il tuo codice sconto.",
+        "placeholder": "Inserisci il tuo codice sconto qui",
+        "no_coupon": "Non ho un codice sconto.",
+        "apply": "Applica"
+    },
+    "privacy_policy": "I tuoi dati personali saranno usati per l'elaborazione dell'ordine, per migliorare l'esperienza attraverso il sito, e per altri fini descritti nella nostra <a>privacy policy</a>.",
+    "terms-and-conditions": "Ho letto e acconsento ai <a>termini e condizioni</a> del sito.",
+    "Billing_Info": {
+        "billing_details": "Dettagli di fatturazione",
+        "first_name": "Nome",
+        "last_name": "Cognome",
+        "company_name": "Azienda",
+        "country": "Paese",
+        "address": "Indirizzo e numero civico",
+        "address_details": "Palazzina, interno etc. ( opzionale )",
+        "postal_code": "Codice postale",
+        "state": "Stato/Regione",
+        "city": "Città",
+        "phone": "Telefono",
+        "email": "Email"
+    },
+    "Shipping_Info": {
+        "is_shipping": "Consegnare a un indirizzo diverso?",
+        "shipping_details": "Shipping Details",
+        "first_name": "Nome",
+        "last_name": "Cognome",
+        "company_name": "Azienda",
+        "country": "Paese",
+        "address": "Indirizzo e numero civico",
+        "address_details": "Palazzina, interno etc. ( opzionale )",
+        "postal_code": "Codice postale",
+        "state": "Stato/Regione",
+        "city": "Città",
+        "phone": "Telefono"
+    },
+    "notes": {
+        "order_notes": "Note ( opzionale )",
+        "placeholder": "Note riguardo il tuo ordine, es. note speciali per la consegna"
+    },
+    "Payment": {
+        "stripe": "Carta di credito ( Stripe )",
+        "paypal": "PayPal",
+        "n_card": "Numero carta",
+        "expiration": "Data scadenza",
+        "cvc": "CVC"
+    }
+}

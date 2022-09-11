@@ -1,0 +1,41 @@
+@import '../../../styles/main.scss';
+
+.form-user-info{
+    max-width: 40%;
+
+    @media screen and (max-width: $lg) {
+        max-width: 50%;   
+    }
+    @media screen and (max-width: $md) {
+        max-width: 100%;   
+    }
+
+    .form-row{
+        @include flexBox(row, space-between, center);
+        width: 100%;
+        gap: 1rem;
+        margin: .5rem 0;
+
+        @media screen and (max-width: $md) {
+            @include flexBox(column, flex-start, center);
+        }
+        
+        .input-group{
+            width: 100%;
+
+            input{
+                width: 100%;
+                padding: .5rem;
+                @include borderRadius(2px);
+                border: 1px solid $border_form;
+                font-size: 14px;
+            }
+        }
+        .select-csc{
+            width: 100%;
+            *{
+            font-size: 14px;
+            }
+        }
+    }
+}
