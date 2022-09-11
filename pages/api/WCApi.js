@@ -12,8 +12,8 @@ const WCApi = new woocommerceRestApi({
     version: 'wc/v3'
 })
 
-const shipping_methods = async () => {
+// const shipping_methods = async () => {
 
-}
+// }
 
 export default WCApi;
