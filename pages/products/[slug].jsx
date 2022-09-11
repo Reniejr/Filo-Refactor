@@ -33,7 +33,7 @@ export async function getStaticPaths({locales}){
     const paths = products.data.flatMap(product => {
         return locales.map(locale => {
             return{
-                params: { slug: product.slug},
+                params: { slug: product.slug.toString()},
                 locale
             }
         })
