@@ -30,7 +30,6 @@ const ProductPage = ({product}) => {
 export async function getStaticPaths({locales}){
 
     const products = await WCApi.get('products')
-    console.log(products)
     const paths = products.data.flatMap(product => {
         return locales.map(locale => {
             return{
@@ -40,11 +39,9 @@ export async function getStaticPaths({locales}){
         })
     })
 
-    console.log( paths)
-
     return{
         paths,
-        fallback: true
+        fallback: false
     }
 }
 
