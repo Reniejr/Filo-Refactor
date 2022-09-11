@@ -37,28 +37,26 @@ const CardPayment = () => {
 
     const form = useRef()
 
-    const handleSubmit = async (e) => {
-
-        e.preventDefault()
+    const handleSubmit = async () => {
 
         if(!stripe || !elements) return
 
-        let paymentIntent = await paymentIntenthandler({total: total})
+        let paymentIntent = await paymentIntenthandler({body:{total: total}})
         
         console.log("STRIPE INTENT", paymentIntent)
     }
 
     useEffect(() => {
-      if (payment_try) form.current.submit() 
+      if (payment_try) handleSubmit() 
     
     }, [payment_try])
     
 
     return (
-      <form 
+      <div 
         ref={form} 
         className={styles["card-payment-box"]}
-        onSubmit={()=>handleSubmit()}
+        // onSubmit={(e)=>handleSubmit(e)}
         >
         <div className={styles["card-number-box"]}>
             <h4 className={styles["card-header"]}>{t('Payment.n_card')}</h4>
@@ -88,7 +86,7 @@ const CardPayment = () => {
                 </div>
             </div>
         </div>
-     </form>
+     </div>
     )
   }
   
