@@ -33,7 +33,7 @@ export async function getStaticPaths({locales}){
     const paths = products.data.flatMap(product => {
         return locales.map(locale => {
             return{
-                params: { product_slug: product.slug},
+                params: { slug: product.slug},
                 locale
             }
         })
@@ -55,7 +55,7 @@ export async function getStaticProps({locale, params}) {
       products: (await import(`../../translations/products/${locale}.json`)).default
     }
 
-    const product = await WCApi.get(`products/?slug=${params.product_slug}`)
+    const product = await WCApi.get(`products/?slug=${params.slug}`)
   
     return {
       props: {
