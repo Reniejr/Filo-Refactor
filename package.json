@@ -14,7 +14,6 @@
     "@stripe/react-stripe-js": "^1.10.0",
     "@stripe/stripe-js": "^1.36.0",
     "@woocommerce/woocommerce-rest-api": "^1.0.1",
-    "axios": "^0.27.2",
     "country-state-city": "^3.1.2",
     "next": "12.2.3",
     "next-intl": "^2.7.4",
