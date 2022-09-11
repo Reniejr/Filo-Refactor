@@ -14,7 +14,7 @@ StripeCardNumberElementChangeEvent,
 } from "@stripe/stripe-js";
 
 //* UTILS
-import { paymentIntenthandler } from '@/config/checkout-stripe'
+import { paymentIntenthandler } from '@/pages/api/checkout-stripe'
  
 //* REDUX
 import { useSelector } from 'react-redux'

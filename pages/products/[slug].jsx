@@ -1,5 +1,5 @@
 //* WooCommerceApi
-import WCApi from '../../config/WooCommerceApi'
+import WCApi from '../api/WCApi'
 
 //* COMPONENTS
 import CustomHead from '@/main/components/CustomHead'
@@ -38,6 +38,8 @@ export async function getStaticPaths({locales}){
             }
         })
     })
+
+    console.log( paths)
 
     return{
         paths,

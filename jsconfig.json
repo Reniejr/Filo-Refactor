@@ -12,6 +12,7 @@
             "@/products/*": ["products/*"],
             "@/slices/*": ["slices/*"],
             "@/config/*": ["config/*"],
+            "@/pages/*": ["pages/*"],
         }
     }
 }
