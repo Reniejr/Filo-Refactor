@@ -6,6 +6,10 @@ const stripePromise = loadStripe(
   `${process.env.STRIPE_PUBLIC_KEY}`
 );
 
+// const options = {
+//   clientSecret: process.env.STRIPE_SK
+// }
+
 const StripeCheckout = () => {
   return (
     <Elements stripe={stripePromise}>

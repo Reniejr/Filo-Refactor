@@ -1,29 +1,35 @@
-const stripe = require('stripe')(process.env.STRIPE_SK)
+// const stripe = require('stripe')(process.env.STRIPE_SK)
 
-// const axios = require('axios').default
+// // const axios = require('axios').default
 
-// const instance = axios.create({
-//     baseURL: process.env.WP_URL,
-//     headers: {
-//         "Content-Type": "application/json",
-//         "Access-Control-Allow-Origin": "*"
+// // const instance = axios.create({
+// //     baseURL: process.env.WP_URL,
+// //     headers: {
+// //         "Content-Type": "application/json",
+// //         "Access-Control-Allow-Origin": "*"
+// //     }
+// // })
+
+// export async function paymentIntenthandler(req, res) {
+//     // const data = req.body.line_items
+//     const total = parseFloat(req.body.total) * 100
+
+//     try {
+//         const paymentIntent = await stripe.paymentIntents.create({
+//             amount: total,
+//             currency: "eur"
+//         })
+//         res.json({
+//             paymentIntentId: paymentIntent.id,
+//             clientSecret: paymentIntent.client_secret
+//         })
+//     } catch (error) {
+//         throw new Error(error)
 //     }
-// })
+// }
 
-export async function paymentIntenthandler(req, res) {
-    // const data = req.body.line_items
-    const total = parseFloat(req.body.total) * 100
+import {
+    loadStripe
+} from "@stripe/stripe-js";
 
-    try {
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount: total,
-            currency: "eur"
-        })
-        res.json({
-            paymentIntentId: paymentIntent.id,
-            clientSecret: paymentIntent.client_secret
-        })
-    } catch (error) {
-        throw new Error(error)
-    }
-}
+export const stripePromise = loadStripe(process.env.STRIPE_PUBLIC_KEY)

@@ -15,7 +15,13 @@ StripeCardNumberElementChangeEvent,
 
 //* UTILS
 import { paymentIntenthandler } from '@/pages/api/checkout-stripe'
- 
+
+import CreateStripeSession from '@/pages/api/StripeApi'
+
+import { loadStripe } from '@stripe/stripe-js';
+
+import axios from 'axios';
+
 //* REDUX
 import { useSelector } from 'react-redux'
 
@@ -25,12 +31,18 @@ import { useTranslations } from 'next-intl'
 //* STYLES
 import styles from '../styles/CardPayment.module.scss';
 
+const pk = process.env.STRIPE_PUBLIC_KEY
+const stripePromise = loadStripe(pk)
+
 const CardPayment = () => {
 
     const t = useTranslations('checkout')
 
     const stripe = useStripe()
     const elements = useElements()
+
+    // console.log(stripe)
+    // console.log(elements)
 
     const { cart, total } = useSelector( state => state.cart)
     const { payment_try } = useSelector( state => state.stripe)
@@ -39,15 +51,31 @@ const CardPayment = () => {
 
     const handleSubmit = async () => {
 
-        if(!stripe || !elements) return
+      // e.preventDefault()
 
-        let paymentIntent = await paymentIntenthandler({body:{total: total}})
-        
-        console.log("STRIPE INTENT", paymentIntent)
+        // if(!stripe || !elements) return
+
+        // // let paymentIntent = await paymentIntenthandler({body:{total: total}})
+
+        // console.log("STRIPE INTENT", paymentIntent)
+
+      const stripe = await stripePromise;
+
+      console.log(stripe)
+
+      const checkoutSession = await CreateStripeSession({body:{item: "Filo Tag"}})
+
+      console.log(checkoutSession)
+
+      const result = await stripe.redirectToCheckout({
+        sessionId: checkoutSession.data.id
+      })
+
+      console.log(result)
     }
 
     useEffect(() => {
-      if (payment_try) handleSubmit() 
+      if (payment_try) handleSubmit()
     
     }, [payment_try])
     

@@ -22,8 +22,10 @@ export const cartSlice = createSlice({
         addToCart(state, action) {
             const {
                 id,
-                price
+                price,
+                name
             } = action.payload
+
             let new_cart = [...state.cart]
 
             const isAlreadyAdded = new_cart.filter(item => item.variation_id === id)
@@ -38,11 +40,14 @@ export const cartSlice = createSlice({
                 new_cart = new_cart.concat({
                     product_id: FT_ID,
                     variation_id: id,
-                    quantity: 1
+                    quantity: 1,
+                    name,
+                    amount: price * 100,
+                    currency: 'EUR'
                 })
             }
 
-            const new_total = Math.round((state.total + price) * 100) / 100
+            const new_total = state.total !== 0 ? Math.round((state.total + price) * 100) / 100 : price
 
             localStorage.setItem('cart', JSON.stringify(new_cart))
             localStorage.setItem('total', new_total)

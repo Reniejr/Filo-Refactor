@@ -100,9 +100,11 @@ function MyApp({ Component, pageProps }) {
       const total_saved = parseFloat(localStorage.getItem('total'))
       const invoice = JSON.parse(localStorage.getItem('invoice'))
       if (cart_saved) {
-        dispatch(setCart(cart_saved));
-        dispatch(setTotal(total_saved));
-        dispatch(setInvoice(invoice));
+        setTimeout(() => {
+          dispatch(setCart(cart_saved));
+          dispatch(setTotal(total_saved));
+          dispatch(setInvoice(invoice));
+        }, 1500);
       }
     }
 
