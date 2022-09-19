@@ -13,7 +13,7 @@ const billing_data = [
     [{
         "id": "company_name",
         "type": "text",
-        "required": true
+        "required": false
     }],
     [{
         "id": "country",
@@ -21,12 +21,12 @@ const billing_data = [
         "required": true
     }],
     [{
-        "id": "address",
+        "id": "address_1",
         "type": "text",
         "required": true
     }],
     [{
-        "id": "address_details",
+        "id": "address_2",
         "type": "text",
         "required": false
     }],
@@ -43,7 +43,7 @@ const billing_data = [
         {
             "id": "city",
             "type": "csc",
-            "required": true
+            "required": false
         }
     ],
     [{
@@ -72,7 +72,7 @@ const shipping_data = [
     [{
         "id": "company_name",
         "type": "text",
-        "required": true
+        "required": false
     }],
     [{
         "id": "country",
@@ -80,12 +80,12 @@ const shipping_data = [
         "required": true
     }],
     [{
-        "id": "address",
+        "id": "address_1",
         "type": "text",
         "required": true
     }],
     [{
-        "id": "address_details",
+        "id": "address_2",
         "type": "text",
         "required": false
     }],
@@ -102,7 +102,7 @@ const shipping_data = [
         {
             "id": "city",
             "type": "csc",
-            "required": true
+            "required": false
         }
     ],
     [{

@@ -50,7 +50,7 @@ const SelectCity = ({detail, values, handlerCsc}) => {
         id={detail}
         instanceId={detail}
         options={options}
-        value={{label:csc_value !== "" ? csc_value : t(`${detail}`), value:csc_value}}
+        value={{label:csc_value !== "" ? csc_value : `${t(`${detail}`)} *`, value:csc_value}}
         // placeholder={t(`${detail}`)}
         className={styles["select-csc"]}
         onChange={handlerCsc}

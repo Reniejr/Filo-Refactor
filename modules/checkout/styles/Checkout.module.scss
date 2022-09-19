@@ -14,6 +14,12 @@
         @include title_font_sm;
         margin-bottom: 1rem;
     }
+
+    .required-txt{
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary;
+    }
 }
 
 .user-container{
@@ -88,6 +94,7 @@
             p{
                 font-size: 14px;
                 font-weight: 600;
+                text-align: right;
             }
         }
     }
@@ -133,6 +140,12 @@
     .order-btn{
         width: 100%;
         margin-top: 3rem;
+
+        &.disabled{
+            background-color: $bg_disabled;
+            border: 1px solid $border_disabled;
+            pointer-events: none;
+        }
     }
 
     @media screen and (max-width: $xl){

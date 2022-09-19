@@ -19,12 +19,31 @@
         }
     }
 
+    .coupon-applied{
+        font-size: 12px;
+        color: $accent_greens;
+        font-weight: 700;
+        
+        .remove-coupon{
+            font-size: 12px;
+            color: $pure_b;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
     .coupon-input{
         width: 100%;
         
+        .coupon-not-allowed, .coupon-not-valid{
+            font-size: 12px;
+            color: $primary;
+            font-weight: 500;
+        }
         .input-group{
             width: 100%;
             @include flexBox(row, flex-start, center);
+
 
             input{
                 width: 100%;
@@ -47,6 +66,12 @@
                 border-top-left-radius: 0;
                 border-bottom-left-radius: 0;
                 max-width: 100px;
+
+                &.disabled{
+                    background-color: $bg_disabled;
+                    border: 1px solid $border_disabled;
+                    pointer-events: none;
+                }
             }
         }
         .no-coupon{

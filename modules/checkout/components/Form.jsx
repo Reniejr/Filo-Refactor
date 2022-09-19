@@ -1,4 +1,4 @@
-import React, { useState, Fragment} from 'react'
+import React, { useState, Fragment, useEffect} from 'react'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux'
@@ -9,6 +9,9 @@ import { useTranslations } from 'next-intl'
 
 //* DATA
 import { billing_data, shipping_data } from '../data'
+
+//* UTILITIES
+import { checkData } from '../utilities'
 
 //* COMPONENTS
 import SelectCity from './SelectCity'
@@ -26,15 +29,18 @@ const Form = ({bill_or_ship, isSubmit}) => {
     const dispatch = useDispatch()
     const billing_saves = useSelector(state => state.order.billing)
     const shipping_saves = useSelector(state => state.order.shipping)
-    const { setBilling, setShipping } = orderSlice.actions
+    const {isOtherShip} = useSelector(state => state.order)
+    const { zones } = useSelector(state => state.locations)
+    const { setBilling, setShipping, setShippingMethod } = orderSlice.actions
 
+    const [ checkForm, setCheckForm ] = useState(false)
     const [ billing_details, setBillingDetails ] = useState({
         "first_name": "",
         "last_name": "",
         "company_name": "",
         "country": "",
-        "address": "",
-        "address_details": "",
+        "address_1": "",
+        "address_2": "",
         "postal_code": "",
         "state": "",
         "city": "",
@@ -46,8 +52,8 @@ const Form = ({bill_or_ship, isSubmit}) => {
         "last_name": "",
         "company_name": "",
         "country": "",
-        "address": "",
-        "address_details": "",
+        "address_1": "",
+        "address_2": "",
         "postal_code": "",
         "state": "",
         "city": "",
@@ -66,6 +72,23 @@ const Form = ({bill_or_ship, isSubmit}) => {
             "city": "",
         }
     })
+
+    if (bill_or_ship === "billing") {
+        useEffect(() => {
+            const checking = checkData(billing_saves)
+            checking.includes(false) ? setCheckForm(false) : setCheckForm(true)  
+          /* eslint-disable-next-line */
+        }, [billing_saves])
+    } else {
+        useEffect(() => {
+            const checking = checkData(shipping_saves)
+            checking.includes(false) ? setCheckForm(false) : setCheckForm(true)
+          
+          /* eslint-disable-next-line */
+        }, [shipping_saves])
+    }
+
+    
 
     const handleInput = (e) => {
         const new_details = bill_or_ship === "billing" ? {...billing_details} : {...shipping_details}
@@ -90,6 +113,23 @@ const Form = ({bill_or_ship, isSubmit}) => {
         const new_billing_details = { ...billing_details }
         const new_shipping_details = { ...shipping_details }
 
+        if(csc_prop === 'country') {
+            const zone = zones.find( zone => zone.location === value.isoCode)
+            if(!zone) {
+                dispatch(setShippingMethod({
+                    "method_id": "cannot_ship",
+                    "method_title": "cannot_ship",
+                    "total": 0
+                }))
+            } else {
+                dispatch(setShippingMethod({
+                    "method_id": zone.method.title.replaceAll(" ", "_").toLowerCase(),
+                    "method_title": zone.method.title,
+                    "total": zone.method.cost
+                }))
+            }
+            
+        }
         if (bill_or_ship === "billing") {
             new_billing_csc[csc_prop] = value.isoCode
             new_billing_details[csc_prop] = value.label
@@ -153,99 +193,11 @@ const Form = ({bill_or_ship, isSubmit}) => {
                 )
             })
         }
-
-        
-        {/* <div className={`${styles["input-group"]}`}>
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("first_name")}
-                id="first_name" 
-                />
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("last_name")}
-                id="last_name" 
-                />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("company_name")}
-                id="company_name" 
-                />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <SelectCity
-                detail="country"
-                values={{
-                    csc_value: bill_or_ship === "billing" ? billing_details.country : shipping_details.country,
-                    parent_value: ""
-                }}
-                handlerCsc={(value)=>console.log(value)}
-            />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("address")}
-                id="address" 
-                />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("address_details")}
-                id="address_details" 
-                />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <input 
-                type="text"
-                onChange={handleInput} 
-                placeholder={t_billing("postal_code")}
-                id="postal_code" 
-                />
-            <SelectCity
-                detail="state"
-                values={{
-                    csc_value: bill_or_ship === "billing" ? billing_details.state : shipping_details.state,
-                    parent_value: bill_or_ship === "billing" ? billing_details.country : shipping_details.country
-                }}
-                handlerCsc={(value)=>console.log(value)}
-            />
-            <SelectCity
-                detail="city"
-                values={{
-                    csc_value: bill_or_ship === "billing" ? billing_details.city : shipping_details.city,
-                    parent_value: bill_or_ship === "billing" ? billing_details.state : shipping_details.state
-                }}
-                handlerCsc={(value)=>console.log(value)}
-            />
-        </div>
-        <div className={`${styles["input-group"]}`}>
-            <input 
-                type="tel" 
-                placeholder={t_billing("phone")}
-                id="phone"
-                onChange={handleInput} 
-                />
-        </div>
         {
-            bill_or_ship === "billing" ? 
-                <div className={`${styles["input-group"]}`}>
-                    <input 
-                        type="email" 
-                        placeholder={t_billing("email")}
-                        id="email" 
-                        onChange={(handleInput)} 
-                        />
-                </div> : null
-        } */}
+            !checkForm ?
+            <p className={styles["required-txt"]}>* {t("field")}&nbsp;{t("is_required")}</p>
+            : null
+        }
     </div>
   )
 }

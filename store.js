@@ -18,6 +18,11 @@ import {
     productsSlice
 } from './slices/productSlice'
 import {
+    locationsSlice
+} from './slices/locationsSlice'
+
+
+import {
     createWrapper
 } from 'next-redux-wrapper'
 
@@ -27,7 +32,8 @@ const makeStore = () => configureStore({
         products: productsSlice.reducer,
         invoice: invoiceSlice.reducer,
         order: orderSlice.reducer,
-        stripe: stripeSlice.reducer
+        stripe: stripeSlice.reducer,
+        locations: locationsSlice.reducer
     },
     devTools: true
 })

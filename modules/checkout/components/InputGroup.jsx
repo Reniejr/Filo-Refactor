@@ -19,7 +19,7 @@ const InputGroup = ({data, form, form_state}) => {
         <input 
             type={data.type} 
             id={data.id}
-            placeholder={t(`${form_type}_Info.${data.id}`)} 
+            placeholder={`${t(`${form_type}_Info.${data.id}`)} ${data.required ? '*' : ''}`} 
             value={state}
             onChange={handler}
             />

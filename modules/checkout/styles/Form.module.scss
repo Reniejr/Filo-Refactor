@@ -9,6 +9,11 @@
     @media screen and (max-width: $md) {
         max-width: 100%;   
     }
+    .required-txt{
+        font-size: 12px;
+        font-weight: 500;
+        color: $primary;
+    }
 
     .form-row{
         @include flexBox(row, space-between, center);

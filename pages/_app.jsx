@@ -7,6 +7,7 @@ import { wrapper } from '../store'
 import { cartSlice } from '@/slices/cartSlice'
 import { productsSlice } from '@/slices/productSlice'
 import { invoiceSlice } from '@/slices/invoiceSlice'
+import { locationsSlice } from '@/slices/locationsSlice'
 
 //* GA4
 import Script from 'next/script'
@@ -17,6 +18,7 @@ import MainLayout from '../layouts/MainLayout';
 
 //* WooCommerceApi
 import WCApi from '../config/WooCommerceApi'
+import { getShippingLocationsMethods } from './api/getShipping'
 
 //* DATA
 import { wc_details } from '@/products/filo-tag'
@@ -26,6 +28,11 @@ import { NextIntlProvider, IntlErrorCode } from 'next-intl'
 
 //* STYLES
 import '@/styles/globals.scss';
+
+//* FONTAWESOME
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 //* NEXTJS INTL FN
 function onError(error) {
@@ -54,6 +61,7 @@ function MyApp({ Component, pageProps }) {
   const { setCart, setTotal } = cartSlice.actions
   const { setProducts } = productsSlice.actions
   const { setInvoice } = invoiceSlice.actions
+  const { setLocations } = locationsSlice.actions
 
   useEffect(() => {
     const handleRouteChange = (url) => {
@@ -72,6 +80,9 @@ function MyApp({ Component, pageProps }) {
     if (!ISSERVER) {
 
       ( async () => { 
+        const shipping_zones = await getShippingLocationsMethods();
+        dispatch(setLocations(shipping_zones))
+
         const products = await WCApi.get('products');
         const FT = products.data.find( product => product.name === "Filo Tag");
         const ft_variations = await Promise.all(

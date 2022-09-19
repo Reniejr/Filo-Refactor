@@ -1,0 +1,12 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Thank You",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "thanks": "Thank You!",
+    "order_complete": "Your order was completed successfully",
+    "step_1": "An email receipt including the details about your order has been sent to the email address provided.",
+    "step_2": "As soon as your order will be processed and sent to the courier service, you will be notify with another email with the tracking number of your order.",
+    "for_info": "Contact us <a>here</a> for any additional information\nor for reporting problems."
+}

@@ -15,6 +15,7 @@ const CostDetails = () => {
     const t = useTranslations('checkout')
 
     const { total } = useSelector( state => state.cart)
+    const { shipping_method } = useSelector( state => state.order)
 
   return (
     <>
@@ -26,14 +27,30 @@ const CostDetails = () => {
             <div className={styles["shipping-method"]}>
                 <h3>{t("shipping")}</h3>
                 <div className={styles["shipping"]}>
-                <p className={styles["method"]}></p>
-                <p className={styles["shipping-cost"]}></p>
+                <p className={styles["method"]}>
+                    {
+                        shipping_method.method_id !== "" ?
+                            t(`${shipping_method.method_id}`) : t("based_country")
+                    }
+                </p>
+                <p className={styles["shipping-cost"]}>
+                    {
+                        shipping_method.method_id === "" || shipping_method.method_id === "cannot_ship" ?
+                            null : `${shipping_method.total},00 €`
+                    }
+                </p>
                 </div>
             </div>
         </div>
         <div className={styles["total-box"]}>
             <h3>{t("total")}</h3>
-            <p>{ total }0 €</p>
+            <p>
+                {/* { total }0 € */}
+                {
+                    shipping_method.method_id !== "" ?
+                        `${shipping_method.total + total}0 €` : null
+                }
+            </p>
         </div>
     </>
   )

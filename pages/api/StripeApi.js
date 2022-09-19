@@ -1,69 +1,62 @@
-// const stripe = require('stripe')(process.env.STRIPE_SK);
-
-// async function CreateStripeSession(req, res) {
-
-//     const {
-//         item
-//     } = req.body;
-
-//     const redirectURL = process.env.NODE_ENV === 'production' ?
-//         "https://devjr.space/checkout" :
-//         "http://localhost:3000"
-
-//     const stripeItem = {
-//         "price_data": {
-//             "currency": "eur",
-//             "product_data": {
-//                 "name": "Filo Tag"
-//             },
-//             "unit_amount": 100,
-//         },
-//         "description": "Test",
-//         "quantity": 1
-//     }
-
-//     const session = await stripe.checkout.sessions.create({
-//         "payment_method_types": ["card"],
-//         "line_items": [stripeItem],
-//         "mode": "payment",
-//         "success_url": redirectURL + "?status=success",
-//         "cancel_url": redirectURL + "?status=cancel",
-//     })
-
-//     res.json({
-//         "id": session.id
-//     })
-
-// }
-
-// export default CreateStripeSession;
-
-import Stripe from 'stripe'
-
-const stripe = new Stripe(process.env.STRIPE_SK)
-
-export default async function handler(req, res) {
+import Stripe from 'stripe';
+const stripe = new Stripe(process.env.STRIPE_SK, {
+    apiVersion: '2020-08-27',
+});
+const handler = async (req, res) => {
     const {
-        items
-    } = req.body
-
-    try {
-        const params = {
-            "submit_type": "pay",
-            "mode": "payment",
-            "payment_method_types": ["card"],
-            "line_items": items,
-            "success_url": "http://localhost:3000?status=success",
-            "cancel_url": "http://localhost:3000?status=cancel",
+        amount,
+        payment_intent_id
+    } = req.body;
+    if (payment_intent_id) {
+        try {
+            // If a payment_intent_id is passed, retrieve the paymentIntent
+            const current_intent = await stripe.paymentIntents.retrieve(
+                payment_intent_id
+            );
+            // If a paymentIntent is retrieved update its amount
+            if (current_intent) {
+                const updated_intent = await stripe.paymentIntents.update(
+                    payment_intent_id, {
+                        amount: amount,
+                    }
+                );
+                res.status(200).json(updated_intent);
+                return;
+            }
+        } catch (e) {
+            //Catch any error and return a status 500
+            if (e.code !== 'resource_missing') {
+                const errorMessage =
+                    e instanceof Error ? e.message : 'Internal server error';
+                res.status(500).json({
+                    statusCode: 500,
+                    message: errorMessage
+                });
+                return;
+            }
         }
-
-        const checkoutSession = await stripe.checkout.sessions.create(params)
-        console.log(checkoutSession)
-
-        res.status(200).json(checkoutSession)
-
-    } catch (error) {
-        throw new Error(error)
     }
-
-}
+    try {
+        // Create PaymentIntent
+        const params = {
+            amount: amount,
+            currency: 'eur',
+            description: 'Payment description',
+            // automatic_payment_methods: {
+            //     enabled: true,
+            // },
+            payment_method_types: ['card']
+        };
+        const payment_intent = await stripe.paymentIntents.create(params);
+        //Return the payment_intent object
+        res.status(200).json(payment_intent);
+    } catch (err) {
+        const errorMessage =
+            err instanceof Error ? err.message : 'Internal server error';
+        res.status(500).json({
+            statusCode: 500,
+            message: errorMessage
+        });
+    }
+};
+export default handler;
