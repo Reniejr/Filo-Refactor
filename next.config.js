@@ -23,7 +23,7 @@ const nextConfig = {
   },
   env: {
     WP_URL: "https://wp.wedevs.it",
-    GA_ID: "UA-236867533-1",
+    GA_ID: "G-P7JLYERS2H",
     WOO_CK: "ck_881b7b3dd1e3747866c792c1670e42756b2e1c6a",
     WOO_CS: "cs_6706d25b83e0085d129bc011c8bb2c773567d21d",
     STRIPE_SK: "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",
