@@ -7,6 +7,16 @@
     width: 100%;
     z-index: 1000;
 
+    .test-banner{
+        background-color: #EBD033;
+        color: $pure_b;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 16px;
+        padding: .5rem 0;
+    }
+
     &#main-header{
         padding: 2rem 0;
         

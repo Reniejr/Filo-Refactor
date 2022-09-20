@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+//* TRANSLATION
+import { useTranslations } from 'next-intl'
+
 //* COMPONENTS
 import {
     LogoLinkCTA,
@@ -33,6 +36,8 @@ const MainHeader = ({t}) => {
     })
 
     const handleNavMobile = () => setNavMobile({navMobile: !navMobile})
+
+    const tGlobals = useTranslations('general')
   
     return (
     <nav 
@@ -82,6 +87,13 @@ const MainHeader = ({t}) => {
                 ></ion-icon>
         </div>
         <MobileMenu t={t} state={navMobile}/>
+        <div className={styles["test-banner"]}>{tGlobals.rich("test_site",{
+            a : (children) => <LinkCTA 
+                href="https://filotrack.com"
+                classes={`${globals['link']} ${globals['link-primary']}`}
+                text_label={children}
+            />
+        })}</div>
     </nav>
   )
 }
