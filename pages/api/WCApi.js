@@ -9,7 +9,10 @@ const WCApi = new woocommerceRestApi({
     url: wp_url,
     consumerKey: wc_ck,
     consumerSecret: wc_secret,
-    version: 'wc/v3'
+    version: 'wc/v3',
+    axiosConfig: {
+        headers: {}
+    }
 })
 
 export default WCApi;
