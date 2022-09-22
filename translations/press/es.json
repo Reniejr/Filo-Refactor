@@ -1,0 +1,19 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Prensa",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Block_1": {
+        "title": "Dosier de prensa",
+        "description": "Filo no es solo un pequeño dispositivo; es una forma muy inteligente de encontrar tus pertenencias. Solo tienes que colocar este genial rastreador de Bluetooth en sus objetos de valor y podrás localizarlos con nuestra aplicación Filo de fácil uso. También puedes utilizar el Filo para encontrar tu teléfono. Si te descargas nuestro dosier de prensa, encontrarás mucha más información, por ejemplo una presentación sobre el producto, imágenes y logotipos.",
+        "button": "Consigue el dosier de prensa"
+    },
+    "Block_2": {
+        "title": "Dosier y consultas de prensa",
+        "description_0": "Si deseas publicar una historia, un artículo o una entrada de blog sobre Filo, ponte en contacto con nosotros desde",
+        "description_1": "y te proporcionaremos toda la información que puedas necesitar.",
+        "here": "aqui"
+    },
+    "featured_on": "Destacado en"
+}

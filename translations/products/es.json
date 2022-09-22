@@ -1,0 +1,40 @@
+{
+    "Filo_Tag": {
+        "title": "Filo Tag - Rastreador Bluetooth",
+        "short_description": "El rastreador Bluetooth con más alto volumen hasta el momento.\nSonido y alcance mejorados. En 4 elegantes colores.\nCompatible con iPhone, iPad y Android.",
+        "x4_label": "En 4 paquetes individuales",
+        "specifications": {
+            "main_label": "Especificaciones",
+            "features": "Caracteristicas",
+            "features_0": "Llame a Filo desde su teléfono",
+            "features_1": "Haz sonar tu teléfono con Filo",
+            "features_2": "Véalo en un mapa",
+            "features_3": "Configure la 'zona de confort' con notificación rápida si se separa del elemento de seguimiento.",
+            "size": "Tamaño",
+            "size_0": "25 mm x 41 mm x 5 mm (0.98 in x 1.61 in x 0.19 in)",
+            "range": "Distancia",
+            "range_0": "Hasta 80 m: línea de visión",
+            "battery": "Pila",
+            "battery_0": "1 años de batería reemplazable",
+            "compatibility": "Compatibilidad",
+            "compatibility_0": "Compatible con iOS 9 y posterior, y dispositivos con Android 4.4 y posterior.",
+            "compatibility_1": "Vea la lista completa de dispositivos oficialmente compatibles."
+
+        }
+    },
+    "Product_Page": {
+        "battery": "Pila",
+        "battery_0": "Pila optimizada con 1 año de duración que puedes reemplazar tú mismo",
+        "sound": "Volumen 10 veces más alto",
+        "sound_0": "Filo Tag cuenta con un volumen diez veces más alto y ofrece un sonido nítido para ayudarte a encontrarlo más rápidamente.",
+        "connection": "Conexión",
+        "connection_0": "Bluetooth LE 4.0",
+        "battery_type": "Tipo de Pila",
+        "battery_type_0": "CR2032",
+        "size": "Dimensiones",
+        "size_0": "25 mm x 41 mm x 5 mm (0.98 in x 1.61 in x 0.19 in)",
+        "compatibility": "Compatible con:",
+        "compatibility_0": "iOS: 9 o posterior, iPad Mini, iPad 3 ° gen o posterior Android: v 4.4 o posterior.",
+        "compatibility_1": "Visita <a>www.filotrack.com/devices</a> para consultar la lista completa de modelos compatibles."
+    }
+}

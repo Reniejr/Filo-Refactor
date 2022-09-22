@@ -1,0 +1,38 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Tu carrito",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "cart": "Tu carrito",
+    "cart_empty": "Aún no tienes ningún artículo en tu carrito. <a>Seguir comprando</a>",
+    "update_cart": "Actualizar",
+    "product": "Producto",
+    "price": "Precio",
+    "quantity": "Cantidad",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "checkout": "Checkout",
+    "is_invoice": "Do you need invoice ?",
+    "Invoice": {
+        "for_company": "A mi empresa",
+        "private": "Private",
+        "vat_n": "Número de valor",
+        "tax_code": "CIF",
+        "insert_details": "Insert details needed",
+        "request": "Request Invoice",
+        "submitted": "Your invoice request has been saved.\nContinue to checkout.\n<p>or change invoice data.</p>",
+        "company": {
+            "company_name": "Company name",
+            "billing_address": "Legal billing address",
+            "sdi_pec": "Código de destinatario o código de correo electrónico certificado (PEC)"
+        },
+        "person": {
+            "first_name": "First name",
+            "last_name": "Last name",
+            "address": "Address",
+            "email": "Email",
+            "pec": "PEC address"
+        }
+    }
+}

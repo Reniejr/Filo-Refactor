@@ -1,0 +1,30 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Cómo funciona",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device, filo tag, how it works",
+        "description": "Attach it. Ring it. Find it.\nAttach Filo to all your personal objects to find them through a very simple mobile app."
+    },
+    "Slider": {
+        "title_0": "Colócalo. Llama. Encuéntralo.",
+        "description_0": "Coloca el Filo en tus objetos de valor.\nConéctalo a la aplicación Filo.\nEncuentra las cosas que más importan.",
+        "title_1": "Puedes ir a cualquier parte. Relájate.\nFilo cuida de ti.",
+        "description_1": "Activa la Zona de confort y recibe una notificación en tu móvil si te dejas el equipaje atrás.",
+        "title_2": "¿Dónde he dejado mi billetera?",
+        "description_2": "Encuentra tu billetera comprobando su última ubicación conocida en el mapa."
+    },
+    "Blocks": {
+        "title_0": "Coloca el Filo en tus objetos de valor",
+        "description_0": "Coloca el Filo en cualquier objeto que no quieras perder u olvidar.",
+        "title_1": "Descárgate la aplicación gratuita de Filo y conéctala a tu Filo.",
+        "description_1": "Sigue las sencillas instrucciones de la aplicación para activar tu Filo.",
+        "title_2": "Deja que suene el Filo y encuéntralo rápidamente.",
+        "description_2": "Haz que suene el Filo para recuperar tus objetos perdidos en segundos.",
+        "title_3": "Encuentra tu móvil",
+        "description_3": "¿Te has olvidado alguna vez de tu móvil? ¡Filo funciona en ambos sentidos! Presiona dos veces el botón de tu Filo para hacer sonar tu móvil, ¡incluso si está en modo de silencio!",
+        "title_4": "Comprueba la última ubicación conocida",
+        "description_4": "¿Está tu Filo fuera del alcance de Bluetooth? Encuentra tus objetos perdidos comprobando su última ubicación conocida. La aplicación recuerda cuándo y dónde los dejaste por última vez.",
+        "title_5": "Zona de confort",
+        "description_5": "Activa la función «Zona de confort» y recibirás una notificación en tu móvil cada vez que dejes tus objetos de valor atrás."
+    },
+    "Download_App": "¡Empecemos!\nDescárgate la aplicación hoy mismo."
+}

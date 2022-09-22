@@ -1,0 +1,32 @@
+{
+    "test_site": "Este NO es el sitio web oficial, todos los derechos y contenidos están reservados a <a>Filo s.r.l.</a>",
+    "buy-now": "Compra ahora",
+    "buy-now-filo": "Compra Filo ahora",
+    "add-cart": "Añadir al carrito",
+    "learn-more": "Más información",
+    "filo-tag": "Filo Tag",
+    "tata-pad": "Tata Pad",
+    "how-it-works": "Cómo funciona",
+    "Features": {
+        "attach_it": "Colócalo",
+        "attach_it_description": "Basta con colocar el Filo en los objetos importantes que no quieres perder u olvidar.",
+        "ring_it": "Llama",
+        "ring_it_description": "Conecta el Filo a la aplicación y llama desde tu móvil para encontrar los objetos conectados.",
+        "find_it": "Encuéntralo",
+        "find_it_description": "Encuentra rápidamente tus objetos perdidos o recuerda dónde los dejaste por última vez."
+    },
+    "Overview1": {
+        "short_description": "El Filo Tag es el modelo de Filo más novedoso y\ncon más volumen. \nDisponible en 4 modernos colores.",
+        "size": "Más pequeño y delgado.",
+        "sound": "Con mejor sonido. Volumen 10 veces más alto.",
+        "battery": "Pila optimizada con un año de duración."
+    },
+    "Product_Merchandise": {
+        "made": "Hecho en Italia",
+        "shipping": "Envío Gratuito en Italia",
+        "warranty": "2 años de garantía",
+        "shipping_3days": "en 3 días hábiles",
+        "14_days": "Garantía de 14 días"
+    },
+    "read-more": "Lee mas"
+}

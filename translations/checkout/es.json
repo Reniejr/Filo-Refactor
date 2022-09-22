@@ -1,0 +1,70 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Checkout",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "your_order": "Your order",
+    "total": "Total",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "flat_rate": "Flat Rate",
+    "free_shipping": "Free Shipping",
+    "based_country": "Select country to ship",
+    "cannot_ship": "Cannot ship to this country",
+    "is_required": "is required.",
+    "field": "The field",
+    "place_order": "Place Order",
+    "Coupon": {
+        "isCoupon": "Have a coupon?",
+        "enter_coupon": "Click here to enter your coupon code.",
+        "placeholder": "Enter coupon code here",
+        "no_coupon": "No coupon code.",
+        "apply": "Apply",
+        "coupon_applied": "Coupon applied.",
+        "coupon_not_valid": "Coupon not valid.",
+        "remove_coupon": "Remove coupon.",
+        "coupon_not_allowed": "Coupon not allowed. Total amount is 0 or shipping price is not specified."
+    },
+    "privacy_policy": "Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our <a>privacy policy</a>.",
+    "terms-and-conditions": "I have read and agreed to website <a>terms and conditions</a>. *",
+    "Billing_Info": {
+        "billing_details": "Billing Details",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "company_name": "Company Name",
+        "country": "Country",
+        "address_1": "House number and street name",
+        "address_2": "Appartment, suite, unit, etc. (optional)",
+        "postal_code": "Postal Code",
+        "state": "State/Region",
+        "city": "City",
+        "phone": "Phone",
+        "email": "Email"
+    },
+    "Shipping_Info": {
+        "is_shipping": "Ship to a different address?",
+        "shipping_details": "Shipping Details",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "company_name": "Company Name",
+        "country": "Country",
+        "address_1": "House number and street name",
+        "address_2": "Appartment, suite, unit, etc. (optional)",
+        "postal_code": "Postal Code",
+        "state": "State/Region",
+        "city": "City",
+        "phone": "Phone"
+    },
+    "notes": {
+        "order_notes": "Order Notes ( optional )",
+        "placeholder": "Notes about your order, e.g. special notes for delivery"
+    },
+    "Payment": {
+        "stripe": "Credit Card ( Stripe )",
+        "paypal": "PayPal",
+        "n_card": "Card Number",
+        "expiration": "Expiry date",
+        "cvc": "CVC"
+    }
+}

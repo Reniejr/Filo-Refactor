@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 
 //* GTM
 import { gtmViewItem } from '@/hooks/gtm'
+import * as gtag from '@/config/gtag'
 
 //* WooCommerceApi
 import WCApi from '../api/WCApi'

@@ -1,0 +1,41 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Trabaja con Nosotros",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Banner": {
+        "title": "Trabaja con nosotros. Lo amarás.",
+        "description_0": "Somos un pequeño equipo formado por gente apasionadaque aman lo que hacen, rodeados de naturalezaen las villas de Pi Campus, Roma.",
+        "description_1": "Siempre buscamos personas con talentopara unirse a nuestro pequeño equipo."
+    },
+    "Content": {
+        "_1": "En Filo creemos firmemente que lo que amamos debe estar siempre a nuestro lado.",
+        "_2": "Por eso creamos Filo, un pequeño dispositivo que ayuda a las personas a encontrar lo que aman.\nFundada en 2014, Filo es una startup italiana que ha recaudado 560 k € de inversión y ha lanzado alrededor de 150,000 productos al mercado en solo 3 años. En diciembre 2017 lanzamos Filo Tag, diseñado por uno de los mejores diseñadores italianos (Emanuele Pizzolorusso), y vendimos el producto en 2 semanas.",
+        "_3": "¿POR QUÉ TRABAJAR EN FILO?",
+        "_4": "Hoy en día, el equipo cuenta con 16 personas y el negocio está creciendo rápidamente. El objetivo que perseguiremos es hacer de Filo una realidad internacional a partir de este año.\nTrabajar en Filo significa no solo poder aprovechar una oportunidad, sino también poder enfrentar un desafío difícil. Notarás que trabajar en una startup de producto no es para todos, pero al mismo tiempo, te hará crecer exponencialmente.\nEn pocas palabras, trabajar en Filo será la mejor experiencia de tu vida."
+    },
+    "Job_Position": {
+        "title": "Puestos de trabajo",
+        "_1": "Actualmente no hay vacantes disponibles.",
+        "_2": "Sin embargo, siempre estamos ansiosos por conocer gente brillante y talentosa que quisiera unirse a nuestro equipo.",
+        "_3": "Si desea ser considerado para puestos futuros, envíe su CV y carta de presentación a: "
+    },
+    "work_with_us": "Trabajar con nosotros incluye",
+    "include_0": {
+        "title": "Un equipo comprometido",
+        "description": "Todos nos enfocamos en el mismo objetivo. Fracasa, aprende, alcanza tu objetivo: tu victoria es nuestra victoria."
+    },
+    "include_1": {
+        "title": "Increíble ubicación",
+        "description": "Nuestra oficina tiene su sede en Roma, en la zona más verde de EUR, en una villa que forma parte del bullicioso eniviroment del PI Campus."
+    },
+    "include_2": {
+        "title": "Crecimiento profesional",
+        "description": "Aprenda algo nuevo cada día. Invertimos en su crecimiento para seguir avanzando juntos."
+    },
+    "include_3": {
+        "title": "No solo funciona",
+        "description": "Comenzamos a trabajar todos los días con una sonrisa. Incluso si somos trabajadores, definitivamente sabemos cómo relajarnos, pasar el tiempo girando o jugando al futbolín."
+    }
+}

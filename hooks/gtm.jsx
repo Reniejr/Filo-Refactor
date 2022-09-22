@@ -3,4 +3,5 @@ export const gtmViewItem = (rest) => {
         event: "view_item",
         ...rest
     })
+    console.log(window.dataLayer)
 }

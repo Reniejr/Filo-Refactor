@@ -15,12 +15,13 @@ const LanguageSwitcher = () => {
 
     const { locale, route, query } = useRouter()
 
-    const { it, en } = getImage('icons')
+    const { it, en, es } = getImage('icons')
 
     const [{languages}, setLangOrder] = useState({
         languages: [ 
             {lang: 'it', img: it},
-            {lang: 'en', img: en}
+            {lang: 'en', img: en},
+            {lang: 'es', img: es},
         ]
     })
 

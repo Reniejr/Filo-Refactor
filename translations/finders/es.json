@@ -1,0 +1,19 @@
+{
+    "Blocks": {
+        "title_1": "¿Donde esta mi telefono?",
+        "description_1": "Utilice la función de búsqueda de teléfonos de Filo para tener su teléfono siempre con usted. Con solo presionar un botón, reúnase con su teléfono. Filo es el rastreador bluetooth perfecto para ayudarlo a encontrar sus llaves, teléfono y pertenencias personales que no puede dejar atrás."
+    },
+    "How_it_works": {
+        "hiw": "¿Como funciona?",
+        "title_0": "1. Colócalo",
+        "description_0": "Basta con colocar el Filo en los objetos importantes que no quieres perder u olvidar.",
+        "title_1": "2. Llama",
+        "description_1": "Conecta el Filo a la aplicación y llama desde tu móvil para encontrar los objetos conectados.",
+        "title_2": "3. Encuéntralo",
+        "description_2": "Encuentra rápidamente tus objetos perdidos o recuerda dónde los dejaste por última vez."
+    },
+    "Finder_Banner": {
+        "title": "Encuentre rápidamente todo lo que importa con Filo",
+        "description": "No pierda de vista sus pertenencias con la aplicación gratuita Filo y el rastreador Bluetooth de Filo. Filo simplemente está ahí cuando más lo necesita. Deje que Filo le recuerde antes de dejar sus pertenencias personales donde quiera que vaya."
+    }
+}

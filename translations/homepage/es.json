@@ -1,0 +1,31 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Italian Tech Atelier",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Top_Slider": {
+        "title_0": "Filo Tag",
+        "description_0": "Filo quiere ayudarte a encontrar las cosas que más importan.",
+        "title_1": "Para él",
+        "description_1": "No volverás a perder el tiempo buscando tus llaves.",
+        "title_2": "Para ella",
+        "description_2": "Mételo en tu bolso o colócalo en el monedero para no volver a olvidarte de nada."
+    },
+    "Mentions": {
+        "featured_on": "Destacado en"
+    },
+    "Filo_Description": {
+        "description": "Filo es un pequeño dispositivo que te ayuda a no olvidarte y a no perder las cosas que más te importan, gracias a una sencilla aplicación móvil."
+    },
+    "Bottom_Slider": {
+        "title_0": "Para tu billetera",
+        "description_0": "Coloca el Filo en tu billetera y utiliza la aplicación para localizarla con un sonido o para comprobar en el mapa dónde la dejaste por última vez.",
+        "title_1": "Para tu bolso, mochila o equipaje",
+        "description_1": "Coloca el Filo en el bolso/equipaje y activa la Zona de confort. Recibe una notificación en tu teléfono en el momento en que lo dejes atrás.",
+        "title_2": "Para tu móvil",
+        "description_2": "Solo tienes que presionar dos veces el botón del Filo y tu móvil empezará a sonar, incluso si está en modo de silencio.",
+        "title_3": "Para tus llaves",
+        "description_3": "Coloca el Filo en tus llaves y sincronízalo con la aplicación de tu teléfono. Así podrás hacer una fácil llamada a tus llaves y encontrarlas rápidamente."
+    }
+}

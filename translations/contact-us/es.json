@@ -1,0 +1,31 @@
+{
+    "Meta_Tags": {
+        "title": "Filo | Ponte en Contacto con Nosotros",
+        "keywords": "filo-tag, filo, technology, bluetooth-device, device",
+        "description": "Filo s.r.l. is an Italian Company on the IoT field based in Rome, Italy.\nWe program, develop, build and sell products that helps people in their daily life hobbies."
+    },
+    "Banner": {
+        "title": "Ponte en Contacto con Nosotros",
+        "description": "Si tienes una propuesta o idea, no dudes en ponerte en contacto con nosotros y te responderemos lo antes posible."
+    },
+    "Help_Support": {
+        "label": "Ayuda y atenciòn al cliente",
+        "description": "¿Necesitas ayuda?\nEstamos aquí para ayudarte en lo que necesites.",
+        "button": "Preguntas frecuentes"
+    },
+    "Promotional": {
+        "label": "Pedidos promocionales y al por mayor",
+        "description": "¿Te interesa personalizar el Filo o distribuirlo?\nHablemos.",
+        "button": "Promocional"
+    },
+    "Press": {
+        "label": "Prensa y medios de comunicaciòn",
+        "description": "¿Quieres escribir un artículo o grabar un vídeo? Tienes todos nuestros materiales de prensa a tu disposición para ayudarte a encontrar cualquier tipo de información que necesites sobre nosotros.",
+        "button": "Materiales de prensa"
+    },
+    "Privacy_DPO": {
+        "label": "Responsable de privacidad",
+        "description": "¿Te interesan las cuestiones de privacidad? \nPonte en contacto con nuestro responsable de privacidad:\nFrancesco Paolucci",
+        "button": "Correo del DPO"
+    }
+}
