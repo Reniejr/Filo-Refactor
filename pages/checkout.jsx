@@ -131,7 +131,8 @@ const Checkout = () => {
                 }
                 <PrivacyTerms/>
                 <button
-                  className={`${globals["btn"]} ${globals["btn-primary"]} ${styles["order-btn"]} ${!isCheck ? styles["disabled"] : null}`}
+                  // className={`${globals["btn"]} ${globals["btn-primary"]} ${styles["order-btn"]} ${!isCheck ? styles["disabled"] : null}`}
+                  className={`${globals["btn"]} ${globals["btn-primary"]} ${styles["order-btn"]} ${styles["disabled"]}`}
                   onClick={() => dispatch(setTry())}
                 >
                   {t("place_order")}
