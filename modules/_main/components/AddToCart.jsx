@@ -1,7 +1,7 @@
 import React from 'react'
 
 //* GA4
-import { dataLayerEvent } from '@/config/gtag'
+import { dataLayerEvent, event } from '@/config/gtag'
 
 //* ROUTER
 import { useRouter } from 'next/router'
