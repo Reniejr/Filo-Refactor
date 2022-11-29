@@ -26,7 +26,8 @@ const useWCHooks = () => {
     } = checkout.actions
     const {
         setOriginalProducts,
-        setWcOrderData
+        setWcOrderData,
+        selectItem
     } = products.actions
 
     useEffect(() => {
@@ -96,6 +97,7 @@ const useWCHooks = () => {
                 })
             })
             if(wc_order_products_data.length > 0) dispatch(setWcOrderData(wc_order_products_data))
+            dispatch(selectItem({product_id: 19, variation_id: 146}))
 
         })()
 

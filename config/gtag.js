@@ -14,9 +14,28 @@ export const event = ({
     label,
     value
 }) => {
-    window.gtag("event", action, {
-        event_category: category,
-        event_label: label,
-        value: value,
-    });
+    if (window !== undefined) {
+        window.gtag("event", action, {
+            event_category: category,
+            event_label: label,
+            value: value,
+        });
+    }
 };
+
+export const dataLayerEvent = ({
+    event,
+    args
+}) => {
+    window.gtag('require', 'ec')
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+        ecommerce: null
+    })
+    window.dataLayer.push({
+        'event': event,
+        'ecommerce': {
+            ...args
+        }
+    })
+}

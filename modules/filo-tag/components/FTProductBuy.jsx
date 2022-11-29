@@ -1,7 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+//* GA4
+import { dataLayerEvent } from '@/config/gtag'
 
 //* TRANSLATION
 import { useTranslations } from 'next-intl'
+
+//* REDUX
+import { useSelector, useDispatch } from 'react-redux'
+import { products } from 'storage/products'
 
 //* DATA
 import { wc_details } from '@/products/filo-tag'
@@ -17,6 +24,10 @@ import globals from '@/styles/Main.module.scss'
 import styles from '../styles/FiloTagProduct.module.scss'
 
 const FTProductBuy = ({direction, isFeatures}) => {
+
+    const { original_data, selected_item } = useSelector(state => state.products)
+    const dispatch = useDispatch()
+    const { selectItem } = products.actions
 
     //* HANDLERS
     const handleFTImg = (id) => wc_details.find( product => product.id === id).img
@@ -69,6 +80,8 @@ const FTProductBuy = ({direction, isFeatures}) => {
 
         const selected = wc_details.find( product => product.bundle === new_filo_tag.bundle && product.color === new_filo_tag.color)
         new_filo_tag.id = selected.id
+        dispatch(selectItem({product_id: 19, variation_id: selected.id}))
+        dataLayerEvent({event: 'select_variant', args: selectItem})
         setFiloTag(new_filo_tag)
         setMainImage(selected.img)
 

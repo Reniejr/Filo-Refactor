@@ -1,5 +1,8 @@
 import React from 'react'
 
+//* GA4
+import { dataLayerEvent } from '@/config/gtag'
+
 //* ROUTER
 import { useRouter } from 'next/router'
 
@@ -21,10 +24,17 @@ const AddToCartBtn = ({product}) => {
   return (
     <button 
       onClick={() => {
+        event({
+          action: 'add_to_cart',
+          category: "ecommerce",
+          label: "item_added",
+          value: {...selected}
+        })
         dispatch(addCartItem(selected))
-        router.push('/cart')
+        // router.push('/cart')
       }}
       className={`${globals["btn"]} ${globals["add-to-cart-btn"]}`}
+      id="add-to-cart"
     >
       Add to Cart
     </button>
