@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux'
 import { orderSlice } from '@/slices/orderSlice';
+import { checkout } from 'storage/checkout';
 
 //* COMPONENTS
 import { LinkCTA } from '@/common/components/CTA';
@@ -19,13 +20,13 @@ const PrivacyTerms = () => {
     const t = useTranslations('checkout')
 
     //* REDUX STATE
-    const { privacy_accepted } = useSelector(state => state.order)
+    const { isPrivacyAccepted } = useSelector(state => state.checkout)
         //* ACTIONS
     const dispatch = useDispatch()
-    const { handlePrivacy } = orderSlice.actions
+    const { setIsPrivacyAccepted } = checkout.actions
 
     const handlePrivacyTerms = (e) => {
-        dispatch(handlePrivacy())
+        dispatch(setIsPrivacyAccepted())
     }
 
   return (
@@ -41,7 +42,7 @@ const PrivacyTerms = () => {
                 type="checkbox" 
                 id="terms" 
                 required
-                checked={privacy_accepted ? true : false}
+                checked={isPrivacyAccepted ? true : false}
                 onChange={handlePrivacyTerms}
                 />
             <label htmlFor="terms" className={styles["terms-label"]}>
@@ -52,7 +53,7 @@ const PrivacyTerms = () => {
             </div>
         </div>
         {
-            !privacy_accepted ?
+            !isPrivacyAccepted ?
             <p className={styles["required-txt"]}>* {t("field")}&nbsp;{t("is_required")}</p> : null
         }
     </>

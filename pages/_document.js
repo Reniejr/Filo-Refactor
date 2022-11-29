@@ -41,6 +41,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+
+          <script defer src={`https://www.paypal.com/sdk/js?client-id=Aa8hpbHy3WE377EjgVp48c0fdzc0C9wU2eLeaohDMOVMQJW965BNDHwdtgRgOXOQiUmgD7MWWm6V46YM&currency=EUR`}  data-namespace="paypal_sdk"></script>
           <script defer type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
           <script defer noModule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         </body>

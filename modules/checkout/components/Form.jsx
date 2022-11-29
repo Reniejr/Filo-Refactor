@@ -2,7 +2,7 @@ import React, { useState, Fragment, useEffect} from 'react'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux'
-import { orderSlice } from '@/slices/orderSlice'
+import { checkout } from 'storage/checkout'
 
 //* TRANSLATION
 import { useTranslations } from 'next-intl'
@@ -27,11 +27,10 @@ const Form = ({bill_or_ship, isSubmit}) => {
     const t_shipping = useTranslations('checkout.Shipping_Info')
 
     const dispatch = useDispatch()
-    const billing_saves = useSelector(state => state.order.billing)
-    const shipping_saves = useSelector(state => state.order.shipping)
-    const {isOtherShip} = useSelector(state => state.order)
-    const { zones } = useSelector(state => state.locations)
-    const { setBilling, setShipping, setShippingMethod } = orderSlice.actions
+    const billing_saves = useSelector(state => state.checkout.billing.data)
+    const shipping_saves = useSelector(state => state.checkout.shipping.data)
+    const { zones } = useSelector(state => state.checkout)
+    const { setShippingMethod, setBillingData, setShippingData } = checkout.actions
 
     const [ checkForm, setCheckForm ] = useState(false)
     const [ billing_details, setBillingDetails ] = useState({
@@ -99,10 +98,10 @@ const Form = ({bill_or_ship, isSubmit}) => {
 
         if (bill_or_ship === "billing") {
             setBillingDetails(new_details)
-            dispatch(setBilling(new_details))
+            dispatch(setBillingData(new_details))
         } else {
             setShippingDetails(new_details)
-            dispatch(setShipping(new_details))
+            dispatch(setShippingData(new_details))
         }
     }
 
@@ -135,13 +134,13 @@ const Form = ({bill_or_ship, isSubmit}) => {
             new_billing_details[csc_prop] = value.label
             setCsc({...csc, billing: new_billing_csc })
             setBillingDetails(new_billing_details)
-            dispatch(setBilling(new_billing_details))
+            dispatch(setBillingData(new_billing_details))
         } else {
             new_shipping_csc[csc_prop] = value.isoCode
             new_shipping_details[csc_prop] = value.label
             setCsc({ ...csc, shipping: new_shipping_csc})
             setShippingDetails(new_shipping_details) 
-            dispatch(setShipping(new_shipping_details))   
+            dispatch(setShippingData(new_shipping_details))   
         }
         
     }

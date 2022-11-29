@@ -66,5 +66,6 @@
         "n_card": "Card Number",
         "expiration": "Expiry date",
         "cvc": "CVC"
-    }
+    },
+    "form_not_filled": "* Fill all field required first."
 }

@@ -16,14 +16,14 @@ const ProductList = () => {
 
     const t = useTranslations('checkout')
 
-    const { cart } = useSelector( state => state.cart)
+    const { line_items } = useSelector( state => state.checkout)
 
   return (
     <>
         <h2>{t("your_order")}</h2>
         <div className={styles["products-list"]}>
             {
-                cart.map( prod => {
+                line_items.map( prod => {
 
                     return(
                         <ProductOrder

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 //* TRANSLATIONS
 import { useTranslations } from 'next-intl'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { orderSlice } from '@/slices/orderSlice';
+import { checkout } from 'storage/checkout';
 
 //* COMPONENTS
 import Form from './Form';
@@ -18,18 +18,17 @@ const CustomerInfo = ({ isSubmit }) => {
 
     const t = useTranslations('checkout')
     const t_shipping = useTranslations('checkout.Shipping_Info')
-    const [ isShipping, setIsShipping ] = useState(false)
 
-    const { billing, isOtherShip, shipping, privacy_accepted } = useSelector( state => state.order)
+    const { billing, shipping, privacy_accepted } = useSelector( state => state.checkout)
     const dispatch = useDispatch()
-    const { setShipping, handleOtherShip, handleAllCheck } = orderSlice.actions
+    const { setShipping, setShippingData, checkUserInfo } = checkout.actions
 
     useEffect(()=>{
 
-      if(!isOtherShip){
+      if(shipping && !shipping.isShipping){
         const new_shipping_details = { ...billing }
         delete new_shipping_details.email
-        dispatch(setShipping(new_shipping_details))
+        dispatch(setShippingData(new_shipping_details))
       } else {
         const empty_shipping_details = { 
           "first_name": "",  
@@ -43,16 +42,16 @@ const CustomerInfo = ({ isSubmit }) => {
           "city": "",  
           "phone": "",  
         }
-        dispatch(setShipping(empty_shipping_details))
+        dispatch(setShippingData(empty_shipping_details))
       }
 
       /* eslint-disable-next-line */
-    },[isOtherShip, billing])
+    },[billing])
     
     useEffect(() => {
-      dispatch(handleAllCheck())
+      dispatch(checkUserInfo())
       /* eslint-disable-next-line */
-    }, [isOtherShip, billing, shipping, privacy_accepted])
+    }, [billing, shipping, privacy_accepted])
     
 
   return (
@@ -64,13 +63,13 @@ const CustomerInfo = ({ isSubmit }) => {
         <input 
             type="checkbox" 
             id="is-shipping" 
-            onChange={()=> dispatch(handleOtherShip(!isOtherShip))}
-            checked={isOtherShip ? true : false}
+            onChange={()=> dispatch(setShipping(!shipping.isShipping))}
+            checked={shipping.isShipping ? true : false}
             />
         </div>
 
         {
-        isOtherShip ?
+         shipping && shipping.isShipping ?
             <Form bill_or_ship="shipping" isSubmit={isSubmit}/> : null
         }
 

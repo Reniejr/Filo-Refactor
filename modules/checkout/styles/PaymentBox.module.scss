@@ -4,6 +4,7 @@
     @include flexBox(column, flex-start, flex-start);
     gap: 1rem;
     width: 60%;
+    margin-bottom: .5rem;
 
     .payment-method{
         width: 100%;
@@ -19,4 +20,10 @@
             }
         }
     }
+}
+
+.form-not-filled{
+    font-size: 12px;
+    color: $primary;
+    font-weight: 500;
 }

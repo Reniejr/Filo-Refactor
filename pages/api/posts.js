@@ -1,4 +1,4 @@
-const BASE_URL = process.env.WP_URL
+const BASE_URL = process.env.NEXT_PUBLIC_WP_URL
 
 const post_url = BASE_URL + '/wp-json/wp/v2/posts'
 const media_url = BASE_URL + '/wp-json/wp/v2/media'

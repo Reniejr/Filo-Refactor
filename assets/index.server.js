@@ -1,5 +1,4 @@
-// const wp_url = process.env.NODE_ENV === 'production' ? process.env.WP_URL : process.env.NEXT_PUBLIC_WP_URL
-const wp_url = process.env.WP_URL
+const wp_url = process.env.NEXT_PUBLIC_WP_URL
 
 const BASE_URL = wp_url + '/wp-content/uploads/2022';
 

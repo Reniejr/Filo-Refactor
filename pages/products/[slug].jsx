@@ -19,23 +19,23 @@ import ft_styles from '../../modules/filo-tag/styles/FiloTagProduct.module.scss'
 
 const ProductPage = ({product}) => {
 
-  useEffect(() => {
+  // useEffect(() => {
     
-    ( async () => {
-      const product_viewed = await WCApi.get(`products/${product.id}`)
-      const gtm_data = {
-        "ecommerce":{
-          "items":[
-            product_viewed.data
-          ]
-        }
-      }
-      gtmViewItem(gtm_data)
+  //   ( async () => {
+  //     const product_viewed = await WCApi.get(`products/${product.id}`)
+  //     const gtm_data = {
+  //       "ecommerce":{
+  //         "items":[
+  //           product_viewed.data
+  //         ]
+  //       }
+  //     }
+  //     gtmViewItem(gtm_data)
 
-    })()
+  //   })()
   
-    /* eslint-disable-next-line */
-  }, [])
+  //   /* eslint-disable-next-line */
+  // }, [])
   
 
   return(

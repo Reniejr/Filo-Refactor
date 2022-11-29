@@ -5,8 +5,10 @@ import { useTranslations } from 'next-intl'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux'
-import { productsSlice } from '@/slices/productSlice'
-import { cartSlice } from '@/slices/cartSlice'
+import { checkout } from 'storage/checkout'
+
+//* DATA
+import { wc_details } from '@/products/filo-tag'
 
 //* ASSETS
 import Image from 'next/future/image'
@@ -20,15 +22,16 @@ const ProductInCart = ({id}) => {
     const t = useTranslations('cart')
 
     const dispatch = useDispatch()
-    const { products } = useSelector(state => state.products)
-    const foundProduct = products.find(product => product.id === id)
+    const { line_items } = useSelector(state => state.checkout)
+    const foundProduct = wc_details.find(product => product.id === id)
+    const {amount, quantity} = line_items.find(item => item.variation_id === id)
 
-    const { cart } = useSelector(state => state.cart)
-    const { quantity } = cart.find(product => product.variation_id === id)
-    const { addToCart, removeByOne, removeFromCart } = cartSlice.actions
+    const { addCartItem, removeByOne, removeFromCart } = checkout.actions
 
     const price = foundProduct && foundProduct.price ?
         foundProduct.price : 0
+    
+    console.log(foundProduct)
 
   return (
     <>
@@ -60,21 +63,21 @@ const ProductInCart = ({id}) => {
                     </div>
                     <div className={styles["price-box"]}>
                         <p className={`${styles["price-mob"]} ${styles["hr-mob"]}`}>{t("price")}</p>
-                        {foundProduct.price}0 €
+                        {parseFloat(amount / 100)}0 €
                     </div>
                     <div className={styles["quantity-box"]}>
                     <p className={`${styles["quantity-mob"]} ${styles["hr-mob"]}`}>{t("quantity")}</p>
                         <div className={styles["input-group"]}>
                             <button
                                 className={`${styles["cart-btn"]} ${styles["input"]}`}
-                                onClick={() => dispatch(removeByOne({id, price}))}
+                                onClick={() => dispatch(removeByOne({variation_id: id, amount}))}
                             >
                                 <ion-icon name="remove-circle-outline"></ion-icon>
                             </button>
                             <div className={styles["quantity"]}>{quantity}</div>
                             <button
                                 className={`${styles["cart-btn"]} ${styles["input"]}`}
-                                onClick={() => dispatch(addToCart({id, price}))}
+                                onClick={() => dispatch(addCartItem({variation_id: id, amount}))}
                                 >
                                 <ion-icon name="add-circle-outline"></ion-icon>
                             </button>
@@ -82,7 +85,7 @@ const ProductInCart = ({id}) => {
                     </div>
                     <div className={styles["subtotal-box"]}>
                     <p className={`${styles["subtotal-mob"]} ${styles["hr-mob"]}`}>{t("subtotal")}</p>
-                        { `${Math.round((quantity * price) * 100) / 100}0 €`}
+                        { `${quantity * amount / 100}0 €`}
                     </div>
                     <div className={styles["remove-box"]}>
                         <button

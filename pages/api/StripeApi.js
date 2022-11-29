@@ -1,5 +1,5 @@
 import Stripe from 'stripe';
-const stripe = new Stripe(process.env.STRIPE_SK, {
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SK, {
     apiVersion: '2020-08-27',
 });
 const handler = async (req, res) => {

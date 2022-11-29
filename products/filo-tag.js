@@ -41,6 +41,7 @@ const filo_tag_x4 = {
 
 const wc_details = [{
         "id": 144,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "1x",
         "color": "black",
         "img": {
@@ -50,6 +51,7 @@ const wc_details = [{
     },
     {
         "id": 145,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "1x",
         "color": "cyan",
         "img": {
@@ -59,6 +61,7 @@ const wc_details = [{
     },
     {
         "id": 146,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "1x",
         "color": "red",
         "img": {
@@ -68,6 +71,7 @@ const wc_details = [{
     },
     {
         "id": 147,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "1x",
         "color": "white",
         "img": {
@@ -77,6 +81,7 @@ const wc_details = [{
     },
     {
         "id": 148,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "4x",
         "color": "black",
         "img": {
@@ -86,6 +91,7 @@ const wc_details = [{
     },
     {
         "id": 149,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "4x",
         "color": "cyan",
         "img": {
@@ -95,6 +101,7 @@ const wc_details = [{
     },
     {
         "id": 150,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "4x",
         "color": "red",
         "img": {
@@ -104,6 +111,7 @@ const wc_details = [{
     },
     {
         "id": 151,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "4x",
         "color": "white",
         "img": {
@@ -113,6 +121,7 @@ const wc_details = [{
     },
     {
         "id": 152,
+        "name": "Filo Tag - Bluetooth Tracker",
         "bundle": "4x",
         "color": "mix",
         "img": {

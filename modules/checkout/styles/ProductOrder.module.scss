@@ -47,8 +47,27 @@
             @include title_font_sm;
             font-size: 12px;
 
+            &.old-price{
+                font-size: 10px;
+                text-decoration: line-through;
+                color: $primary;
+            }
+
+            &.discounted-amount, &.original-price{
+                font-size: 12px;
+            }
+            
             @media screen and (max-width: $sm) {
                 font-size: 13px;
+                &.old-price{
+                    font-size: 11px;
+                    text-decoration: overline;
+                    color: $primary;
+                }
+    
+                &.discounted-amount, &.original-price{
+                    font-size: 13px;
+                }
             }
         }
     }

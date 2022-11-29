@@ -96,6 +96,21 @@
                 font-weight: 600;
                 text-align: right;
             }
+
+            .price-container{
+                .discounted-subtotal{
+                    font-size: 12px;
+                    font-weight: 500;
+                    text-align: right;
+                    color: $primary;
+                    text-decoration: line-through;
+                }
+                .original-subtotal, .fianl-subtotal{
+                    font-size: 14px;
+                    font-weight: 600;
+                    text-align: right;
+                }
+            }
         }
     }
 

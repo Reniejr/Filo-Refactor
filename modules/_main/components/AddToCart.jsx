@@ -5,24 +5,23 @@ import { useRouter } from 'next/router'
 
 //* REDUX
 import { useDispatch, useSelector } from 'react-redux'
-import { cartSlice } from '@/slices/cartSlice'
-// import { productsSlice } from '@/slices/productSlice'
+import { checkout } from 'storage/checkout'
 
 //* STYLES
 import globals from '@/styles/Main.module.scss'
 
 const AddToCartBtn = ({product}) => {
 
-  const { addToCart } = cartSlice.actions
-  const { products } = useSelector(state => state.products)
-  const price = products.length > 0 ? products.find(search => search.id === product.id).price : 0
+  const { addCartItem } = checkout.actions
+  const { wc_order_data } = useSelector(state => state.products)
+  const selected = wc_order_data.find( wc_product => wc_product["variation_id"] === product.id)
   const dispatch = useDispatch()
   const router = useRouter()
 
   return (
     <button 
       onClick={() => {
-        dispatch(addToCart({...product, price}))
+        dispatch(addCartItem(selected))
         router.push('/cart')
       }}
       className={`${globals["btn"]} ${globals["add-to-cart-btn"]}`}

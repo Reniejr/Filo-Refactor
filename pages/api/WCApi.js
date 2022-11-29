@@ -2,7 +2,7 @@ import woocommerceRestApi from "@woocommerce/woocommerce-rest-api";
 
 const wp_url = process.env.NEXT_PUBLIC_WP_URL,
     wc_ck = process.env.NEXT_PUBLIC_WOO_CK,
-    wc_secret = process.env.NEXT_PUBLIC_WOO_SECRET
+    wc_secret = process.env.NEXT_PUBLIC_WOO_CS
 
 
 const WCApi = new woocommerceRestApi({

@@ -66,5 +66,6 @@
         "n_card": "Numero carta",
         "expiration": "Data scadenza",
         "cvc": "CVC"
-    }
+    },
+    "form_not_filled": "* Compila prima i campi necessari."
 }

@@ -21,7 +21,7 @@ import { LinkCTA } from '@/common/components/CTA';
 const Cart = () => {
 
     const t = useTranslations('cart')
-    const {cart, total} = useSelector( state => state.cart)
+    const {line_items, original_total} = useSelector( state => state.checkout)
     const router = useRouter()
 
   return (
@@ -34,7 +34,7 @@ const Cart = () => {
             <div className={`${globals["container"]} ${styles["container"]}`}>
                 <h1>{t('cart')}</h1>
                 {
-                    cart.length > 0 ?
+                    line_items.length > 0 ?
                     <>
                     
                         <div className={styles["cart-table"]}>
@@ -47,7 +47,7 @@ const Cart = () => {
                                 <div className={styles["remove-header"]}></div>
                             </div>
                             {
-                                cart.map( product => {
+                                line_items.map( product => {
                                     return(
                                         <ProductInCart 
                                             key={product.variation_id}
@@ -66,7 +66,7 @@ const Cart = () => {
                             </button>
                             <div className={styles["total-box"]}>
                                 <h2>{t("total")}</h2>
-                                <p className={styles["total"]}>{ total === 0 ? "0.00 €" : `${total}0 €`}</p>
+                                <p className={styles["total"]}>{ original_total === 0 ? "0.00 €" : `${original_total / 100}0 €`}</p>
                             </div>
                         </div>
                         <Invoice/>

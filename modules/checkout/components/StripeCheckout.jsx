@@ -1,15 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 //* WOOCOMMERCE
-import WCApi from '@/pages/api/WCApi';
+import axios from 'axios'
 
 //* TRANSLATION
 import { useTranslations } from 'next-intl'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux';
-import { cartSlice } from '@/slices/cartSlice';
-import { orderSlice } from '@/slices/orderSlice';
+import { checkout } from 'storage/checkout';
 
 //* ROUTER
 import { useRouter } from 'next/router';
@@ -33,12 +32,10 @@ const StripeCheckout = ({paymentIntent}) => {
   
   //* REDUX STATE
   const { payment_try } = useSelector( state => state.stripe)
-  const { cart } = useSelector( state => state.cart)
-  const { billing, shipping, shipping_method, card_filled } = useSelector( state => state.order)
+  const { line_items, billing, shipping, shipping_method } = useSelector( state => state.checkout)
     //* REDUX ACTIONS
   const dispatch = useDispatch()
-  const { setCart } = cartSlice.actions
-  const { handleAllCheck, handleCheck, handleCardFilled } = orderSlice.actions
+  const { resetCartItems, setIsCardFilled, checkUserInfo } = checkout.actions
 
   //* ROUTER
   const router = useRouter()
@@ -56,24 +53,24 @@ const StripeCheckout = ({paymentIntent}) => {
 
   useEffect(() => {
     if (elEmpty === -2) {
-      dispatch(handleCardFilled(false))
-      dispatch(handleAllCheck())
+      dispatch(setIsCardFilled(false))
+      dispatch(checkUserInfo())
     }
     
     return () => {
-      dispatch(handleCardFilled(false))
-      dispatch(handleAllCheck())
+      dispatch(setIsCardFilled(false))
+      dispatch(checkUserInfo())
     }
     
     /* eslint-disable-next-line */
   },[])
   useEffect(() => {
     if (elEmpty === 0) {
-      dispatch(handleCardFilled(true))
-      dispatch(handleAllCheck())
+      dispatch(setIsCardFilled(true))
+      dispatch(checkUserInfo())
     } else {
-      dispatch(handleCardFilled(false))
-      dispatch(handleAllCheck())
+      dispatch(setIsCardFilled(false))
+      dispatch(checkUserInfo())
     }
     
     /* eslint-disable-next-line */
@@ -134,18 +131,20 @@ const StripeCheckout = ({paymentIntent}) => {
         "payment_method": "stripe",
         "payment_method_title": "Card",
         "set_paid": true,
-        "billing": billing,
-        "shipping": shipping,
-        "line_items": cart,
+        "billing": billing.data,
+        "shipping": shipping.data.data,
+        "line_items": line_items,
         "shipping_lines": [{
           ...shipping_method,
           total: shipping_method.total.toString()
         }]
       }
-      WCApi.post('orders', order)
+      axios.post(`${process.env.NEXT_PUBLIC_WP_URL}/wp-json/wc/v3/orders?consumer_key=${process.env.NEXT_PUBLIC_WOO_CK}&consumer_secret=${process.env.NEXT_PUBLIC_WOO_CS}`, order)
+      .then((response) => {
+        // console.log(response.data)
+      })
 
-      dispatch(setCart([]))
-      localStorage.clear()
+      dispatch(resetCartItems())
       router.push("/thank-you-page")
     }
 

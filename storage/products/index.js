@@ -5,17 +5,24 @@ import {
     HYDRATE
 } from 'next-redux-wrapper'
 
+import products_state from './state'
+import {
+    setOriginalProducts,
+    setWcOrderData,
+    selectItem
+} from './actions'
+
 const initialState = {
-    products: []
+    ...products_state
 }
 
-export const productsSlice = createSlice({
+export const products = createSlice({
     name: 'products',
     initialState,
     reducers: {
-        setProducts(state, action) {
-            state.products = action.payload
-        }
+        setOriginalProducts,
+        setWcOrderData,
+        selectItem
     },
     extraReducers: {
         [HYDRATE]: (state, action) => {
@@ -27,7 +34,4 @@ export const productsSlice = createSlice({
     }
 })
 
-export const {
-    setProducts
-} = productsSlice.actions
-export default productsSlice.reducer
+export default products.reducer

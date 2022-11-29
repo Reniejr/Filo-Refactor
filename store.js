@@ -3,23 +3,14 @@ import {
 } from '@reduxjs/toolkit'
 
 import {
-    cartSlice
-} from './slices/cartSlice'
-import {
-    invoiceSlice
-} from './slices/invoiceSlice'
-import {
     stripeSlice
 } from './slices/stripeSlice'
 import {
     orderSlice
 } from './slices/orderSlice'
-import {
-    productsSlice
-} from './slices/productSlice'
-import {
-    locationsSlice
-} from './slices/locationsSlice'
+
+import checkout from './storage/checkout'
+import products from './storage/products'
 
 
 import {
@@ -28,12 +19,11 @@ import {
 
 const makeStore = () => configureStore({
     reducer: {
-        cart: cartSlice.reducer,
-        products: productsSlice.reducer,
-        invoice: invoiceSlice.reducer,
-        order: orderSlice.reducer,
+        // order: orderSlice.reducer,
         stripe: stripeSlice.reducer,
-        locations: locationsSlice.reducer
+        checkout,
+        products
+
     },
     devTools: true
 })

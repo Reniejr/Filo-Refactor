@@ -1,28 +1,98 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 //* TRANSLATIONS
 import { useTranslations } from 'next-intl'
 
 //* REDUX
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { checkout } from 'storage/checkout';
 
 //* STYLES
-import globals from '@/styles/Main.module.scss';
 import styles from '../styles/Checkout.module.scss';
 
 const CostDetails = () => {
 
     const t = useTranslations('checkout')
 
-    const { total } = useSelector( state => state.cart)
-    const { shipping_method } = useSelector( state => state.order)
+    const { original_total, shipping_method, discount } = useSelector( state => state.checkout)
+    const { setNewTotal } = checkout.actions
+    const dispatch = useDispatch()
+
+    const [ displayTotal, setDisplayTotal ] = useState({
+        original_subtotal: original_total,
+        discounted_total: 0,
+        total: 0
+    }) 
+
+    useEffect(() => {
+        setDisplayTotal({
+            ...displayTotal,
+            original_subtotal: original_total,
+            total: original_total
+        })
+        /* eslint-disable-next-line */
+    }, [original_total])
+
+    useEffect(() => {
+      
+        if (discount) {
+            setDisplayTotal({
+                ...displayTotal,
+                discounted_total: discount.discounted_total,
+                total: parseFloat(discount.discounted_total) + parseFloat(shipping_method.total * 100)
+            })
+            dispatch(setNewTotal(parseFloat(discount.discounted_total) + parseFloat(shipping_method.total * 100)))
+            
+        } else {
+            setDisplayTotal({
+                ...displayTotal,
+                discounted_total: 0,
+                total: parseFloat(displayTotal.original_subtotal) + parseFloat(shipping_method.total * 100)
+            })
+            dispatch(setNewTotal(parseFloat(displayTotal.original_subtotal) + parseFloat(shipping_method.total * 100)))
+        }
+        
+        /* eslint-enable-next-line */
+    }, [discount])
+    
+    useEffect(() => {
+        
+        if (shipping_method.total !== 0) {
+            setDisplayTotal({
+                ...displayTotal,
+                total: parseFloat(displayTotal.total) + parseFloat(shipping_method.total * 100)
+            })
+            dispatch(setNewTotal(parseFloat(displayTotal.total) + parseFloat(shipping_method.total * 100)))
+            
+        } else {
+            setDisplayTotal({
+                ...displayTotal,
+                total: displayTotal.discounted_total !== 0 ? displayTotal.discounted_total : original_total
+            })
+            dispatch(setNewTotal(displayTotal.discounted_total !== 0 ? displayTotal.discounted_total : original_total))
+        }
+
+        /* eslint-enable-next-line */
+    }, [shipping_method])
+
+    const fixNumTo2Decimals = (num) => (Math.round(num * 100) / 100).toFixed(2)
+    
 
   return (
     <>
         <div className={styles["cost-details"]}>
             <div className={styles["subtotal"]}>
                 <h3>{t("subtotal")}</h3>
-                <p>{total}0 €</p>
+                <div className={styles["price-container"]}>
+                    <p 
+                        className={`${discount && discount.discounted_total ? styles["discounted-subtotal"] : styles["original-subtotal"]}`}
+                        >{fixNumTo2Decimals(displayTotal.original_subtotal / 100)} €</p>
+                    {
+                        discount && discount.discounted_total ?
+                        <p className={`${styles["final-subtotal"]}`}>{fixNumTo2Decimals(displayTotal.discounted_total / 100)} €</p>
+                        : null
+                    }
+                </div>
             </div>
             <div className={styles["shipping-method"]}>
                 <h3>{t("shipping")}</h3>
@@ -45,11 +115,7 @@ const CostDetails = () => {
         <div className={styles["total-box"]}>
             <h3>{t("total")}</h3>
             <p>
-                {/* { total }0 € */}
-                {
-                    shipping_method.method_id !== "" ?
-                        `${shipping_method.total + total}0 €` : null
-                }
+                {fixNumTo2Decimals(displayTotal.total / 100)}€
             </p>
         </div>
     </>

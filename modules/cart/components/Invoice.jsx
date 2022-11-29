@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 //* TRANSLATION
 import { useTranslations } from 'next-intl'
 
 //* REDUX
 import { useSelector, useDispatch } from 'react-redux'
-import { invoiceSlice } from '@/slices/invoiceSlice'
+import { checkout } from 'storage/checkout'
 
 //* STYLES
 import globals from '@/styles/Main.module.scss'
@@ -15,13 +15,11 @@ const Invoice = () => {
 
     const t = useTranslations('cart')
     const t_invoice = useTranslations('cart.Invoice')
-    const { invoice } = useSelector(state => state.invoice)
     const dispatch = useDispatch()
-    const { setInvoice } = invoiceSlice.actions    
+    const { setInvoiceData, setInvoice } = checkout.actions  
+    const { isInvoice } = useSelector(state => state.checkout.invoice)
 
     const [ isSubmitted, setIsSubmitted ] = useState(false)
-
-    const [ is_invoice, setIsInvoice ] = useState(false)
 
     const [ invoice_details, setInvoiceDetails ] = useState({
         "choose": "company",
@@ -60,14 +58,12 @@ const Invoice = () => {
     const handleSetInvoice = () => {
         const new_invoice = invoice_details.choose === "company" ? 
             company_details : private_details
-        localStorage.setItem("invoice", JSON.stringify(new_invoice))
-        dispatch(setInvoice(new_invoice))
+        dispatch(setInvoiceData(new_invoice))
         setIsSubmitted(true)
     }
     
     const removeInvoice = () => {
-        localStorage.setItem("invoice", null)
-        dispatch(setInvoice(null))
+        dispatch(setInvoiceData(null))
         setIsSubmitted(false)
     }
 
@@ -81,13 +77,13 @@ const Invoice = () => {
                 type="checkbox" 
                 id="is_invoice" 
                 onChange={() => {
-                    setIsInvoice(!is_invoice);
+                    dispatch(setInvoice(!isInvoice));
                 }} 
-                checked={is_invoice}
+                checked={isInvoice}
                 />
         </div>
         {
-            is_invoice ?
+            isInvoice ?
                 <div className={styles["invoice-details"]}>
                     <div className={styles["invoice-choose"]}>
                         <div className={styles["radio-group"]}>
