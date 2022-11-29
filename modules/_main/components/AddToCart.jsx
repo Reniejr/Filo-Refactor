@@ -31,7 +31,7 @@ const AddToCartBtn = ({product}) => {
           value: {...selected}
         })
         dispatch(addCartItem(selected))
-        // router.push('/cart')
+        router.push('/cart')
       }}
       className={`${globals["btn"]} ${globals["add-to-cart-btn"]}`}
       id="add-to-cart"
