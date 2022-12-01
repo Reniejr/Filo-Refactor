@@ -35,8 +35,6 @@ const ProductPage = ({product}) => {
         const main_product = await WCApi.get(`products/19`)
         if(variation.data && main_product.data && window !== undefined) {
             const item_ga4 = gtag.productToDLGA4(main_product.data, variation.data)
-            console.log('item', item_ga4)
-            console.log("price", variation.data.price)
             gtag.dataLayerEvent({
                 event: "view_item",
                 args: { 
@@ -45,13 +43,6 @@ const ProductPage = ({product}) => {
                     items: [item_ga4]
                 }
             })
-            // gtagEvent('view_item', {
-            //     ecommerce:{
-            //         currency: "EUR", 
-            //         value: parseFloat(variation.data.price), 
-            //         items: [item_ga4]
-            //     }
-            // })
         }
     })()
 

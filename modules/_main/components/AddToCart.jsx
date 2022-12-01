@@ -1,7 +1,10 @@
 import React from 'react'
 
 //* GA4
-import { dataLayerEvent, event } from '@/config/gtag'
+import * as gtag from '@/config/gtag'
+
+//* WOOCOMMERCE
+import WCApi from '@/pages/api/WCApi'
 
 //* ROUTER
 import { useRouter } from 'next/router'
@@ -16,20 +19,30 @@ import globals from '@/styles/Main.module.scss'
 const AddToCartBtn = ({product}) => {
 
   const { addCartItem } = checkout.actions
-  const { wc_order_data } = useSelector(state => state.products)
+  const { wc_order_data, selected_item } = useSelector(state => state.products)
   const selected = wc_order_data.find( wc_product => wc_product["variation_id"] === product.id)
   const dispatch = useDispatch()
   const router = useRouter()
 
   return (
     <button 
-      onClick={() => {
-        event({
-          action: 'add_to_cart',
-          category: "ecommerce",
-          label: "item_added",
-          value: {...selected}
-        })
+      onClick={async () => {
+        let variation_id = 146
+        if(selected_item) variation_id = selected_item.variation_id
+          
+        const variation = await WCApi.get(`products/19/variations/${variation_id}`)
+        const main_product = await WCApi.get(`products/19`)
+        if(variation.data && main_product.data && window !== undefined) {
+            const item_ga4 = gtag.productToDLGA4(main_product.data, variation.data)
+            gtag.dataLayerEvent({
+                event: "add_to_cart",
+                args: { 
+                    currency: "EUR", 
+                    value: parseFloat(variation.data.price), 
+                    items: [item_ga4]
+                }
+            })
+        }
         dispatch(addCartItem(selected))
         router.push('/cart')
       }}
