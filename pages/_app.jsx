@@ -80,6 +80,7 @@ function MyApp({ Component, pageProps }) {
         });
       `,
     }}
+    id="gtag-datalayer-allow"
   />
   <Script
     strategy="afterInteractive"
