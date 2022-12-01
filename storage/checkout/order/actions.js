@@ -13,7 +13,7 @@ export const setIsCardFilled = (state, action) => {
 
 export const checkUserInfo = (state, action) => {
     const check_billing = checkData1(state.billing.data)
-    const check_shipping = checkData1(state.shipping.data)
+    const check_shipping = checkData1(state.shipping.data.data)
     const check_privacy = state.isPrivacyAccepted
     const check_card = state.payment_method_title === "Card" ?
         state.isCardFilled : true
@@ -27,7 +27,7 @@ export const checkUserInfo = (state, action) => {
         check_card,
         check_coupon
     ]
-    // console.log(check_array)
+    console.log(check_array)
 
     check_array.includes(false) ? state.check_user_info = false : state.check_user_info = true
 

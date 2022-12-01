@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 //* GA4
-import { dataLayerEvent } from '@/config/gtag'
+import { dataLayerEvent, productToDLGA4, gtagEvent } from '@/config/gtag'
 
 //* TRANSLATION
 import { useTranslations } from 'next-intl'
@@ -22,6 +22,7 @@ import FeaturesDropdown from './FeaturesDropdown'
 //* STYLES
 import globals from '@/styles/Main.module.scss'
 import styles from '../styles/FiloTagProduct.module.scss'
+import WCApi from '@/pages/api/WCApi'
 
 const FTProductBuy = ({direction, isFeatures}) => {
 
@@ -40,6 +41,37 @@ const FTProductBuy = ({direction, isFeatures}) => {
         "color": "red",
         "id": 146
     })
+
+    useEffect(() => {
+      
+        (async () => {
+            
+            const variation = await WCApi.get(`products/19/variations/${filo_tag.id}`)
+            const main_product = await WCApi.get(`products/19`)
+            if(variation.data && main_product.data){
+                const item_ga4 = productToDLGA4(main_product.data, variation.data)
+                console.log('item', item_ga4)
+                console.log("price", variation.data.price)
+                dataLayerEvent({
+                    event: "view_item",
+                    args: { 
+                        currency: "EUR", 
+                        value: parseFloat(variation.data.price), 
+                        items: [item_ga4]
+                    }
+                })
+                // gtagEvent('view_item', {
+                //     ecommerce:{
+                //         currency: "EUR", 
+                //         value: parseFloat(variation.data.price), 
+                //         items: [item_ga4]
+                //     }
+                // })
+            }
+        })()
+
+    }, [filo_tag])
+    
 
     const [ main_img, setMainImage ] = useState({
         src: handleFTImg(filo_tag.id).src,

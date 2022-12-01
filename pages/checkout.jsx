@@ -72,7 +72,7 @@ const Checkout = () => {
         })
       }
 
-      if(payment_method === "paypal"){
+      if(payment_method === "paypal" && check_user_info){
 
         const order = {
           "payment_method": "paypal",

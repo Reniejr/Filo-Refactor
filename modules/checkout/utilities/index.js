@@ -13,6 +13,7 @@ const checkData1 = (object_to_check) => {
             else return false
         } else return true
     })
+    console.log(data_check)
     return data_check.includes(false) ? false : true
 }
 
