@@ -24,7 +24,7 @@ const ProductSelectors = ({state, handlers, styles_prop}) => {
     <>
         <div className={styles["selectors-container"]}>
             <div 
-                className={`${styles["1x-bundle"]} ${styles["bundle-selector"]} ${filo_tag.bundle === "1x" ? styles["active"] : styles["disabled"]}`}
+                className={`${styles["1x-bundle"]} ${styles["bundle-selector"]} ${filo_tag.bundle === "1x" ? styles["active"] : styles["disabled"]} bundle-selector`}
                 style={s_bundle_selector('1x')}
                 onClick={() => handleBundle("1x")}
                 >
@@ -34,7 +34,7 @@ const ProductSelectors = ({state, handlers, styles_prop}) => {
                 </div>
             </div>
             <div 
-                className={`${styles["4x-bundle"]} ${styles["bundle-selector"]} ${filo_tag.bundle === "4x" ? styles["active"] : styles["disabled"]}`}
+                className={`${styles["4x-bundle"]} ${styles["bundle-selector"]} ${filo_tag.bundle === "4x" ? styles["active"] : styles["disabled"]} bundle-selector`}
                 style={s_bundle_selector('4x')}
                 onClick={() => handleBundle("4x")}
                 >
@@ -58,6 +58,7 @@ const ProductSelectors = ({state, handlers, styles_prop}) => {
                             height={24}
                             onClick={() => handleColor(color_i.color)}
                             style={s_color_selector(color_i.color)}
+                            className={`color-selector`}
                         />
                     )
                 })

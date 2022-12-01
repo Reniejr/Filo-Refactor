@@ -41,36 +41,6 @@ const FTProductBuy = ({direction, isFeatures}) => {
         "color": "red",
         "id": 146
     })
-
-    useEffect(() => {
-      
-        (async () => {
-            
-            const variation = await WCApi.get(`products/19/variations/${filo_tag.id}`)
-            const main_product = await WCApi.get(`products/19`)
-            if(variation.data && main_product.data){
-                const item_ga4 = productToDLGA4(main_product.data, variation.data)
-                console.log('item', item_ga4)
-                console.log("price", variation.data.price)
-                dataLayerEvent({
-                    event: "view_item",
-                    args: { 
-                        currency: "EUR", 
-                        value: parseFloat(variation.data.price), 
-                        items: [item_ga4]
-                    }
-                })
-                // gtagEvent('view_item', {
-                //     ecommerce:{
-                //         currency: "EUR", 
-                //         value: parseFloat(variation.data.price), 
-                //         items: [item_ga4]
-                //     }
-                // })
-            }
-        })()
-
-    }, [filo_tag])
     
 
     const [ main_img, setMainImage ] = useState({
@@ -113,7 +83,7 @@ const FTProductBuy = ({direction, isFeatures}) => {
         const selected = wc_details.find( product => product.bundle === new_filo_tag.bundle && product.color === new_filo_tag.color)
         new_filo_tag.id = selected.id
         dispatch(selectItem({product_id: 19, variation_id: selected.id}))
-        dataLayerEvent({event: 'select_variant', args: selectItem})
+        // dataLayerEvent({event: 'select_variant', args: selectItem})
         setFiloTag(new_filo_tag)
         setMainImage(selected.img)
 

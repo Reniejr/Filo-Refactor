@@ -1,5 +1,8 @@
 import { useEffect } from 'react'
 
+//* REDUX
+import { useSelector } from 'react-redux'
+
 //* GTM
 import { gtmViewItem } from '@/hooks/gtm'
 import * as gtag from '@/config/gtag'
@@ -19,23 +22,40 @@ import ft_styles from '../../modules/filo-tag/styles/FiloTagProduct.module.scss'
 
 const ProductPage = ({product}) => {
 
+  const { selected_item } = useSelector(state => state.products)
+
   useEffect(() => {
-    
-    ( async () => {
-      const product_viewed = await WCApi.get(`products/${product.id}`)
-      // console.log(product_viewed.data)
+      
+    (async () => {
 
-      // if(product_viewed.data){
-      //   gtag.dataLayerEvent({
-      //     event: "view_item",
-      //     args: { items: [product_viewed.data]}
-      //   })
-      // }
-
+      let variation_id = 146
+      if(selected_item) variation_id = selected_item.variation_id
+        
+        const variation = await WCApi.get(`products/19/variations/${variation_id}`)
+        const main_product = await WCApi.get(`products/19`)
+        if(variation.data && main_product.data && window !== undefined) {
+            const item_ga4 = gtag.productToDLGA4(main_product.data, variation.data)
+            console.log('item', item_ga4)
+            console.log("price", variation.data.price)
+            gtag.dataLayerEvent({
+                event: "view_item",
+                args: { 
+                    currency: "EUR", 
+                    value: parseFloat(variation.data.price), 
+                    items: [item_ga4]
+                }
+            })
+            // gtagEvent('view_item', {
+            //     ecommerce:{
+            //         currency: "EUR", 
+            //         value: parseFloat(variation.data.price), 
+            //         items: [item_ga4]
+            //     }
+            // })
+        }
     })()
-  
-    /* eslint-disable-next-line */
-  }, [])
+
+}, [selected_item])
   
 
   return(
