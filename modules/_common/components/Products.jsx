@@ -104,7 +104,7 @@ const ProductOverview1 = () => {
                 </div>
                 <div className={styles["cta-container"]}>
                     <LinkCTA
-                        href="/product/filo-tag"
+                        href="/products/filo-tag"
                         classes={`${globals["btn"]} ${globals["btn-primary"]}`}
                         text_label={tGlobal("buy-now")}
                     />
