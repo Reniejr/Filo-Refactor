@@ -3,8 +3,8 @@ const path = require('path');
 const nextConfig = {
   async rewrites() {
     return [{
-      source: "/*",
-      destination: "https://wedevs.it/*"
+      source: "/",
+      destination: "https://wedevs.it/"
     }]
   },
   reactStrictMode: true,
