@@ -4,7 +4,7 @@ const nextConfig = {
   async rewrites() {
     return [{
       source: "/",
-      destination: "https://wedevs.it/"
+      destination: "wedevs.it/"
     }]
   },
   reactStrictMode: true,
